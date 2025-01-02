@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.10.1] - XX/XX/XXXX
+
+**Improved:**
+* Updated ReadMe
+* Support horizontal scrolling in code blocks
+
 ## [1.10.0] - 01/01/2025🎉
 
 **New:**
