@@ -3,9 +3,9 @@
 ## [1.10.2] - XX/XX/XXXX
 
 **Improved:**
-* Various minor enhancments to Search plugin
+* Various minor enhancements to Search plugin
 * Updated ReadMe
-* Removed page title in search results when all results are on the same page
+* Underscores may be used to represent spaces in URL parameters, in addition to the standard encoded value of %20
 
 ## [1.10.1] - 02/01/2025🍁
 
