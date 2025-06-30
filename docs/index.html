@@ -197,12 +197,11 @@
 
         if (isValidUrl(url)) {
 
-          docsifyURL = window.location.href
+          var docsifyURL = window.location.href
 
           var params = new URLSearchParams(docsifyURL.search);
           params.delete('url-field');
           docsifyURL = docsifyURL.split("?")[0]; //url;
-
           docsifyURL = docsifyURL.replace('/#/', '');
           docsifyURL = docsifyURL.replace(/\/?$/, '/'); // If no trailing slash add it
 
@@ -249,14 +248,19 @@
 
           // Get last segment of URL
           const { hostname } = new URL(url);
-          var lastSegment = url.split('/').pop();
+
+          // Code generated/assisted by Anthropic Claude AI
+          // Remove URL parameters (anything after ? or &)
+          var lastSegment = url.split('?')[0].split('&')[0].split('/').pop();
+
           if (hedgedocInstances.includes(hostname)) {
             // Support for HedgeDoc instances in the Web Page Builder
-            lastSegment = lastSegment.replace(/#/g, '');
+            lastSegment = lastSegment.split('&')[0].split('?')[0];
             if (!url.includes('/download')) {
               lastSegment = lastSegment + '/download';
             }
           }
+
           var URLparms = '';
 
           const cb1 = document.querySelector('#editCheck');
@@ -269,16 +273,22 @@
               if ((document.querySelector('#loadcustomsidebar').checked || document.querySelector('#loadcustomnavbar').checked) && !(hedgedocInstances.includes(hostname))) {
                 gitlinkPageURL = gitlinkPageURL.substring(0, gitlinkPageURL.lastIndexOf("/"));
               }
-              var URLparms = URLparms + `&edit-link=` + gitlinkPageURL;
+              if (!url.includes('edit-link=')) {
+                var URLparms = URLparms + `&edit-link=` + gitlinkPageURL;
+              }
             }
           }
 
           if (document.querySelector('#stylesidebar').checked) {
-            var URLparms = URLparms + `&sidebar=true`;
+            if (!url.includes('sidebar=')) {
+              var URLparms = URLparms + `&sidebar=true`;
+            }
           }
 
           if (document.querySelector('#styletoc').checked) {
-            var URLparms = URLparms + `&toc=true`;
+            if (!url.includes('toc=')) {
+              var URLparms = URLparms + `&toc=true`;
+            }
           }
 
           var getBrowserTabTitle = document.getElementById("browserTabTitle");
@@ -287,8 +297,10 @@
             document.getElementById("browserTabTitle").value = 'Published by Docsify-This';
           }
           if (!(browserTabTitle == "Published by Docsify-This")) {
-            browserTabTitle = encodeURI(browserTabTitle);
-            URLparms = URLparms + `&browser-tab-title=` + browserTabTitle;
+            if (!url.includes('browser-tab-title=')) {
+              browserTabTitle = encodeURI(browserTabTitle);
+              URLparms = URLparms + `&browser-tab-title=` + browserTabTitle;
+            }
           }
 
           var getEditThisPage = document.getElementById("editLinkText");
@@ -310,14 +322,18 @@
 
           const cb3 = document.querySelector('#hideCredits');
           if (cb3.checked) {
-            var URLparms = URLparms + `&hide-credits=true`;
+            if (!url.includes('hide-credits=')) {
+              var URLparms = URLparms + `&hide-credits=true`;
+            }
           }
 
           const cb4 = document.querySelector('#narrowToC');
           if (cb4.checked) {
             if (URLparms.includes("&toc=true")) {
-              var URLparms = URLparms.replace("&toc=true", "");
-              URLparms = URLparms + `&toc-narrow=true`;
+              if (!url.includes('toc-narrow=')) {
+                var URLparms = URLparms.replace("&toc=true", "");
+                URLparms = URLparms + `&toc-narrow=true`;
+              }
             }
           }
 
@@ -349,7 +365,9 @@
                     ToCHeadings = "h3";
                   }
                 }
-                URLparms = URLparms + `&toc-headings=` + ToCHeadings;
+                if (!url.includes('toc-headings=')) {
+                  URLparms = URLparms + `&toc-headings=` + ToCHeadings;
+                }
               }
             }
           }
@@ -360,27 +378,37 @@
             document.getElementById("maxLevel").value = 2;
           }
           if (!(maxLevel == 2)) {
-            URLparms = URLparms + `&maxLevel=` + maxLevel;
+            if (!url.includes('maxLevel=')) {
+                URLparms = URLparms + `&maxLevel=` + maxLevel;
+            }
           }
 
           const cb8 = document.querySelector('#hypothesisenable');
           if (cb8.checked) {
-            var URLparms = URLparms + `&hypothesis=true`;
+            if (!url.includes('hypothesis=')) {
+              var URLparms = URLparms + `&hypothesis=true`;
+            }
           }
 
           var getFontFamily = document.getElementById('fontfamily').selectedOptions[0].value;
           if (!(getFontFamily == "default")) {
-            var URLparms = URLparms + `&font-family=` + getFontFamily;
+            if (!url.includes('font-family=')) {
+              var URLparms = URLparms + `&font-family=` + getFontFamily;
+            }
           }
 
           var getFontSize = document.getElementById('fontsize').value;
           if (!(getFontSize == "18px")) {
-            var URLparms = URLparms + `&font-size=` + getFontSize;
+            if (!url.includes('font-size=')) {
+              var URLparms = URLparms + `&font-size=` + getFontSize;
+            }
           }
 
           var getLineHeight = document.getElementById('lineheight').value;
           if (!(getLineHeight == "1.4")) {
-            var URLparms = URLparms + `&line-height=` + getLineHeight
+            if (!url.includes('line-height=')) {
+              var URLparms = URLparms + `&line-height=` + getLineHeight
+            }
           }
 
           var getColor = document.getElementById("linkcolor");
@@ -395,17 +423,23 @@
             hexCode = hexCode.substring(1);
           }
           if (!(hexCode == "0374B5")) {
-            URLparms = URLparms + `&link-color=` + hexCode;
+            if (!url.includes('link-color=')) {
+              URLparms = URLparms + `&link-color=` + hexCode;
+            }
           }
 
           const cb9 = document.querySelector('#loadfavicon');
           if (cb9.checked) {
-            var URLparms = URLparms + `&loadFavicon=favicon.png`;
+            if (!url.includes('loadFavicon=')) {
+              var URLparms = URLparms + `&loadFavicon=favicon.png`;
+            }
           }
 
           const cb10 = document.querySelector('#loadcoverpage');
           if (cb10.checked) {
-            var URLparms = URLparms + `&coverpage=_coverpage.md`;
+            if (!url.includes('coverpage=')) {
+              var URLparms = URLparms + `&coverpage=_coverpage.md`;
+            }
           }
 
           const cb11 = document.querySelector('#loadcustomsidebar');
@@ -416,35 +450,47 @@
               document.getElementById("styletoc").checked = false;
               document.getElementById("stylesidebar").checked = true;
             }
-            var URLparms = URLparms + `&loadSidebar=_sidebar.md`;
+            if (!url.includes('loadSidebar=')) {
+              var URLparms = URLparms + `&loadSidebar=_sidebar.md`;
+            }
           }
 
           const cb12 = document.querySelector('#loadcustomnavbar');
           if (cb12.checked) {
-            var URLparms = URLparms + `&loadNavbar=_navbar.md`;
+            if (!url.includes('loadNavbar=')) {
+              var URLparms = URLparms + `&loadNavbar=_navbar.md`;
+            }
           }
 
           const cb13 = document.querySelector('#loadcustomfooter');
           if (cb13.checked) {
-            var URLparms = URLparms + `&loadFooter=_footer.md`;
+            if (!url.includes('loadFooter=')) {
+              var URLparms = URLparms + `&loadFooter=_footer.md`;
+            }
           }
 
           var getSiteName = document.getElementById("siteName");
           var siteName = getSiteName.value;
           if (!(siteName == "")) {
-            siteName = siteName.replace(/ /g, '%20');
-            URLparms = URLparms + `&name=` + siteName;
+            if (!url.includes('name=')) {
+              siteName = siteName.replace(/ /g, '%20');
+              URLparms = URLparms + `&name=` + siteName;
+            }
           }
 
           var getSiteLogo = document.getElementById("siteLogo");
           var siteLogo = getSiteLogo.value;
           if (!(siteLogo == "")) {
-            URLparms = URLparms + `&logo=` + siteLogo;
+            if (!url.includes('logo=')) {
+              URLparms = URLparms + `&logo=` + siteLogo;
+            }
           }
 
           const cb14 = document.querySelector('#enableSidebarsearch');
           if (cb14.checked) {
-            var URLparms = URLparms + `&searchbox=true`;
+            if (!url.includes('searchbox=')) {
+              var URLparms = URLparms + `&searchbox=true`;
+            }
           }
 
           var getSubMaxLevel = document.getElementById("subMaxLevel");
@@ -453,20 +499,26 @@
             document.getElementById("subMaxLevel").value = 2;
           }
           if (!(subMaxLevel == 2)) {
-            URLparms = URLparms + `&subMaxLevel=` + subMaxLevel;
+            if (!url.includes('subMaxLevel=')) {
+              var URLparms = URLparms + `&subMaxLevel=` + subMaxLevel;
+            }
           }
 
           var getpageTitle = document.getElementById("pageTitle");
           var pageTitle = getpageTitle.value;
           if (!(pageTitle == "")) {
-            pageTitle = pageTitle.replace(/ /g, '%20');
-            URLparms = URLparms + `&page-title=` + pageTitle;
+            if (!url.includes('page-title=')) {
+              pageTitle = pageTitle.replace(/ /g, '%20');
+              var URLparms = URLparms + `&page-title=` + pageTitle;
+            }
           }
 
           var getlinktextdecoration = document.getElementById("linktextdecoration");
           var linktextdecoration = getlinktextdecoration.value;
           if (!(linktextdecoration === 'underline')) {
-            URLparms = URLparms + `&link-text-decoration=` + linktextdecoration;
+            if (!url.includes('link-text-decoration=')) {
+              var URLparms = URLparms + `&link-text-decoration=` + linktextdecoration;
+            }
           }
 
           var getColor = document.getElementById("linkhovercolor");
@@ -475,42 +527,58 @@
             hexCode = hexCode.substring(1);
           }
           if (!(hexCode == "")) {
-            URLparms = URLparms + `&link-color-hover=` + hexCode;
+            if (!url.includes('link-color-hover=')) {
+              var URLparms = URLparms + `&link-color-hover=` + hexCode;
+            }
           }
 
           var linkhovertextdecoration = document.getElementById("linkhovertextdecoration").value;
           if (!(linkhovertextdecoration === 'none')) {
-            URLparms = URLparms + `&link-text-decoration-hover=` + linkhovertextdecoration;
+            if (!url.includes('link-text-decoration-hover=')) {
+              var URLparms = URLparms + `&link-text-decoration-hover=` + linkhovertextdecoration;
+            }
           }
 
           var externalLinkTarget = document.getElementById("externalLinkTarget").value;
           if (!(externalLinkTarget === '_top')) {
-            URLparms = URLparms + `&externalLinkTarget=` + externalLinkTarget;
+            if (!url.includes('externalLinkTarget=')) {
+              var URLparms = URLparms + `&externalLinkTarget=` + externalLinkTarget;
+            }
           }
 
           const cb17 = document.querySelector('#pagination');
           if (cb17.checked) {
-            var URLparms = URLparms + `&pagination=true`;
+            if (!url.includes('pagination=')) {
+              var URLparms = URLparms + `&pagination=true`;
+            }
           }
 
           const cb18 = document.querySelector('#mergeNavbar');
           if (cb18.checked) {
-            var URLparms = URLparms + `&mergeNavbar=true`;
+            if (!url.includes('mergeNavbar=')) {
+              var URLparms = URLparms + `&mergeNavbar=true`;
+            }
           }
 
           var getheaderweight = document.getElementById('headerweight').value;
           if (!(getheaderweight == "400")) {
-            var URLparms = URLparms + `&header-weight=` + getheaderweight
+            if (!url.includes('header-weight=')) {
+              var URLparms = URLparms + `&header-weight=` + getheaderweight
+            }
           }
 
           const cb16 = document.querySelector('#imageCaptions');
           if (cb16.checked) {
-            var URLparms = URLparms + `&image-captions=true`;
+            if (!url.includes('image-captions=')) {
+              var URLparms = URLparms + `&image-captions=true`;
+            }
           }
           
           const cb15 = document.querySelector('#zoomimages');
           if (cb15.checked) {
-            var URLparms = URLparms + `&zoom-images=true`;
+            if (!url.includes('zoom-images=')) {
+              var URLparms = URLparms + `&zoom-images=true`;
+            }
           }
 
           var getColor = document.getElementById("coverpagecolor");
@@ -525,12 +593,16 @@
             hexCode = hexCode.substring(1);
           }
           if (!(hexCode == "6C8A9A")) {
-            URLparms = URLparms + `&coverpage-color=` + hexCode;
+            if (!url.includes('coverpage-color=')) {
+              var URLparms = URLparms + `&coverpage-color=` + hexCode;
+            }
           }
 
           var getenabledarkmode = document.getElementById('enableDarkmode').value;
           if (!(getenabledarkmode == "false")) {
-            var URLparms = URLparms + `&dark-mode=` + getenabledarkmode
+            if (!url.includes('dark-mode=')) {
+              var URLparms = URLparms + `&dark-mode=` + getenabledarkmode
+            }
           }
 
           var getColor = document.getElementById("linkcolordarkmode");
@@ -545,7 +617,9 @@
             hexCode = hexCode.substring(1);
           }
           if (!(hexCode == "1BA1EE")) {
-            URLparms = URLparms + `&link-color-dark-mode=` + hexCode;
+            if (!url.includes('link-color-dark-mode=')) {
+              var URLparms = URLparms + `&link-color-dark-mode=` + hexCode;
+            }
           }
 
           var getColor = document.getElementById("linkhovercolordarkmode");
@@ -554,7 +628,9 @@
             hexCode = hexCode.substring(1);
           }
           if (!(hexCode == "")) {
-            URLparms = URLparms + `&link-color-hover-dark-mode=` + hexCode;
+            if (!url.includes('link-color-hover-dark-mode=')) {
+              var URLparms = URLparms + `&link-color-hover-dark-mode=` + hexCode;
+            }
           }
 
           var getColor = document.getElementById("coverpagecolordarkmode");
@@ -569,7 +645,17 @@
             hexCode = hexCode.substring(1);
           }
           if (!(hexCode == "262D30")) {
-            URLparms = URLparms + `&coverpage-color-dark-mode=` + hexCode;
+            if (!url.includes('coverpage-color-dark-mode=')) {
+              var URLparms = URLparms + `&coverpage-color-dark-mode=` + hexCode;
+            }
+          }
+
+          const parts = lastSegment.split(/[?&]/);
+          lastSegment = parts[0];
+          let queryString = '';
+          if (parts.length > 1) {
+              // Join all parameters back together
+              queryString = '&' + parts.slice(1).join('&');
           }
 
           if ((!(isExtensionAllowed(lastSegment)) || lastSegment === "") && url.includes("gist.githubusercontent.com")) {
@@ -583,9 +669,12 @@
             selectText();
             return;
           } else {
-            // Filename with supported extension is present along with full path and filename
-            url = url.substring(0, url.lastIndexOf("/"));
-            var baseURL = docsifyURL + `?basePath=${url}&homepage=${lastSegment}` + URLparms;
+            // Code generated/assisted by Anthropic Claude AI
+            // Extract base URL, handling malformed parameter separators
+            const baseUrl = url.split(/[?&]/)[0];
+            url = baseUrl.substring(0, baseUrl.lastIndexOf("/"));
+
+            var baseURL = docsifyURL + `?basePath=${url}&homepage=${lastSegment}` + URLparms + queryString;
           }
 
           var docsifyPreviewWin = window.open(baseURL, "Docsify-This Preview");
@@ -608,12 +697,13 @@
     }
 
     const isValidUrl = urlString => {
-      var urlPattern = new RegExp('^(https?:\\/\\/)?' + // validate protocol
-        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // validate domain name
-        '((\\d{1,3}\\.){3}\\d{1,3}))' + // validate OR ip (v4) address
-        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // validate port and path
-        '(\\?[;&a-z\\d%_.~+=-]*)?' + // validate query string
-        '(\\#[-a-z\\d_]*)?$', 'i'); // validate fragment locator
+      var urlPattern = new RegExp('^(https?:\\/\\/)?' +      // Protocol
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // Domain OR
+        '((\\d{1,3}\\.){3}\\d{1,3}))' +                      // IP address
+        '(\\:\\d+)?' +                                       // Port
+        '(\\/[^\\s]*)*' +                                    // Path (more permissive)
+        '(\\?[^\\s#]*)?' +                                   // Query string (more permissive)
+        '(\\#[^\\s]*)?$', 'i');                              // Fragment
       return !!urlPattern.test(urlString);
     }
 
@@ -1743,7 +1833,7 @@
   <script src="assets/vendor/docsify/plugins/custom/docsify-fontawesome.min.js"></script>
 
   <!-- Footnotes Plugin -->
-  <!-- <script src="//cdn.jsdelivr.net/npm/@sy-records/docsify-footnotes/lib/index.min.js"></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/@sy-records/docsify-footnotes/dist/index.min.js"></script> -->
   <script src="assets/vendor/docsify/plugins/docsify-footnotes.min.js"></script>
 
   <!-- Pagination Plugin -->
@@ -1939,7 +2029,7 @@
     if (!(window.$docsify['basePath'] === undefined)) {
       imagecaptions = getURLParameterByName(['image-captions', 'imageCaptions'], null, null, window.location.href, true);
       if (!(imagecaptions === false)) {
-        document.write('<script src="assets/vendor/docsify/plugins/docsify-img-caption.js"><\/script>');
+        document.write('<script src="assets/vendor/docsify/plugins/custom/docsify-img-caption.js"><\/script>');
       }
     }
   </script>
