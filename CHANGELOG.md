@@ -1,6 +1,20 @@
 # Changelog
 
-## [1.10.4] - XX/XX/2025
+## [1.10.5] - XX/XX/2025
+
+**New:**
+* Added CSS Markdown classes to support cards (`card` & `card-rounded`) and responsive card lists (`card-list`)
+* Added CSS Markdown classes to support header overlays on full-width images (`header-image-full-width-headings-overlay` & `card-rounded`) and responsive card lists (`header-tall-image-full-width-headings-overlay`)
+* Added example Docsify-This template (Blog Style Site Template)
+* Added URL parm `home-link` to display a custom home page link at the top of a page
+
+**Improved:**
+* Updated ReadMe
+
+**Bugfix:**
+* Minor CSS fixes
+
+## [1.10.4] - 07/01/2025🇨🇦
 
 **New:**
 * Support for multi-line display of Markdown file URLs with the ability to manually append URL parameters

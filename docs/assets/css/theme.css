@@ -480,7 +480,7 @@
   margin-right: 6px;
   font-size: 0.8rem;
   line-height: 0.9rem;
-  background-color: --base-background-color;
+  background-color: var(--base-background-color);
   font-family: -apple-system, "Segoe UI", "Helvetica Neue", sans-serif;
   font-weight: bold;
   text-decoration: none;
@@ -752,8 +752,9 @@
 }
 
 /* CSS currently only works with sidebar and standalone pages */
-.markdown-section .header-image-full-width {
-  margin-top: -2rem;
+.markdown-section .header-image-full-width,
+.markdown-section .header-image-full-width-headings-overlay {
+  margin-top: -3rem;
   left: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
@@ -766,8 +767,9 @@
   object-position: center 50%;
 }
 
-.markdown-section .header-tall-image-full-width {
-  margin-top: -2rem;
+.markdown-section .header-tall-image-full-width,
+.markdown-section .header-tall-image-full-width-headings-overlay {
+  margin-top: -3rem;
   left: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
@@ -778,6 +780,84 @@
   height: 40dvh;
   object-fit: cover;
   object-position: center 50%;
+}
+
+/* CSS generated/assisted by Anthropic Claude AI */
+.markdown-section p:has(.header-tall-image-full-width-headings-overlay,
+.header-image-full-width-headings-overlay) + h1 {
+  position: absolute;
+  top: 13dvh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow:
+    2px 2px 4px rgba(0,0,0,0.8),
+    0 0 20px rgba(0,0,0,0.4);
+  z-index: 10;
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.0rem); /* Scales between 2rem and 3.0rem */
+  line-height: clamp(2.2rem, 5.5vw, 3.4rem);
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  backdrop-filter: blur(2px);
+  background: linear-gradient(
+    135deg,
+    rgba(0,0,0,0.3) 0%,
+    rgba(0,0,0,0.1) 100%
+  );
+  padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 4vw, 2rem);
+  border-radius: 8px;
+  max-width: 90vw;
+}
+
+.markdown-section p:has(.header-image-full-width-headings-overlay) + h1 {
+  top: 11dvh;
+}
+
+.markdown-section p:has(.header-tall-image-full-width-headings-overlay,
+.header-image-full-width-headings-overlay) + h1 + h2 {
+  position: absolute;
+  top: calc(16dvh + 3rem + 1rem);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255,255,255,0.95);
+  text-shadow:
+    1px 1px 3px rgba(0,0,0,0.7),
+    0 0 15px rgba(0,0,0,0.3);
+  z-index: 10;
+  margin: 0;
+  font-size: clamp(1.2rem, 3vw, 1.8rem); /* Scales between 1.2rem and 1.8rem */
+  line-height: clamp(1.4rem, 3.5vw, 2rem);
+  width: 100%;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  padding: clamp(0.25rem, 1vw, 0.5rem) clamp(0.75rem, 3vw, 1.5rem);
+  max-width: 80vw;
+  border: 0;
+}
+
+.markdown-section p:has(.header-image-full-width-headings-overlay) + h1 + h2 {
+  top: calc(14dvh + 3rem + 1rem);
+}
+
+/* Keep text-shadow for links in h1 and h2 (same as parent) */
+.markdown-section p:has(.header-tall-image-full-width-headings-overlay,
+.header-image-full-width-headings-overlay) + h1 a,
+.markdown-section p:has(.header-tall-image-full-width-headings-overlay,
+.header-image-full-width-headings-overlay) + h1 + h2 a {
+  text-shadow: inherit; /* Inherit shadow from parent */
+  text-decoration: none; /* Remove default underline */
+}
+
+/* Apply underline only on hover */
+.markdown-section p:has(.header-tall-image-full-width-headings-overlay,
+.header-image-full-width-headings-overlay) + h1 a:hover,
+.markdown-section p:has(.header-tall-image-full-width-headings-overlay,
+.header-image-full-width-headings-overlay) + h1 + h2 a:hover {
+  text-decoration: underline; /* Show underline on hover */
 }
 
 .markdown-section .image-75 {
@@ -871,6 +951,94 @@
   }
 }
 
+/* CSS generated/assisted by Anthropic Claude AI */
+.markdown-section .card-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.markdown-section .card:not(.card-list .card),
+.markdown-section .card-rounded:not(.card-list .card-rounded) {
+  margin-top: 2rem;
+}
+
+.markdown-section .card,
+.markdown-section .card-rounded {
+  border: 1px solid var(--mono-tint2);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* This ensures images respect border-radius */
+}
+
+.markdown-section .card-rounded {
+  border-radius: 0.35em;
+}
+
+.markdown-section .card h2,
+.markdown-section .card-rounded h2 {
+  margin: 0 0 .1rem 0;
+  padding-bottom: .5rem;
+  font-size: 1.3rem;
+}
+
+/* Adjust space above and below h2 that follows edge-to-edge images */
+.markdown-section .card p:has(img):first-child + h2,
+.markdown-section .card-rounded p:has(img):first-child + h2 {
+  margin-top: 1rem;
+  padding-bottom: .25rem;
+}
+
+/* All images have normal padding by default */
+.markdown-section .card p:has(img),
+.markdown-section .card-rounded p:has(img) {
+  margin: 0;
+}
+
+/* First images extend to card edges */
+.markdown-section .card p:has(img):first-child,
+.markdown-section .card-rounded p:has(img):first-child {
+  margin: -1.6rem -1.5rem -1rem -1.5rem;
+}
+
+.markdown-section .card img,
+.markdown-section .card-rounded img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.markdown-section .card p,
+.markdown-section .card-rounded p {
+  flex-grow: 1;
+  margin-bottom: .1rem;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .markdown-section .card-list {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .markdown-section .card,
+  .markdown-section .card-rounded {
+    padding: 1.25rem;
+  }
+
+  .markdown-section .card img,
+  .markdown-section .card-rounded img {
+    height: 200px;
+  }
+
+  .markdown-section .card p:has(img):first-child,
+  .markdown-section .card-rounded p:has(img):first-child {
+    margin: -1.35rem -1.25rem -0.75rem -1.25rem;
+  }
+}
+
 .markdown-section figure,
 .markdown-section p,
 .markdown-section ol,
@@ -886,7 +1054,7 @@
   line-height: 1.55rem;
 }
 
-.markdown-section .h3 {
+.markdown-section h3 {
   line-height: 1.35rem;
 }
 
@@ -1361,7 +1529,7 @@ span #docsifythisurlfield {
   border-radius: 3px;
   outline: solid 1px #777777;
   outline-offset: 0px;
-  padding-bottom:1px;
+  padding-bottom: 1px;
   margin-left: 4px;
 }
 
@@ -1371,7 +1539,7 @@ span #docsifythisurlfield {
   border-radius: 3px;
   outline: solid 1px #777777;
   outline-offset: 0px;
-  padding-bottom:1px;
+  padding-bottom: 1px;
   margin-left: 4px;
 }
 
@@ -1381,7 +1549,7 @@ span #docsifythisurlfield {
   border-radius: 3px;
   outline: solid 1px #777777;
   outline-offset: 0px;
-  padding-bottom:1px;
+  padding-bottom: 1px;
   margin-left: 4px;
 }
 
@@ -1391,7 +1559,7 @@ span #docsifythisurlfield {
   border-radius: 3px;
   outline: solid 1px #777777;
   outline-offset: 0px;
-  padding-bottom:1px;
+  padding-bottom: 1px;
   margin-left: 4px;
 }
 
@@ -1401,7 +1569,7 @@ span #docsifythisurlfield {
   border-radius: 3px;
   outline: solid 1px #777777;
   outline-offset: 0px;
-  padding-bottom:1px;
+  padding-bottom: 1px;
   margin-left: 4px;
 }
 
@@ -1411,7 +1579,7 @@ span #docsifythisurlfield {
   border-radius: 3px;
   outline: solid 1px #777777;
   outline-offset: 0px;
-  padding-bottom:1px;
+  padding-bottom: 1px;
   margin-left: 4px;
 }
 

@@ -61,7 +61,7 @@
 
   <style>
     :root {
-      --base-font-family: system-ui, sans-serif;
+      --base-font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
 
       --base-line-height: 1.4;
       --base-font-size: 18px;
@@ -650,8 +650,7 @@
             }
           }
 
-          const parts = lastSegment.split(/[?&]/);
-          lastSegment = parts[0];
+          const parts = url.split(/[?&]/);
           let queryString = '';
           if (parts.length > 1) {
               // Join all parameters back together
@@ -1262,13 +1261,21 @@
               if (!(getURLParameterByName(['standalone', 'embedded'])) && !(getURLParameterByName('hidegitlink', null, null, window.location.href, true) === 'true') && (!!gitLinkRepoURL)) {
                 if (!(getURLParameterByName(['hide-credits', 'hideCredits'], null, null, window.location.href, true) === 'true')) {
                   if (getURLParameterByName(['edit-link-top', 'editLinkTop'], null, null, window.location.href, true) === 'true') {
-                    return editHtml + '\n' + html + '<br />' + '\n\n' + '<hr>' + creditHtml
+                    if (!html.includes('full-width')) {
+                      return editHtml + '\n' + html + '<br />' + '\n\n' + '<hr>' + creditHtml
+                    } else {
+                      return html + '\n\n' + editHtml + '\n\n' + '<hr>' + creditHtml
+                    }
                   } else {
                     return html + '\n\n' + editHtml + '\n\n' + '<hr>' + creditHtml
                   }
                 } else {
                   if (getURLParameterByName(['edit-link-top', 'editLinkTop'], null, null, window.location.href, true) === 'true') {
-                    return editHtml + '\n' + html
+                    if (!html.includes('full-width')) {
+                      return editHtml + '\n' + html
+                    } else {
+                      return html + '<br />' + '\n\n' + editHtml
+                    }
                   } else {
                     return html + '<br />' + '\n\n' + editHtml
                   }
@@ -1276,7 +1283,11 @@
 
               } else if (getURLParameterByName(['standalone', 'embedded']) && !(getURLParameterByName('hidegitlink', null, null, window.location.href, true) === 'true') && (!!gitLinkRepoURL)) {
                 if (getURLParameterByName(['edit-link-top', 'editLinkTop'], null, null, window.location.href, true) === 'true') {
-                  return editHtml + '\n' + html
+                  if (!html.includes('full-width')) {
+                    return editHtml + '\n' + html
+                   } else {
+                    return html + '<br />' + '\n\n' + editHtml
+                   }
                 } else {
                   return html + '<br />' + '\n\n' + editHtml
                 }
@@ -1356,6 +1367,45 @@
                 newh1.innerHTML = pageTitle;
                 let divToMoveTo = document.getElementById("main");
                 divToMoveTo.insertBefore(newh1, divToMoveTo.children[0]);
+              }
+
+              // Code generated/assisted by Anthropic Claude AI
+              // Add back link if parameter present and transform + characters to &
+              let backLink = getURLParameterByName(['back-link', 'backLink'], null, null, window.location.href, true);
+
+              if (backLink) {
+                  backLink = backLink.replace(/\+/g, '&');
+                  let divToMoveTo = document.getElementById("main");
+                  let backLinkElement = document.createElement("a");
+                  backLinkElement.href = backLink;
+                  backLinkElement.textContent = "←Back";
+                  let linkWrapper = document.createElement("p");
+                  linkWrapper.appendChild(backLinkElement);
+                  let fullWidthImage = divToMoveTo.querySelector('img[class*="full-width"]');             
+                  if (fullWidthImage) {
+                      let imageClass = fullWidthImage.className;               
+                      if (imageClass === "header-tall-image-full-width-headings-overlay" || 
+                          imageClass === "header-image-full-width-headings-overlay") {
+                          let firstH1 = divToMoveTo.querySelector("h1");
+                          if (firstH1) {
+                              let nextElement = firstH1.nextElementSibling;
+                              if (nextElement && nextElement.tagName.toLowerCase() === 'h2') {
+                                  nextElement.insertAdjacentElement('afterend', linkWrapper);
+                              } else {
+                                  firstH1.insertAdjacentElement('afterend', linkWrapper);
+                              }
+                          }
+                      } else {
+                          let wrapperP = fullWidthImage.closest('p');                        
+                          if (wrapperP) {
+                              wrapperP.insertAdjacentElement('afterend', linkWrapper);
+                          } else {
+                              fullWidthImage.insertAdjacentElement('afterend', linkWrapper);
+                          }
+                      }
+                  } else {
+                      divToMoveTo.insertBefore(linkWrapper, divToMoveTo.children[0]);
+                  }
               }
 
               // Iframes update for responsive design
