@@ -816,8 +816,8 @@ To edit a file in GitHub, tap the **Pencil** icon (Edit file) in the upper-right
 
 - [One Page Article Template](/?id=docsify-this-one-page-article-template)
 - [One Page Course Template](/?id=docsify-this-one-page-course-template)
-- [Multiple Page Site Template](/?id=docsify-this-multiple-page-site-template)
-- [Blog Style Site Template](/?id=docsify-this-blog-style-site-template)
+- [Multiple Page Basic Site Template](/?id=docsify-this-multiple-page-basic-site-template)
+- [Multiple Page Blog Style Site Template](/?id=docsify-this-multiple-page-blog-style-site-template)
 - [Multiple Page Open Publishing Site Template](/?id=docsify-this-multiple-page-open-publishing-site-template)
 - [Multiple Page Course Site Template](/?id=docsify-this-multiple-page-course-site-template)
 - [LMS Content Pages Template](/?id=docsify-this-lms-content-pages-template)
@@ -826,7 +826,7 @@ To edit a file in GitHub, tap the **Pencil** icon (Edit file) in the upper-right
 
 <div class="docsifythiscolumn35" >
 
-![Docsify-This One Page Article Template](images/docsify-this-one-page-article.jpg ":class=docsify-this-screenshot")
+[![One Page Article Template](images/docsify-this-one-page-article.jpg ":class=docsify-this-screenshot")](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md)
 
 </div>
 
@@ -849,7 +849,7 @@ One Page Article [home.md](https://github.com/hibbitts-design/docsify-this-one-p
 
 <div class="docsifythiscolumn35" >
 
-![Docsify-This One Page Course Template](images/docsify-this-one-page-course.jpg ":class=docsify-this-screenshot")
+[![One Page Course Template](images/docsify-this-one-page-course.jpg ":class=docsify-this-screenshot")](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-course/main&homepage=home.md)
 
 </div>
 
@@ -867,51 +867,50 @@ One Page Course [home.md](https://github.com/hibbitts-design/docsify-this-one-pa
 
 </div>
 
-<div class="row" id="docsify-this-multiple-page-site-template">
+<div class="row" id="docsify-this-multiple-page-basic-site-template">
 
 <div class="docsifythiscolumn35" >
 
-![Docsify-This Multiple Page Site](images/docsify-this-multiple-page-site.jpg ":class=docsify-this-screenshot")
+[![Multiple Page Basic Site](images/docsify-this-multiple-page-basic-site.jpg ":class=docsify-this-screenshot")](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-basic-site/main&homepage=home.md)
 
 </div>
 
 <div class="docsifythiscolumn65" >
 
-<h4><a href="https://github.com/hibbitts-design/docsify-this-multiple-page-site">Multiple Page Site Template</a></h4>
+<h4><a href="https://github.com/hibbitts-design/docsify-this-multiple-page-basic-site">Multiple Page Basic Site Template</a></h4>
 
-Multiple Page Site [home.md](https://github.com/hibbitts-design/docsify-this-multiple-page-site/blob/main/home.md) file, including the use of the Markdown CSS class `header-image-full-width`, displayed by Docsify-This as:
+Multiple Page Basic Site [home.md](https://github.com/hibbitts-design/docsify-this-multiple-page-basic-site/blob/main/home.md) file and a range of page content examples, including the use of the Markdown CSS class `header-image-full-width`, displayed by Docsify-This as:
 
-- [Website](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-site/main&homepage=home.md "Docsify-This Multiple Page Site - Website")
-- [Website using the Merriweather font](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-site/main&homepage=home.md&font-family=Merriweather,Georgia,serif "Docsify-This Multiple Page Site - Website using the Merriweather font")
-- [Website using the Merriweather font and red links](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-site/main&homepage=home.md&font-family=Merriweather,Georgia,serif&link-color=CC0000 "Docsify-This Multiple Page Site - Website using the Merriweather font and red links")
-- [Website and 'Edit this Page' links](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-site/main&homepage=home.md&edit-link=https://github.com/hibbitts-design/docsify-this-multiple-page-site/blob/main/home.md "Docsify-This Multiple Page Site - Website with 'Edit this Page' link")
-- [Website and 'Edit this Page' links using the Merriweather font](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-site/main&homepage=home.md&edit-link=https://github.com/hibbitts-design/docsify-this-multiple-page-site/blob/main/home.md&font-family=Merriweather,Georgia,serif "Docsify-This Multiple Page Site - Website with 'Edit this Page' link using the Merriweather font")
-- [Website with Docsify Navbar](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-site/main&homepage=home.md&loadNavbar=_navbar "Docsify-This Multiple Page Site - Website with Docsify Navbar and an 'Edit this Page' link")
-- [Website with Footer and an 'Edit this Page' link](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-site/main&homepage=home.md&loadFooter=_footer&edit-link=https://github.com/hibbitts-design/docsify-this-multiple-page-site/blob/main/home.md "Docsify-This Multiple Page Site - Website with Footer and an 'Edit this Page' link")
-- [Website with Docsify Navbar and 'GitHub Repository' link](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-site/main&homepage=home.md&loadNavbar=_navbar&edit-link=https://github.com/hibbitts-design/docsify-this-multiple-page-site&edit-link-text=GitHub%20Repository "Docsify-This Multiple Page Site - Website with Docsify Navbar and an 'GitHub Repository' link")
-
-</div>
+- [Website](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-basic-site/main&homepage=home.md "Docsify-This Multiple Page Basic Site - Website")
+- [Website using the Merriweather font](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-basic-site/main&homepage=home.md&font-family=Merriweather,Georgia,serif "Docsify-This Multiple Page Basic Site - Website using the Merriweather font")
+- [Website using the Merriweather font and red links](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-basic-site/main&homepage=home.md&font-family=Merriweather,Georgia,serif&link-color=CC0000 "Docsify-This Multiple Page Basic Site - Website using the Merriweather font and red links")
+- [Website and 'Edit this Page' links](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-basic-site/main&homepage=home.md&edit-link=https://github.com/hibbitts-design/docsify-this-multiple-page-basic-site/blob/main/home.md "Docsify-This Multiple Page Basic Site - Website with 'Edit this Page' link")
+- [Website and 'Edit this Page' links using the Merriweather font](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-basic-site/main&homepage=home.md&edit-link=https://github.com/hibbitts-design/docsify-this-multiple-page-basic-site/blob/main/home.md&font-family=Merriweather,Georgia,serif "Docsify-This Multiple Page Basic Site - Website with 'Edit this Page' link using the Merriweather font")
+- [Website with Footer and an 'Edit this Page' link](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-basic-site/main&homepage=home.md&loadFooter=_footer&edit-link=https://github.com/hibbitts-design/docsify-this-multiple-page-basic-site/blob/main/home.md "Docsify-This Multiple Page Basic Site - Website with Footer and an 'Edit this Page' link")
+- [Website with 'GitHub Repository' link](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-basic-site/main&homepage=home.md&edit-link=https://github.com/hibbitts-design/docsify-this-multiple-page-basic-site&edit-link-text=GitHub%20Repository "Docsify-This Multiple Page Basic Site - Website with 'GitHub Repository' link")
 
 </div>
 
-<div class="row" id="docsify-this-blog-style-site-template">
+</div>
+
+<div class="row" id="docsify-this-multiple-page-blog-style-site-template">
 
 <div class="docsifythiscolumn35" >
 
-![Docsify-This Blog Style Site](images/docsify-this-blog-style-site.jpg ":class=docsify-this-screenshot")
+[![Multiple Page Blog Style Site](images/docsify-this-multiple-page-blog-style-site.jpg ":class=docsify-this-screenshot")](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-blog-style-site/main&homepage=home.md)
 
 </div>
 
 <div class="docsifythiscolumn65" >
 
-<h4><a href="https://github.com/hibbitts-design/docsify-this-blog-style-site">Blog Style Site Template</a></h4>
+<h4><a href="https://github.com/hibbitts-design/docsify-this-multiple-page-blog-style-site">Multiple Page Blog Style Site Template</a></h4>
 
-Blog Style Site [home.md](https://github.com/hibbitts-design/docsify-this-blog-style-site/blob/main/home.md) file, including the use of the Markdown CSS class `header-image-full-width-headings-overlay`, displayed by Docsify-This as:
+Multiple Page Blog Style Site [home.md](https://github.com/hibbitts-design/docsify-this-multiple-page-blog-style-site/blob/main/home.md) file, including the use of a responsive card list created with HTML div elements and the Markdown CSS class `header-image-full-width-headings-overlay`, displayed by Docsify-This as:
 
-- [Website](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-blog-style-site/main&homepage=home.md "Docsify-This Blog Style Site - Website")
-- [Website using the Merriweather font](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-blog-style-site/main&homepage=home.md&font-family=Merriweather,Georgia,serif "Docsify-This Blog Style Site - Website using the Merriweather font")
-- [Website using the Merriweather font and red links](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-blog-style-site/main&homepage=home.md&font-family=Merriweather,Georgia,serif&link-color=CC0000 "Docsify-This Blog Style Site - Website using the Merriweather font and red links")
-- [Website and 'Edit this Page' links](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-blog-style-site/main&homepage=home.md&edit-link=https://github.com/hibbitts-design/docsify-this-blog-style-site/blob/main/home.md "Docsify-This Blog Style Site - Website with 'Edit this Page' link")
+- [Website](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-blog-style-site/main&homepage=home.md "Docsify-This Multiple Page Blog Style Site - Website")
+- [Website using the Merriweather font](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-blog-style-site/main&homepage=home.md&font-family=Merriweather,Georgia,serif "Docsify-This Multiple Page Blog Style Site - Website using the Merriweather font")
+- [Website using the Merriweather font and red links](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-blog-style-site/main&homepage=home.md&font-family=Merriweather,Georgia,serif&link-color=CC0000 "Docsify-This Multiple Page Blog Style Site - Website using the Merriweather font and red links")
+- [Website and 'Edit this Page' links](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-blog-style-site/main&homepage=home.md&edit-link=https://github.com/hibbitts-design/docsify-this-multiple-page-blog-style-site/blob/main/home.md "Docsify-This Multiple Page Blog Style Site - Website with 'Edit this Page' link")
 
 </div>
 
@@ -921,7 +920,7 @@ Blog Style Site [home.md](https://github.com/hibbitts-design/docsify-this-blog-s
 
 <div class="docsifythiscolumn35" >
 
-![Docsify-This Multiple Page Open Publishing Site](images/docsify-this-multiple-page-open-publishing-site.jpg ":class=docsify-this-screenshot")
+[![Multiple Page Open Publishing Site](images/docsify-this-multiple-page-open-publishing-site.jpg ":class=docsify-this-screenshot")](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-open-publishing-site/main&homepage=home.md&sidebar=true&loadSidebar=_sidebar.md&hide-credits=true)
 
 </div>
 
@@ -948,7 +947,7 @@ Multiple Page Open Publishing Site [home.md](https://github.com/hibbitts-design/
 
 <div class="docsifythiscolumn35" >
 
-![Docsify-This Course Site Template](images/docsify-this-multiple-page-course-site.jpg ":class=docsify-this-screenshot")
+[![Multiple Page Course Site Template](images/docsify-this-multiple-page-course-site.jpg ":class=docsify-this-screenshot")](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-course-site/main&homepage=home.md&sidebar=true&loadSidebar=_sidebar.md&name=CPT-363&loadNavbar=_navbar.md&hide-credits=true&browser-tab-title=CPT-363)
 
 </div>
 
@@ -974,7 +973,7 @@ Multiple Page Course Site [home.md](https://github.com/hibbitts-design/docsify-t
 
 <div class="docsifythiscolumn35" >
 
-![Docsify-This LMS Content Pages Template](images/docsify-this-lms-content-pages.jpg ":class=docsify-this-screenshot")
+[![LMS Content Pages Template](images/docsify-this-lms-content-pages.jpg ":class=docsify-this-screenshot")](https://canvas.sfu.ca/courses/76289)
 
 </div>
 
@@ -1058,7 +1057,9 @@ For example, to edit GitHub Markdown files on your desktop you would do the foll
 - [embedly-card](/?id=embedly-card)
 - [header-image-fade](/?id=header-image-fade)
 - [header-image-full-width](/?id=header-image-full-width)
+- [header-tall-image-full-width](/?id=header-tall-image-full-width)
 - [header-image-full-width-headings-overlay](/?id=header-image-full-width-headings-overlay)
+- [header-tall-image-full-width-headings-overlay](/?id=header-tall-image-full-width-headings-overlay)
 - [image-75/image-50/image-25](/?id=image-75image-50image-25)
 - [image-75-border/image-50-border/image-25-border](/?id=image-75-borderimage-50-borderimage-25-border)
 - [image-border](/?id=image-border)
@@ -1403,18 +1404,36 @@ Suggested width of 1200px to 2000px, and display of Table of Contents or 'Edit t
 
 ##### header-image-full-width
 
-Suggested size of 1200px to 2000px width and 400px to 600px height, and display of Table of Contents or 'Edit this Page' links at top of page are not available.
+Suggested size of 1200px to 2000px width and 400px to 600px height, and display of Table of Contents or 'Edit this Page' links at top of page are not available. H1 and H2 headings immediately following the image receive enhanced typography styling.
 
 ```markdown
-![Photo of Mountain](images/mountain.jpg ":class=header-image")
+![Photo of Mountain](images/mountain.jpg ":class=header-image-full-width")
+```
+
+##### header-tall-image-full-width
+
+Suggested size of 1200px to 2000px width and 400px to 600px height, and display of Table of Contents or 'Edit this Page' links at top of page are not available. H1 and H2 headings immediately following the image receive enhanced typography styling.
+
+```markdown
+![Photo of Mountain](images/mountain.jpg ":class=header-tall-image-full-width")
 ```
 
 ##### header-image-full-width-headings-overlay
 
-Suggested size of 1200px to 2000px width and 400px to 600px height, and display of Table of Contents or 'Edit this Page' links at top of page are not available.
+Suggested size of 1200px to 2000px width and 400px to 600px height, and display of Table of Contents or 'Edit this Page' links at top of page are not available. H1 and H2 headings immediately following the image are positioned as overlays on the image.
 
 ```markdown
 ![Photo of Mountain](images/mountain.jpg ":class=header-image-full-width-headings-overlay")
+
+# Page Title
+```
+
+##### header-tall-image-full-width-headings-overlay
+
+Suggested size of 1200px to 2000px width and 400px to 600px height, and display of Table of Contents or 'Edit this Page' links at top of page are not available. H1 and H2 headings immediately following the image are positioned as overlays on the image.
+
+```markdown
+![Photo of Mountain](images/mountain.jpg ":class=header-tall-image-full-width-headings-overlay")
 
 # Page Title
 ```
@@ -1628,7 +1647,7 @@ You can limit the domains which remote files can be rendered from by locating th
 
 ##### Advanced Customization
 
-If you want to further customize and control the presentation of your Markdown content, especially when rendering multiple page sites, you can install your own [Docsify Open Publishing Starter Kit](https://github.com/hibbitts-design/docsify-open-publishing-starter-kit) (that this hosted web app is based on) and store all Markdown files within that site. You can learn more about the capabilities of Docsify itself at [Docsify.js.org](https://docsify.js.org).
+If you want to further customize and control the presentation of your Markdown content, especially when rendering Multiple Page Basic Sites, you can install your own [Docsify Open Publishing Starter Kit](https://github.com/hibbitts-design/docsify-open-publishing-starter-kit) (that this hosted web app is based on) and store all Markdown files within that site. You can learn more about the capabilities of Docsify itself at [Docsify.js.org](https://docsify.js.org).
 
 Looking for some help with getting a Docsify custom-This instance up and running for your organization? Paul provides a range of professional services related to Docsify-This - [contact him to learn more](https://docsify-this.net/#/?id=contact-and-support).
 
