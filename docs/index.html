@@ -12,16 +12,14 @@
   <link rel="shortcut icon" href="#">
 
   <meta property="og:title" content="Docsify-This" />
-  <meta property="og:description" content="Instantly turn online Markdown files into standalone Web pages." />
+  <meta property="og:description" content="Markdown Web Publishing" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://docsify-this.net/" />
-  <meta property="og:image" content="https://docsify-this.net/images/og-image.png" />
+  <meta property="og:url" content="https://docsify-this.net?v=3" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@hibbittsdesign" />
   <meta name="twitter:title" content="Docsify-This" />
   <meta name="twitter:description" content="Instantly turn online Markdown files into standalone Web pages." />
-  <meta name="twitter:image" content="https://docsify-this.net/images/og-image.png" />
 
   <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 
@@ -1071,6 +1069,12 @@
         fontStyle: (getURLParameterByName('image-captions-font-style', null, null, window.location.href, true) || 'italic'),   // Caption font style (default: 'italic')
         wrapInFigure: true,    // Use figure/figcaption (default: true)
         imageAlign: (getURLParameterByName('image-captions-image-align', null, null, window.location.href, true) || 'left'),   // Caption alignment (default: 'left')    // Image alignment: 'left', 'center', or 'right' (default: 'center')
+      },
+
+      copyCode: {
+        buttonText: 'Copy',
+        errorText: 'Error',
+        successText: 'Copied',
       },
 
       // CUSTOM PLUGINS
@@ -2127,6 +2131,13 @@
       if (!(imagecaptions === false)) {
         document.write('<script src="assets/vendor/docsify/plugins/custom/docsify-img-caption.js"><\/script>');
       }
+    }
+  </script>
+
+  <!-- Copy Code Plugin -->
+  <script>
+    if (window.$docsify['basePath'] === undefined) {
+      document.write('<script src="assets/vendor/docsify/plugins/docsify-code-copy.min.js"><\/script>');
     }
   </script>
 

@@ -1,17 +1,29 @@
 # Changelog
 
-## [1.10.5] - XX/XX/2025
+## [1.10.6] - XX/XX/2025
+
+**New:**
+* Availability of alias domain Share-This.net for non Docsify-This branded URLs
+
+**Improved:**
+* Updated ReadMe
+* Removed image for Twitter Cards and Open Graph
+* Relocated enable search field checkbox to basic URL parameters
+* Minor refresh to Web Page Builder UI
+
+## [1.10.5] - 08/01/2025☀️
 
 **New:**
 * Added CSS Markdown classes to support cards (`card` & `card-rounded`) and responsive card lists (`card-list`)
 * Added CSS Markdown classes to support header overlays on full-width images (`header-image-full-width-headings-overlay` and `header-tall-image-full-width-headings-overlay`)
+* Added support for topic index using standard links in first paragraph
 * Added example Docsify-This template (Blog Style Site Template)
-* Added URL parm `home-link` to display a custom home page link at the top of a page
-* Added font preview area next to font selction menu
+* Added URL parm `back-link` to display a custom back link at the top of a page
+* Added font preview area next to font selection menu
 
 **Improved:**
-* Updated ReadMe
-* Improve visual design of h1 and h2 below top full width image
+* Updated ReadMe, including a new Quickstart section
+* Improve visual design of h1 and h2 below top full width image (use HTML tags to keep default styling)
 
 **Bugfix:**
 * Minor CSS fixes
