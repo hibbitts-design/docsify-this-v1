@@ -49,6 +49,7 @@ https://github.com/hibbitts-design/markdown/blob/main/ReadMe.md
 <ul>
   <li><a href="#what-problem-does-docsify-this-solve">What Problem Does Docsify-This Solve?</a></li>
   <li><a href="#docsify-this-core-design-principles">Docsify-This Core Design Principles</a></li>
+  <li><a href="#when-is-docsify-this-a-good-candidate">When is Docsify-This a Good Candidate?</a></li>
   <li><a href="#how-docsify-this-works">How Docsify-This Works</a></li>
   <li><a href="#read-what-people-are-saying-about-docsify-this">Read What People are Saying about Docsify-This</a></li>
 </ul>
@@ -104,6 +105,7 @@ Have you tried out Docsify-This? Share your [feedback about Docsify-This](https:
 
 - [What Problem Does Docsify-This Solve?](#what-problem-does-docsify-this-solve)
 - [Docsify-This Core Design Principles](#docsify-this-core-design-principles)
+- [When is Docsify-This a Good Candidate?](#when-is-docsify-this-a-good-candidate)
 - [How Docsify-This Works](#how-docsify-this-works)
 - [Read What People are Saying about Docsify-This](#read-what-people-are-saying-about-docsify-this)
 
@@ -129,10 +131,33 @@ With Docsify-This you can:
 
 - Zero Maintenance Publishing
 - Separation of Content and Presentation 
-- Platform independence over vendor lock-in
+- Platform independence and choice
 - Your content, your control
 - Support the 5 Rs of OER
 - Authors helping other authors
+
+---
+
+### When is Docsify-This a Good Candidate?
+
+#### Docsify-This often works really well when you:
+- Want to embed the same content across multiple platforms (LMS, websites, etc.)
+- Need cross-platform content reuse (same content for web, mobile, PDF and eBook generation)
+- Want to publish open content quickly without technical setup
+- Prefer minimal maintenance publishing (set it and forget it, no Webserver needed)
+- Value simple, portable Markdown files with platform independence
+- Are interested in using GitHub/Codeberg for version-control and collaboration
+- Are creating educational materials, documentation, or research content
+
+#### Other publishing tools might be better candidates when you:
+- Require SEO optimization and search engine discoverability
+- Need complex user management, approval workflows, or interactive features (contact forms, newsletters, user accounts)
+- Want rich media features (e-commerce, forums, booking systems) or extensive visual customization
+- Have multiple content types requiring different layouts (events, products, news, etc.)
+- Are building large, complex websites with hundreds of pages
+- Prefer visual page builders over Markdown editing
+
+**Still unsure?** Docsify-This is designed for easy entry _and_ exit - try it with your content risk-free. Your Markdown files can be used by other tools if your needs change. For more powerful Markdown file-based publishing with hosting capabilities, explore the open-source [Grav CMS](https://getgrav.org/) project.
 
 ---
 
@@ -158,7 +183,7 @@ The appearance of rendered Markdown files can be customized by optional [URL par
 
 Share-This.net is also available as an alias domain for non Docsify-This branded URLs, for example https://share-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md.
 
-Looking for an overall introduction to publishing with Docsify-This? Check out [Markdown Publishing with Docsify-This](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/publishing-with-docsify-this/main&sidebar=true&edit-link=https://github.com/hibbitts-design/publishing-with-docsify-this/blob/main/README.md&maxLevel=4&title=Markdown%20Publishing%20with%20Docsify-This).
+Looking for an overall introduction to publishing with Docsify-This? Check out [Markdown Publishing with Docsify-This](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/publishing-with-docsify-this/main&sidebar=true&edit-link=https://github.com/hibbitts-design/publishing-with-docsify-this/blob/main/README.md&maxLevel=3&title=Markdown%20Publishing%20with%20Docsify-This).
 
 Docsify-This uses client-side rendering, which means your content will not be indexed by search engines like Google, Bing, or DuckDuckGo.
 
@@ -361,6 +386,7 @@ The following additional URL parameters are available for use in Docsify-This UR
 - [loadNavbar](#loadNavbar)
 - [loadSidebar](#loadSidebar)
 - [logo](#logo)
+- [max-width](#max-width)
 - [mergeNavbar](#mergeNavbar)
 - [name](#name)
 - [page-title](#page-title)
@@ -467,6 +493,11 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts
 
 Display a logo image for the website in a Docsify custom Sidebar (i.e. file 'logo.png) with the optional **logo** Docsify parameter, for example:  
 https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-course-site/main&homepage=home.md&sidebar=true&loadSidebar=_sidebar.md&loadNavbar=_navbar.md&name=CPT-363&logo=/images/logo.png The full folder path and filename must be provided. A website name must also be provided, and will be used as the alt text for the logo.
+
+##### max-width
+
+Set a custom max width for content of your web pages with the optional **max-width** parameter (not included in the Advanced Web Page Builder), for example:  
+https://preview-v2.docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&core-theme-styles=true&max-width=100. If no unit is included the default unit is percentage (%). You can also specify other units like max-width=910px.
 
 ##### mergeNavbar
 
@@ -1238,7 +1269,7 @@ The following style prefixes are available with Docsify-This:
 
 [A Collection of GitHub Markdown files](https://github.com/paulhibbitts/cmpt-363-222-pages) used as course content [within an SFU CMPT-363 Canvas LMS site](https://canvas.sfu.ca/courses/69678).
 
-[A Collection of GitHub Markdown files with inline CSS](https://github.com/paulhibbitts/docsify-this-cmpt-363-222-site) used as a [multiple page SFU CMPT-363 course site with SFU visual branding and the Docsify Search plugin enabled](https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts/docsify-this-cmpt-363-222-site/main&homepage=home.md&loadNavbar=_navbar.md&sidebar=true&loadSidebar=_sidebar.md&loadFavicon=favicon.png&dark-mode=auto&name=CMPT-363-222&searchbox=true#/course-welcome), [multiple page SFU CMPT-363 course site with SFU visual branding and website logo](https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts/docsify-this-cmpt-363-222-site/main&homepage=home.md&loadNavbar=_navbar.md&sidebar=true&loadSidebar=_sidebar.md&loadFavicon=favicon.png&dark-mode=auto&name=CMPT-363-222&logo=images/logo.png#/course-welcome), and an example [single Markdown file with default visual styling for embeddeding](https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts/docsify-this-cmpt-363-222-site/main&homepage=home.md&hide-credits=true#/course-welcome).
+[A Collection of GitHub Markdown files with inline CSS](https://github.com/paulhibbitts/docsify-this-cmpt-363-222-site) used as a [multiple page SFU CMPT-363 course site with SFU visual branding and the Docsify Search plugin enabled](https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts/docsify-this-cmpt-363-222-site/main&homepage=home.md&loadNavbar=_navbar.md&sidebar=true&loadSidebar=_sidebar.md&loadFavicon=favicon.png&dark-mode=auto&name=CMPT-363-222&searchbox=true#/course-welcome), [multiple page SFU CMPT-363 course site with SFU visual branding and website logo](https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts/docsify-this-cmpt-363-222-site/main&homepage=home.md&loadNavbar=_navbar.md&sidebar=true&loadSidebar=_sidebar.md&loadFavicon=favicon.png&dark-mode=auto&name=CMPT-363-222&logo=images/logo.png#/course-welcome), an example [single Markdown file for embeddeding styled via URL parameters](https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts/docsify-this-cmpt-363-222-site/main&homepage=home.md&link-color=CC0633&link-text-decoration=none&link-text-decoration-hover=underline&hide-credits=true#/course-welcome) and an example [single Markdown file with for embeddeding into Canvas styled via URL parameters](https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts/docsify-this-cmpt-363-222-site/main&homepage=home.md&font-family=Lato%20Extended,Lato,Helvetica%20Neue,Helvetica,Arial,sans-serif&font-size=16px&hide-credits=true#/course-welcome).
 
 [GitHub Markdown Content Demo file](https://github.com/hibbitts-design/docsify-this-markdown-content-demo/blob/main/README.md), displayed by Docsify-This as a [Web Page with 'Edit this Page' link](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-markdown-content-demo/main&homepage=README.md&edit-link=https://github.dev/hibbitts-design/docsify-this-markdown-content-demo/blob/main/README.md) using the new [GitHub.dev web editor](https://docs.github.com/en/codespaces/the-githubdev-web-based-editor) (currently in Beta).
 
@@ -1319,6 +1350,7 @@ An overview to self-publishing with Markdown using the open source project Docsi
 - [Providing a Page Table of Contents within a Smaller Area](#providing-a-page-table-of-contents-within-a-smaller-area)
 - [Including Code Blocks](#including-code-blocks)
 - [Displaying Images in a Grid](#displaying-images-in-a-grid)
+- [Embedding a Responsive Docsify-This Page in an iFrame](/?id=embedding-a-responsive-docsify-this-page-in-html)
 - [Embedding a Responsive Docsify-This Page in HTML](#embedding-a-responsive-docsify-this-page-in-html)
 - [Including External Markdown Content](#including-external-markdown-content)
 - [Use of WikiLinks](#use-of-wikilinks)
@@ -1398,6 +1430,20 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts
 
 Use the optional **image-captions** parameter to display alt text below images, for example:  
 https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts/Markdown-File-Tests/main&homepage=image-grid.md&image-grid-columns=4&zoom-images=true&image-captions=true&image-captions-text-align=center&image-captions-font-style=normal
+
+##### Embedding a Responsive Docsify-This Page in an iFrame
+
+A [fully responsive Docsify-This page can be embedded into an iFrame](https://demo.hibbittsdesign.org/embedded-docsify-this-iframe/), using the following as a working example:
+
+```html
+  <div style="width: 100%; margin: 0; padding: 0; overflow: hidden;">
+    <iframe src="https://docsify-this.net/?basePath=https://raw.githubusercontent.com/paulhibbitts/github-demo-markdown-file/main&homepage=README.md" 
+          style="width: 100%; height: 2700px; border: none; display: block;"
+          scrolling="no"
+          frameborder="0">
+    </iframe>
+  </div>
+```
 
 ##### Embedding a Responsive Docsify-This Page in HTML
 

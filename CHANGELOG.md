@@ -4,12 +4,14 @@
 
 **New:**
 * Availability of alias domain Share-This.net for non Docsify-This branded URLs
+* Support of optional max-width parameter (`max-width`) to set custom page content width
 
 **Improved:**
 * Updated ReadMe
 * Removed image for Twitter Cards and Open Graph
 * Relocated enable search field checkbox to basic URL parameters
 * Minor refresh to Web Page Builder UI
+* Improved file error messages
 
 ## [1.10.5] - 08/01/2025☀️
 
