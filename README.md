@@ -8,7 +8,7 @@
 
 ## Instantly Turn Online Markdown Files into Web Pages
 
-This open-source web app, built with magical documentation site generator [Docsify](https://docsify.js.org), lets you publish online [Markdown](https://en.wikipedia.org/wiki/Markdown) files as web pages without setting up your own website.
+This open-source web app, built with magical documentation site generator [Docsify](https://docsify.js.org), makes [Markdown](https://en.wikipedia.org/wiki/Markdown) publishing as simple as providing a file link - publish single pages or entire websites with no webserver required.
 
 <div style="display: none;">
 
@@ -396,7 +396,7 @@ The following additional URL parameters are available for use in Docsify-This UR
 
 ##### back-link
 
-Add a custom back link to other sites at the top of your web pages with the optional back-link parameter (not included in the Advanced Web Page Builder), for example:  
+Add a custom back link to other sites at the top of your web pages with the optional back-link parameter, for example:  
 https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&back-link=https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-course/main+homepage=home.md+sidebar=true. Please note that since & is used to separate URL parameters, any & characters within the back-link URL must be replaced with + characters.
 
 ##### coverpage
@@ -1313,7 +1313,7 @@ _Easy Markdown to Github Pages_
 _Markdown Content Demos_  
 [Standard and GitHub Flavored Markdown file](https://github.com/paulhibbitts/demo-markdown-file/blob/main/README.md), displayed by Docsify-This as a [Web Page with 'View raw Markdown' link](https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts/demo-markdown-file/main&edit-link=https://raw.githubusercontent.com/paulhibbitts/demo-markdown-file/main/README.md&edit-link-text=View%20raw%20Markdown).
 
-[Standard and GitHub Flavored Markdown Demo Codeberg file](https://github.com/paulhibbitts/demo-markdown-file/blob/main/README.md), displayed by Docsify-This as a [Web Page with 'View raw Markdown' link](https://docsify-this.net/?basePath=https://raw.codeberg.page/paulhibbitts/demo-markdown-file&homepage=README.md&edit-link=https://codeberg.org/paulhibbitts/demo-markdown-file/raw/branch/main/README.md&edit-link-text=View%20raw%20Markdown).
+[Standard and GitHub Flavored Markdown Demo Codeberg file](https://codeberg.org/paulhibbitts/demo-markdown-file/src/branch/main/README.md), displayed by Docsify-This as a [Web Page with 'View raw Markdown' link](https://docsify-this.net/?basePath=https://raw.codeberg.page/paulhibbitts/demo-markdown-file&homepage=README.md&edit-link=https://codeberg.org/paulhibbitts/demo-markdown-file/raw/branch/main/README.md&edit-link-text=View%20raw%20Markdown).
 
 [Docsify-This Markdown CSS Styles & Embeds Demo file](https://github.com/hibbitts-design/docsify-this-markdown-content-demo/blob/main/README.md), displayed by Docsify-This as a [Web Page with 'Edit this Page' link](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-markdown-content-demo/main&homepage=README.md&edit-link=https://github.dev/hibbitts-design/docsify-this-markdown-content-demo/blob/main/README.md) using the new [GitHub.dev web editor](https://docs.github.com/en/codespaces/the-githubdev-web-based-editor) (currently in Beta).
 
