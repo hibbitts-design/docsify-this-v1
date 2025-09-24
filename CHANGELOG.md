@@ -1,11 +1,16 @@
 # Changelog
 
-## [1.10.7] - XX/XX/2025🏫
+## [1.10.7] - XX/XX/2025
 
 **New:**
 * Added sidebar banner image support via HTML image
 * Automatic image path resolution for HTML image assets using data-src attribute relative to site base path with fallback support
 * Added field for a custom back link to the top of the page in Advanced Web Page Builder (in addition to URL parameter `back-link`)
+* Added (long overdue) basic support for printing
+
+**Improved:**
+* Updated CSS fonts
+* Updated ReadMe
 
 ## [1.10.6] - 09/02/2025🏫
 
