@@ -158,6 +158,8 @@ Page layout:
 
 <div class="docsifythisurlbuilderoptionsline" style='margin-top:0px;'>Page link color:<br><input style="border-radius: 7px;border-color: #8e8f9d" aria-label="Page link color" type="text" maxlength="7" size="8" value="#0374B5" id="linkcolor" style="text-transform:uppercase" oninput="validateColorAndUpdatePreview('linkcolor', 'linkcolorpreview');" data-coloris><span id="linkcolorpreview"></span></div>
 
+<div class="clearfix">
+
 <div class="docsifythisurlbuilderoptionsline"><div class='stackedlabeldropdown' style='margin-bottom:12px;border-radius: 7px;border-color: #8e8f9d'>
   <label for="headerweight">Page headers font weight:</label>
   <select style="border-radius: 7px;border-color: #8e8f9d" class="docsifythisurlbuilderoptionsline" id="headerweight" name="headerweight">
@@ -168,9 +170,38 @@ Page layout:
   </select>
 </div></div>
 
+</div>
+
+<h3>Page Display Options</h3>
+
+<hr>
+
 <div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="imageCaptions" unchecked><label for="imageCaptions">Show alternative text of images as captions</label></div>
 
 <div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="zoomimages" unchecked><label for="zoomimages">Enable zoomable page images (tapping on images to enlarge them)</label></div>
+
+<hr>
+
+<div class="clearfix">
+
+<div class='stackedlabeldropdown' style='margin-bottom:4px;border-radius: 7px;border-color: #8e8f9d'>
+  <label for="maxWidthValue">Content maximum width:</label>
+  <div style="display: flex; gap: 10px;">
+    <input type="number" id="maxWidthValue" name="maxWidthValue"
+       style="flex: .5; border-radius: 7px; border-color: #8e8f9d; vertical-align: top;"
+       value="910" step="10">
+    <select style="border-radius: 7px; border-color: #8e8f9d; vertical-align: top; transform: translateY(4px);"
+        id="maxWidthValueUnit" name="maxWidthValueUnit" value="px" onchange="updateMaxWidthStep()">
+      <option value="px" data-step="10" selected>Pixels (px)</option>
+      <option value="%" data-step="5">Percent (%)</option>
+      <option value="ch" data-step="1">Characters (ch)</option>
+    </select>
+  </div>
+</div>
+
+</div>
+
+<hr>
 
 <div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="hypothesisenable" unchecked><label for="hypothesisenable">Enable page annotation with Hypothes.is, an open source web annotation tool</label></div>
 
@@ -872,6 +903,9 @@ For basic embedding with a fixed height to seamlessly integrate with other desti
   </iframe>
 </div>
 ```
+
+Once you are viewing the embedded page, you can refine the left/right margins of the content by adjusting the `max-width` parameter (default unit is %), as shown in the example Docsify-This URL above.
+
 
 _Adjust the `height` value (2700px) to match your content length. Test on different devices to ensure all content is visible._
 
@@ -1975,8 +2009,12 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts
 
 ##### Displaying Markdown Content During a Presentation
 
-When presenting content to an audience, you can optimize display for better readability by adjusting font size, font family, and optionally enabling dark theme mode. Docsify's `topMargin` configuration parameter can also be adjusted to add space above the first line of content. For example, to display a specific section using a larger sans-serif font with white text on a dark background and increased spacing above the header:  
-https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this/main&font-family=Open%20Sans,sans-serif&max-width=80&font-size=42px&header-weight=600&dark-mode=on&topMargin=20#/?id=docsify-this-core-design-principles
+When presenting content to an audience, you can optimize display for better readability by adjusting font size, font family, content maximum width, and optionally enabling dark theme mode. For example, to display a specific section using a larger sans-serif font with white text on a dark background:  
+https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this/main&font-family=Open%20Sans,sans-serif&font-size=42px&header-weight=600&dark-mode=on#/?id=docsify-this-core-design-principles
+
+Once viewing the presented page, you can refine the left/right margins and spacing above any navigated to header by further adjusting content maximum width (`max-width`, default unit is % and the suggested value is 80) and optionally adding the URL parameter `topMargin` (default unit is px) to the Docsify-This URL:  
+
+https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this/main&font-family=Open%20Sans,sans-serif&font-size=42px&header-weight=600&dark-mode=on&max-width=80&topMargin=20#/?id=docsify-this-core-design-principles
 
 ##### Providing a Page Table of Contents within a Smaller Area
 
