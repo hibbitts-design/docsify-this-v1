@@ -93,7 +93,7 @@ Page layout:
 
 <div id="docsifythisurlbuilderoptionsDiv" style='display: none'>
 
-<h3>Page Style and Behavior</h3>
+### Page Style and Behavior
 
 <hr>
 
@@ -172,7 +172,7 @@ Page layout:
 
 </div>
 
-<h3>Page Display Options</h3>
+### Page Display Options
 
 <hr>
 
@@ -188,7 +188,7 @@ Page layout:
   <label for="maxWidthValue">Content maximum width:</label>
   <div style="display: flex; gap: 10px;">
     <input type="number" id="maxWidthValue" name="maxWidthValue"
-       style="flex: .5; border-radius: 7px; border-color: #8e8f9d; vertical-align: top;"
+       style="width=85px; border-radius: 7px; border-color: #8e8f9d; vertical-align: top;"
        value="910" step="10">
     <select style="border-radius: 7px; border-color: #8e8f9d; vertical-align: top; transform: translateY(4px);"
         id="maxWidthValueUnit" name="maxWidthValueUnit" value="px" onchange="updateMaxWidthStep()">
@@ -197,15 +197,14 @@ Page layout:
       <option value="ch" data-step="1">Characters (ch)</option>
     </select>
   </div>
+    <div style="font-size: 1em; opacity: 0.8; margin-top: -5px;">
+      Embedding or presenting content? Try 100% for embeds or 80% for presentations
+    </div>
 </div>
 
 </div>
 
-<hr>
-
-<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="hypothesisenable" unchecked><label for="hypothesisenable">Enable page annotation with Hypothes.is, an open source web annotation tool</label></div>
-
-<h3>Navigation Display Options</h3>
+### Navigation Display Options
 
 <hr>
 
@@ -222,7 +221,7 @@ Page layout:
 
 <div class="docsifythisurlbuilderoptionsline">Maximum Header level (1-6) of Docsify Sidebar:<br><input style="border-radius: 7px;border-color: #8e8f9d" aria-label="Maximum Header level (1-6) of Docsify Sidebar" type="number" size="1" value="2" min="1" max="6" id="maxLevel" name="maxLevel"></div>
 
-<h3>Additional Page Options</h3>
+### Additional Page Options
 
 <hr>
 
@@ -234,17 +233,13 @@ Page layout:
 
 <div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="hideCredits" unchecked><label for="hideCredits">Remove the Docsify-This credit text from bottom of page</label></div>
 
-<input class="docsifythisurlbuilderprimarybutton" style="border:none;margin-top: 10px;" type="button" id="btn_2" value="Publish as a Web Page" onclick="openURLs(document.getElementById('docsifythisurlfield').value)"/>
-
-<div class="docsifythisurlbuilderoptionsline" style="margin-top: 42px;margin-bottom: -27px;"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="advancedwebpagebuilder" onclick='toggleDiv2(this)' unchecked><label for="advancedwebpagebuilder">Advanced Web Page Builder Options</label></div>
-
-<div id="docsifythisurlbuilderoptionsDiv2" style='margin-top:40px;display: none'>
-
-<h3>Dark Theme Mode and Link Colors</h3>
+### Dark Theme
 
 <hr>
 
-<div class="docsifythisurlbuilderoptionsline"><div class='stackedlabeldropdown' style='margin-bottom:4px;border-radius: 7px;border-color: #8e8f9d'>
+<div class="clearfix">
+
+<div class="docsifythisurlbuilderoptionsline"><div class='stackedlabeldropdown' style='margin-top:-6px; margin-bottom:4px;border-radius: 7px;border-color: #8e8f9d'>
   <label for="enableDarkmode">Dark theme mode:</label>
   <select style="border-radius: 7px;border-color: #8e8f9d" class="docsifythisurlbuilderoptionsline" id="enableDarkmode" name="enableDarkmode">
     <option value="false">Off</option>
@@ -254,11 +249,23 @@ Page layout:
   </select>
 </div></div>
 
+</div>
+
+<input class="docsifythisurlbuilderprimarybutton" style="border:none;margin-top: 10px;" type="button" id="btn_2" value="Publish as a Web Page" onclick="openURLs(document.getElementById('docsifythisurlfield').value)"/>
+
+<div class="docsifythisurlbuilderoptionsline" style="margin-top: 42px;margin-bottom: -27px;"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="advancedwebpagebuilder" onclick='toggleDiv2(this)' unchecked><label for="advancedwebpagebuilder">Advanced Web Page Builder Options</label></div>
+
+<div id="docsifythisurlbuilderoptionsDiv2" style='margin-top:40px;display: none'>
+
+### Dark Theme Link Colors
+
+<hr>
+
 <div class="docsifythisurlbuilderoptionsline" style="margin-left: 10px;">Link color for dark theme:<br><input style="border-radius: 7px;border-color: #8e8f9d" aria-label="Page link color for dark theme" type="text" maxlength="7" size="8" value="#1BA1EE" id="linkcolordarkmode" style="text-transform:uppercase" oninput="validateColorAndUpdatePreview('linkcolordarkmode', 'linkcolordarkmodepreview');" data-coloris><span id="linkcolordarkmodepreview"></span></div>
 
 <div class="docsifythisurlbuilderoptionsline" style="margin-left: 10px;">Link hover color for dark theme:<br><input style="border-radius: 7px;border-color: #8e8f9d" aria-label="Page link hover color for dark theme" type="text" maxlength="7" size="8" value="" id="linkhovercolordarkmode" style="text-transform:uppercase" oninput="validateColorAndUpdatePreview('linkhovercolordarkmode', 'linkhovercolordarkmodepreview');" data-coloris><span id="linkhovercolordarkmodepreview"></span></div>
 
-<h3>Link Style and Behavior</h3>
+### Link Style and Behavior
 
 <hr>
 
@@ -300,7 +307,7 @@ Page layout:
 
 </div>
 
-<h3>Custom Page Additions</h3>
+### Custom Page Additions
 
 <hr>
 
@@ -308,7 +315,11 @@ Page layout:
 
 <div class="docsifythisurlbuilderoptionsline">Add page title (as H1 header at top of page):<br><input style="border-radius: 7px;border-color: #8e8f9d" aria-label="Add page title (as H1 header at top of page)" type="text" maxlength="200" value="" id="pageTitle" name="pageTitle"></div>
 
-<h3>Docsify Custom Files</h3>
+<hr>
+
+<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="hypothesisenable" unchecked><label for="hypothesisenable">Enable page annotation with Hypothes.is, an open source web annotation tool</label></div>
+
+### Docsify Custom Files
 
 <hr>
 
@@ -319,7 +330,7 @@ Page layout:
 <div class="docsifythisurlbuilderoptionsindentedline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="loadfavicon"  unchecked><label for="loadfavicon">Favicon (<code>favicon.png</code>)</label></div>
 <div class="docsifythisurlbuilderoptionsindentedline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="loadcustomfooter" unchecked><label for="loadcustomfooter">Footer (<code>_footer.md</code>)</label></div>
 
-<h3>Docsify Custom Sidebar Options</h3>
+### Docsify Custom Sidebar Options
 
 <hr>
 
@@ -331,13 +342,13 @@ Page layout:
 
 <div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="pagination" unchecked><label for="pagination">Enable pagination buttons in page content area (Docsify custom Sidebar required)  </label></div>
 
-<h3>Custom Docsify Navbar Options</h3>
+### Docsify Custom Navbar Options
 
 <hr>
 
 <div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="mergeNavbar" unchecked><label for="mergeNavbar">Move Navbar items to the top of the Sidebar on smaller screens</label></div>
 
-<h3>Docsify Custom Coverpage Colors</h3>
+### Docsify Custom Coverpage Colors
 
 <hr>
 

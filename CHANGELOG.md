@@ -4,9 +4,11 @@
 
 **New:**
 * Added value and unit fields for max width in Web Page Builder (in addition to URL parameter `max-width`)
+* Support scrolling to specific Web Page Builder sections
 
 **Improved:**
 * Updated ReadMe
+* Reorganized Advanced Web Page Builder options
 
 ## [1.10.7] - 10/01/2025🎃
 
