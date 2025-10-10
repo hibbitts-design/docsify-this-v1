@@ -5,10 +5,14 @@
 **New:**
 * Added value and unit fields for max width in Web Page Builder (in addition to URL parameter `max-width`)
 * Support scrolling to specific Web Page Builder sections
+* Web Page Builder option and URL parameter to initially close the Sidebar ( `close-sidebar`)
 
 **Improved:**
 * Updated ReadMe
-* Reorganized Advanced Web Page Builder options
+* Minor reoganization of Advanced Web Page Builder options
+* Automatically adjust padding-top to 0 when max-width=100
+* Automatically adjust topMargin when max-width is a percentage
+* Keep sidebar font to default font size
 
 ## [1.10.7] - 10/01/2025🎃
 

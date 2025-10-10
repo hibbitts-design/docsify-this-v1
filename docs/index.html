@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Docsify-This | Instantly Publish Markdown Files as Web Pages</title>
   <meta name="description"
-    content="Docsify-This makes it easy to start turning online Markdown files into multi-device friendly, shareable web pages. Great for documentation, course materials, technical writing, and lightweight publishing. Open-source and setup-free — just write, share, and future-proof your content.">
+    content="Docsify-This makes it easy to start turning online Markdown files into shareable web pages, embeddable content, and presentation-friendly displays. Great for documentation, course materials, technical writing, and lightweight publishing. Open-source and setup-free — just write, share, and future-proof your content.">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- <link rel="icon" href="assets/favicon/favicon.png"> -->
@@ -66,6 +66,7 @@
       --base-font-size: 18px;
 
       --cover-max-width: 45em;
+      --content-max-width: 910px;
 
       --heading-h2-border-style: none;
       --heading-h1-margin: 1rem 0rem -0.5rem 0rem;
@@ -592,6 +593,13 @@
             }
           }
 
+          const cb20 = document.querySelector('#closesidebar');
+          if (cb20.checked) {
+            if (!url.includes('close-sidebar=')) {
+              var URLparms = URLparms + `&close-sidebar=true`;
+            }
+          }
+
           var getmaxwidthvalue = document.getElementById('maxWidthValue').value;
           var getmaxwidthvalueunit = document.getElementById('maxWidthValueUnit').value;
           if (!((getmaxwidthvalue == "910") && (getmaxwidthvalueunit == "px"))) {
@@ -843,6 +851,7 @@
       document.getElementById("mergeNavbar").checked = false;
       document.getElementById("headerweight").value = '400';
       document.getElementById("zoomimages").checked = false;
+      document.getElementById("closesidebar").checked = false;
       document.getElementById("maxWidthValue").value = 910;
       document.getElementById("maxWidthValueUnit").value = 'px';
       document.getElementById("coverpagecolor").value = '#6C8A9A';
@@ -1143,6 +1152,14 @@
 
             if (window.$docsify['basePath']) {
 
+              // Close Sidebar based on URL parm
+              if (getURLParameterByName(['close-sidebar', 'closeSidebar'], null, null, window.location.href, true) === 'true') {
+                const sidebarToggle = document.querySelector('.sidebar-toggle');
+                if (sidebarToggle) {
+                  sidebarToggle.click();
+                }
+              }
+
               var htmlElement = document.createElement('div');
               htmlElement.innerHTML = html;
 
@@ -1433,6 +1450,16 @@
               const docHead = document.head;
               const docBody = document.body;
 
+              // Close Sidebar - handle page-to-page navigation if URL parameter is present
+              if (getURLParameterByName(['close-sidebar', 'closeSidebar'], null, null, window.location.href, true) === 'true') {
+                const sidebarToggle = document.querySelector('.sidebar-toggle');
+                const sidebar = document.querySelector('.sidebar');
+                
+                if (sidebar && !sidebar.classList.contains('close') && sidebarToggle) {
+                  sidebarToggle.click();
+                }
+              }
+
               /* Javascript generated/assisted by Anthropic Claude AI */
               // Function to resolve image paths
               window.resolveImagePath = function (imagePath) {
@@ -1595,7 +1622,12 @@
                     // Use requestAnimationFrame for immediate scroll to the element
                     requestAnimationFrame(() => {
                       // Calculate the scroll position with topMargin offset
-                      let scrollTop = targetElement.offsetTop - topMargin;
+                      let scrollTop = 0;
+                      if ((getURLParameterByName('sidebar') === true) && (!(getURLParameterByName('topMargin')))) {
+                        scrollTop = targetElement.offsetTop;
+                      } else {
+                        scrollTop = targetElement.offsetTop - topMargin;
+                      }
                       
                       // Ensure we don't scroll above the top of the page
                       scrollTop = Math.max(0, scrollTop);
@@ -1616,6 +1648,28 @@
             }
 
             if (window.$docsify['basePath']) {
+
+              // Close Sidebar - handle same-page ?id= changes if URL parameter is present
+              if (getURLParameterByName(['close-sidebar', 'closeSidebar'], null, null, window.location.href, true) === 'true') {
+                
+                let lastHash = window.location.hash;
+                
+                window.addEventListener('hashchange', function() {
+                  const currentHash = window.location.hash;
+                  
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    
+                    const sidebarToggle = document.querySelector('.sidebar-toggle');
+                    const sidebar = document.querySelector('.sidebar');
+                    
+                    if (sidebar && !sidebar.classList.contains('close') && sidebarToggle) {
+                      sidebarToggle.click();
+                    }
+                  }
+                });
+              }
+
               return; // Exit if basePath is present
             }
 
@@ -1824,6 +1878,10 @@
               document.getElementById("zoomimages").checked = true;
             }
 
+            if (getURLParameterByName(['close-sidebar', 'closeSidebar'], null, null, window.location.href, true) === 'true') {
+              document.getElementById("closesidebar").checked = true;
+            }
+
             maxWidth = getURLParameterByName('max-width', null, null, window.location.href, true);
             if (maxWidth) {
               if (!(isNaN(maxWidth))) {
@@ -2014,16 +2072,39 @@
 
   <!-- Adjust Page Margins When Standalone or Embedded -->
   <script>
-    if (getURLParameterByName(['standalone', 'embedded',]) || standalone) {
-      var editCSS = document.createElement('style')
+    if (getURLParameterByName(['standalone', 'embedded']) || standalone ||
+      (getURLParameterByName('sidebar') && getURLParameterByName(['max-width', 'maxWidth']))) {
+      var editCSS = document.createElement('style');
       maxwidth = getURLParameterByName(['max-width', 'maxWidth'], null, null, window.location.href, true);
       if (!(maxwidth === false)) {
-        if (!(isNaN(maxwidth))) {
-          editCSS.innerHTML = ".markdown-section {padding-left: 0; padding-right: 0;}";
+        // Extract numeric value and unit
+        var numericValue = parseFloat(maxwidth);
+        var unit = maxwidth.toString().replace(numericValue, '').trim() || '%';
+
+        if (!isNaN(numericValue)) {
+          // Handle percentage widths
+          if (unit === '%' && numericValue == 100) {
+            editCSS.innerHTML = ".markdown-section {padding-top: 0 !important; padding-left: 0; padding-right: 0;}";
+          } else if (unit === '%') {
+            if (!(getURLParameterByName('topMargin'))) {
+              var adjustedTopMargin = (100 - numericValue) * 1.75;
+              window.$docsify.topMargin = adjustedTopMargin;
+            }
+            editCSS.innerHTML = ".markdown-section {padding-left: 0; padding-right: 0;}";
+          }
+          // Handle px or ch widths with large font sizes
+          else if ((unit === 'px' || unit === 'ch') && !getURLParameterByName('topMargin')) {
+            var fontSizeRaw = getURLParameterByName(['font-size', 'fontSize'], null, null, window.location.href, true);
+            var fontSize = parseFloat(fontSizeRaw);
+            if (!isNaN(fontSize) && fontSize >= 24) {
+              window.$docsify.topMargin = (fontSize - 16);
+            }
+            editCSS.innerHTML = ".markdown-section {padding-left: 0; padding-right: 0;}";
+          }
         }
       } else {
         editCSS.innerHTML = ".markdown-section {padding: 1rem 14px;}";
-      }     
+      }
       document.body.appendChild(editCSS);
     }
   </script>
@@ -2201,7 +2282,26 @@
           // Append 'rem' if no unit is specified
           fontsize = fontsize + 'rem';
         }
+        document.documentElement.style.setProperty('--sidebar-width', '306px');
         document.documentElement.style.setProperty('--base-font-size', fontsize);
+        document.documentElement.style.setProperty('--sidebar-name-font-size', '24px');
+        var fontCSS = document.createElement('style');
+        fontCSS.innerHTML = `
+            .sidebar { font-size: 18px !important; }
+            .search kbd { font-size: 14px !important; }
+            .sidebar .search h2 { font-size: 18px !important; }
+        `;
+        document.head.appendChild(fontCSS);
+        document.addEventListener('DOMContentLoaded', function () {
+          const elements = document.querySelectorAll('.sidebar-nav, .search');
+          elements.forEach(element => {
+            element.style.marginTop = '27px';
+          });
+          const sidebarHeadings = document.querySelectorAll('.sidebar > h1');
+          sidebarHeadings.forEach(element => {
+            element.style.setProperty('margin-top', '27px', 'important');
+          });
+        });
       }
 
       // Change line height if lineheight parameter present

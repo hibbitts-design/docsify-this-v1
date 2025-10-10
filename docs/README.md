@@ -138,6 +138,8 @@ Page layout:
     <option value="24px">24px</option>
     <option value="36px">36px</option>
     <option value="48px">48px</option>
+    <option value="60px">60px</option>
+    <option value="72px">72px</option>
   </select>
 </div>
         
@@ -198,7 +200,7 @@ Page layout:
     </select>
   </div>
     <div style="font-size: 1em; opacity: 0.8; margin-top: -5px;">
-      Embedding or presenting content? Try 100% for embeds or 80% for presentations
+      Embedding or presenting content? Try 100% for embeds and 80% for presentations
     </div>
 </div>
 
@@ -216,6 +218,8 @@ Page layout:
 <div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="narrowToC" unchecked><label for="narrowToC">Use a narrower table of contents area, along with a smaller screen breakpoint</label></div>
 
 <hr>
+
+<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="closesidebar"/><label for="closesidebar">Automatically close Docsify Sidebar for presentations or focused reading</label></div>
 
 <div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="enableSidebarsearch" unchecked><label for="enableSidebarsearch">Enable search field in Docsify Sidebar</label></div>
 
@@ -458,10 +462,11 @@ Docsify-This provides a quick way to transform and style [Markdown content](http
 With Docsify-This you can:
 
 - Instantly publish online Markdown files as standalone web pages or even complete websites — no complex configuration required
+- Display existing Markdown content in a presentation-friendly style for workshops, courses, and online sessions
 - Maintain full control over your content by keeping files stored in their original locations, such as GitHub or Codeberg
 - Customize web pages with a point-and-click Web Page Builder, avoiding the need for technical expertise or custom development
 - Encourage collaboration with automatic ‘Edit this Page’ links for Markdown files hosted on GitHub or Codeberg, making it possible for collaborative authoring
-- Embed constraint-free Markdown/HTML seamlessly into other platforms (LMS, CMS, etc.), enabling flexible content presentation and cross-platform integration
+- Embed constraint-free Markdown/HTML seamlessly into other platforms (LMS, CMS, etc.), enabling flexible content display and cross-platform integration
 - Streamline content reuse by embedding Markdown files across platforms without duplication, reducing redundant workflows and boosting efficiency
 - Tailor the appearance of embedded content dynamically using URL parameters, adapting it to suit the look and feel of each destination platform
 
@@ -478,18 +483,19 @@ With Docsify-This you can:
 
 ---
 
-### When is Docsify-This a Good Candidate?
+#### When is Docsify-This a Good Candidate?
 
-#### Docsify-This often works really well when you:
+##### Docsify-This often works really well when you:
 - Want to embed the same content across multiple platforms (LMS, websites, etc.)
 - Need cross-platform content reuse (same content for web, mobile, PDF and eBook generation)
 - Want to publish open content quickly without technical setup
+- Need to present existing Markdown content for live audiences
 - Prefer minimal maintenance publishing (set it and forget it, no Webserver needed)
 - Value simple, portable Markdown files with platform independence
 - Are interested in using GitHub/Codeberg for version-control and collaboration
 - Are creating educational materials, documentation, or research content
 
-#### Other publishing tools might be better candidates when you:
+##### Other publishing tools might be better candidates when you:
 - Require SEO optimization and search engine discoverability
 - Need complex user management, approval workflows, or interactive features (contact forms, newsletters, user accounts)
 - Want rich media features (e-commerce, forums, booking systems) or extensive visual customization
@@ -599,6 +605,7 @@ Learn more about each of the basic Docsify-This URL parameters below, and discov
 **Basic URL Parameters (included in the standard Web Page Builder)**
 
 - [browser-tab-title](/?id=browser-tab-titleconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
+- [close-sidebar](/?id=close-sidebarconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
 - [edit-link](/?id=edit-linkconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
 - [edit-link-text](/?id=edit-link-textconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
 - [edit-link-top](/?id=edit-link-topconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
@@ -621,8 +628,12 @@ Learn more about each of the basic Docsify-This URL parameters below, and discov
 ##### browser-tab-title<button type="button" class="copy-link" aria-label="Copy browser-tab-title parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&browser-tab-title=Published_by_Docsify-This').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
 Set a custom title on Browser tab for your web pages with the optional **browser-tab-title** parameter, for example:  
-https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main/docs&homepage=resources.md&browser-tab-title=Resources  
-Please note to use titles with spaces they must be [encoded](https://meyerweb.com/eric/tools/dencoder/), so "My Page" would be "My%20Page". Underscores may also be used to represent spaces.
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main/docs&homepage=resources.md&browser-tab-title=Resources. Please note to use titles with spaces they must be [encoded](https://meyerweb.com/eric/tools/dencoder/), so "My Page" would be "My%20Page". Underscores may also be used to represent spaces.
+
+##### close-sidebar<button type="button" class="copy-link" aria-label="Copy close-sidebar parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&close-sidebar=true').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
+
+Set the Docsify sidebar to start closed and auto-close after navigation with the optional **close-sidebar** parameter, for example:  
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&sidebar=true&close-sidebar=true
 
 ##### edit-link<button type="button" class="copy-link" aria-label="Copy edit-link parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&edit-link=').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
@@ -632,10 +643,9 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-des
 ##### edit-link-text<button type="button" class="copy-link" aria-label="Copy edit-link-text parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&edit-link-text=Edit_this_Page').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
 Change the default text for a "Edit this Page" link with the optional **edit-link-text** parameter, for example:  
-https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main&edit-link=https://github.com/hibbitts-design/docsify-open-publishing-starter-kit/blob/main/README.md&edit-link-text=View%20as%20Markdown  
-Please note to use text with spaces they must be [encoded](https://meyerweb.com/eric/tools/dencoder/), so "View as Markdown" would be "View%20as%20Markdown". Underscores may also be used to represent spaces.
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main&edit-link=https://github.com/hibbitts-design/docsify-open-publishing-starter-kit/blob/main/README.md&edit-link-text=View%20as%20Markdown. Please note to use text with spaces they must be [encoded](https://meyerweb.com/eric/tools/dencoder/), so "View as Markdown" would be "View%20as%20Markdown". Underscores may also be used to represent spaces.
 
-##### edit-link-top<button type="button" class="copy-link" aria-label="Copy edit-link-top parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&edit-link-top=false').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
+##### edit-link-top<button type="button" class="copy-link" aria-label="Copy edit-link-top parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&edit-link-top=true').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
 Change the location of the "Edit this Page" link from the bottom of pages to be the top of pages with the optional **edit-link-top** parameter, for example:  
 https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main&toc=true&edit-link=https://github.com/hibbitts-design/docsify-open-publishing-starter-kit/blob/main/README.md&edit-link-top=true
@@ -643,29 +653,29 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-des
 ##### font-family<button type="button" class="copy-link" aria-label="Copy font-family parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&font-family=Source_Sans_Pro,Helvetica_Neue,sans-serif').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
 Set a custom font for your web pages with the optional **font-family** parameter, for example:  
-https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main/docs&homepage=resources.md&font-family=Helvetica,Arial,sans-serif. This parameter can be particularly valuable when trying to better match the visual presentation of embedded content with your destination platform. Please note to use fonts with spaces in their names they must be [encoded](https://meyerweb.com/eric/tools/dencoder/), so "Courier New" would be "Courier%20New". Underscores may also be used to represent spaces.
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main/docs&homepage=resources.md&font-family=Helvetica,Arial,sans-serif. This parameter can be particularly valuable when trying to better match the visual appearance of embedded content with your destination platform. Please note to use fonts with spaces in their names they must be [encoded](https://meyerweb.com/eric/tools/dencoder/), so "Courier New" would be "Courier%20New". Underscores may also be used to represent spaces.
 
 ##### font-size<button type="button" class="copy-link" aria-label="Copy font-size parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&font-size=18px').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
 Set a custom font size for your web pages with the optional **font-size** parameter, for example:  
-https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main/docs&homepage=resources.md&font-size=16px. This parameter can be particularly valuable when trying to better match the visual presentation of embedded content with your destination platform.
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main/docs&homepage=resources.md&font-size=16px. This parameter can be particularly valuable when trying to better match the visual appearance of embedded content with your destination platform.
 
 ##### header-weight<button type="button" class="copy-link" aria-label="Copy header-weight parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&header-weight=400').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
 Set a custom header font weight (default is 400 - regular) for your web pages with the optional **header-weight** parameter, for example:  
 https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main/docs&homepage=resources.md&header-weight=600
 
-##### hide-credits<button type="button" class="copy-link" aria-label="Copy hide-credits parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&hide-credits=false').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
+##### hide-credits<button type="button" class="copy-link" aria-label="Copy hide-credits parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&hide-credits=true').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
 Hide the credits usually shown at the bottom of every displayed Docsify-This page with the optional **hide-credits** parameter, for example:  
 https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main/docs&homepage=resources.md&hide-credits=true
 
-##### hypothesis<button type="button" class="copy-link" aria-label="Copy hypothesis parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&hypothesis=false').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
+##### hypothesis<button type="button" class="copy-link" aria-label="Copy hypothesis parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&hypothesis=true').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
 Enable page annotation with [Hypothes.is](https://hypothes.is) with the optional **hypothesis** parameter, for example:  
 https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main/docs&homepage=resources.md&hypothesis=true
 
-##### image-captions<button type="button" class="copy-link" aria-label="Copy image-captions parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&image-captions=false').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
+##### image-captions<button type="button" class="copy-link" aria-label="Copy image-captions parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&image-captions=true').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
 Turn alt text into image captions (using the semantic HTML `<figure>` and `<figcaption>` structure) with the optional **image-captions** parameter, for example:  
 https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&image-captions=true
@@ -690,12 +700,12 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-des
 Enable the Docsify Search plugin (which currently includes matches for text and markup) on multiple page sites including a Sidebar with the optional **searchbox** Docsify parameter, for example:  
 https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-course-site/main&homepage=home.md&sidebar=true&loadSidebar=_sidebar.md&loadNavbar=_navbar.md&searchbox=true
 
-##### sidebar<button type="button" class="copy-link" aria-label="Copy sidebar parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&sidebar=false').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
+##### sidebar<button type="button" class="copy-link" aria-label="Copy sidebar parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&sidebar=true').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
 Display a Docsify sidebar with the optional **sidebar** parameter, for example:  
 https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main&sidebar=true
 
-##### toc<button type="button" class="copy-link" aria-label="Copy toc parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&toc=false').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
+##### toc<button type="button" class="copy-link" aria-label="Copy toc parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&toc=true').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
 Display a page table of contents with the optional **toc** parameter, for example:  
 https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-publishing-starter-kit/main/docs&homepage=introduction.md&toc=true
@@ -705,12 +715,12 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-des
 Set the page heading levels (i.e. h1, h2, etc.) to be included in the Page Table of Contents with the optional **toc-headings** parameter, for example:  
 https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-publishing-starter-kit/main/docs&homepage=introduction.md&toc=true&toc-headings=h1,h2,h3
 
-##### toc-narrow<button type="button" class="copy-link" aria-label="Copy toc-narrow parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&toc-narrow=false').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
+##### toc-narrow<button type="button" class="copy-link" aria-label="Copy toc-narrow parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&toc-narrow=true').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
 Use a less wide Page Table of Contents with the optional **toc-narrow** parameter, for example:  
 https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-publishing-starter-kit/main/docs&homepage=introduction.md&toc-narrow=true. This parameter can be particularly valuable when embedding content where a smaller screen area is likely.
 
-##### zoom-images<button type="button" class="copy-link" aria-label="Copy zoom-images parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&zoom-images=false').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
+##### zoom-images<button type="button" class="copy-link" aria-label="Copy zoom-images parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&zoom-images=true').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
 Enable image zoom (tapping on page images to enlarge them) with the optional **zoom-images** Docsify parameter, for example:  
 https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-markdown-content-demo/main&zoom-images=true. To exclude images, use `![](image.png ":no-zoom")`.
@@ -751,8 +761,7 @@ The following additional URL parameters are available for use in Docsify-This UR
 ##### back-link<button type="button" class="copy-link" aria-label="Copy back-link parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&back-link=').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
 Add a custom back link to other sites at the top of your web pages with the optional back-link parameter, for example:  
-https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&back-link=https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-course/main+homepage=home.md+sidebar=true  
-Please note that since & is used to separate URL parameters, any & characters within the back-link URL must be replaced with + characters.
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&back-link=https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-course/main+homepage=home.md+sidebar=true. Please note that since & is used to separate URL parameters, any & characters within the back-link URL must be replaced with + characters.
 
 ##### coverpage<button type="button" class="copy-link" aria-label="Copy coverpage parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&coverpage=').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
@@ -867,8 +876,7 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-des
 ##### page-title<button type="button" class="copy-link" aria-label="Copy age-title parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&age-title=').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
 Add a custom page title at the top of your web pages with the optional **page-title** parameter, for example:  
-https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/grav-skeleton-course-hub/refs/heads/master/pages/03.resources&homepage=page.md&page-title=Resources  
-Please note to use titles with spaces they must be [encoded](https://meyerweb.com/eric/tools/dencoder/), so "My Page" would be "My%20Page". Underscores may also be used to represent spaces.
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/grav-skeleton-course-hub/refs/heads/master/pages/03.resources&homepage=page.md&page-title=Resources. Please note to use titles with spaces they must be [encoded](https://meyerweb.com/eric/tools/dencoder/), so "My Page" would be "My%20Page". Underscores may also be used to represent spaces.
 
 ##### pagination<button type="button" class="copy-link" aria-label="Copy pagination parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&pagination=true').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
@@ -916,7 +924,6 @@ For basic embedding with a fixed height to seamlessly integrate with other desti
 ```
 
 Once you are viewing the embedded page, you can refine the left/right margins of the content by adjusting the `max-width` parameter (default unit is %), as shown in the example Docsify-This URL above.
-
 
 _Adjust the `height` value (2700px) to match your content length. Test on different devices to ensure all content is visible._
 
@@ -991,7 +998,7 @@ To use these templates you would generally do the following (template specific i
 
 To edit a file in GitHub, tap the **Pencil** icon (Edit file) in the upper-right when viewing the file, make your changes, and then tap the **Commit changes...** button to save those changes.
 
-**Available Docsify-This Markdown Templates**
+##### Available Docsify-This Markdown Templates
 
 - [One Page Article Template](#docsify-this-one-page-article-template)
 - [One Page Course Template](#docsify-this-one-page-course-template)
@@ -1164,13 +1171,13 @@ Multiple Page Course Site [home.md](https://github.com/hibbitts-design/docsify-t
 
 Example pages, including the use of the `font-family`, `font-size` and `hide-credits` URL parameters for seamless content embedding within the Canvas LMS, as displayed by Docsify-This:
 
-- [Embeddable Home Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=home.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Home Page")
-- [Embeddable Weekly Module Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=module-01.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Weekly Module Page")
-- [Embeddable Schedule Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=schedule.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Schedule Page")
-- [Embeddable Topics Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=topics.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Topics Page")
-- [Embeddable Resources Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=resources.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Resource Page")
-- [Embeddable UX Techniques Guide Page (using Accordion format)](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=ux-techniques-guide.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable UX Techniques Guide Page (using Accordion format)")
-- [Embeddable Contact Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=contact.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Contact Page")
+- [Embeddable Home Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=home.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Home Page") ([home.md](https://github.com/hibbitts-design/docsify-this-lms-content-pages/blob/main/home.md))
+- [Embeddable Weekly Module Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=module-01.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Weekly Module Page") ([module-01.md](https://github.com/hibbitts-design/docsify-this-lms-content-pages/blob/main/module-01.md))
+- [Embeddable Schedule Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=schedule.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Schedule Page") ([schedule.md](https://github.com/hibbitts-design/docsify-this-lms-content-pages/blob/main/schedule.md))
+- [Embeddable Topics Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=topics.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Topics Page") ([topics.md](https://github.com/hibbitts-design/docsify-this-lms-content-pages/blob/main/topics.md))
+- [Embeddable Resources Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=resources.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Resource Page") ([resources.md](https://github.com/hibbitts-design/docsify-this-lms-content-pages/blob/main/resources.md))
+- [Embeddable Guide Page - using accordion format](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=ux-techniques-guide.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable UX Techniques Guide Page (using Accordion format)") ([ux-techniques-guide.md](https://github.com/hibbitts-design/docsify-this-lms-content-pages/blob/main/ux-techniques-guide.md))
+- [Embeddable Contact Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=contact.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Contact Page") ([contact.md](https://github.com/hibbitts-design/docsify-this-lms-content-pages/blob/main/contact.md))
 
 View an example Canvas LMS site using Docsify-This content at https://canvas.sfu.ca/courses/76692.
 
@@ -1828,7 +1835,7 @@ You can limit the domains which remote files can be rendered from by locating th
 
 ##### Advanced Customization
 
-If you want to further customize and control the presentation of your Markdown content, especially when rendering multiple page sites, you can install your own [Docsify Open Publishing Starter Kit](https://github.com/hibbitts-design/docsify-open-publishing-starter-kit) (that this hosted web app is based on) and store all Markdown files within that site. You can learn more about the capabilities of Docsify itself at [Docsify.js.org](https://docsify.js.org).
+If you want to further customize and control the display of your Markdown content, especially when rendering multiple page sites, you can install your own [Docsify Open Publishing Starter Kit](https://github.com/hibbitts-design/docsify-open-publishing-starter-kit) (that this hosted web app is based on) and store all Markdown files within that site. You can learn more about the capabilities of Docsify itself at [Docsify.js.org](https://docsify.js.org).
 
 Looking for some help with getting a Docsify custom-This instance up and running for your organization? Paul provides a range of professional services related to Docsify-This - [contact him to learn more](https://docsify-this.net/#/?id=contact-and-support).
 
@@ -1980,6 +1987,7 @@ An overview to self-publishing with Markdown using the open source project Docsi
 - [Understanding Path Handling in Docsify-This](/?id=understanding-path-handling-in-docsify-this)
 - [Matching Fonts with Your Destination Platform Content](/?id=matching-fonts-with-your-destination-platform-content)
 - [Displaying Markdown Content During a Presentation](/?id=displaying-markdown-content-during-a-presentation)
+- [Reducing Content Shift When Toggling the Sidebar](/?id=reducing-content-shift-when-toggling-the-sidebar)
 - [Providing a Page Table of Contents within a Smaller Area](/?id=providing-a-page-table-of-contents-within-a-smaller-area)
 - [Including Code Blocks](/?id=including-code-blocks)
 - [Displaying Images in a Grid](/?id=displaying-images-in-a-grid)
@@ -2020,12 +2028,27 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts
 
 ##### Displaying Markdown Content During a Presentation
 
-When presenting content to an audience, you can optimize display for better readability by adjusting font size, font family, content maximum width, and optionally enabling dark theme mode. For example, to display a specific section using a larger sans-serif font with white text on a dark background:  
-https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this/main&font-family=Open%20Sans,sans-serif&font-size=42px&header-weight=600&dark-mode=on#/?id=docsify-this-core-design-principles
+When presenting content to an audience, you can optimize display for better readability by adjusting font size, font family, content maximum width, and optionally enabling dark theme mode. For more interactive presentations, you can also include the Docsify Sidebar. For example, to display a specific section using a larger sans-serif font with white text on a dark background:  
+https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&font-family=Open%20Sans,sans-serif&font-size=36px&header-weight=600&dark-mode=on#/?id=introduction
 
-Once viewing the presented page, you can refine the left/right margins and spacing above any navigated to header by further adjusting content maximum width (`max-width`, default unit is % and the suggested value is 80) and optionally adding the URL parameter `topMargin` (default unit is px) to the Docsify-This URL:  
+Once viewing the presented page, you can refine the left/right margins and spacing above any navigated to header by further adjusting content maximum width (`max-width`, default unit is % and the suggested initial value is 80):  
 
-https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this/main&font-family=Open%20Sans,sans-serif&font-size=42px&header-weight=600&dark-mode=on&max-width=80&topMargin=20#/?id=docsify-this-core-design-principles
+https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&font-family=Open%20Sans,sans-serif&font-size=42px&header-weight=600&dark-mode=on&max-width=80#/?id=introduction
+
+You can also refine the `font-size` parameter for further adjusting the amount of text shown on the presented page.
+
+If you want to toggle the Docsify sidebar for navigation during your presentation, ensure the content width accounts for the sidebar display to prevent possible text reflow. For example, here is the sidebar included but initially closed, using the more consistent content width unit of characters (ch):  
+https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&font-family=Open%20Sans,sans-serif&font-size=36px&header-weight=600&dark-mode=on&max-width=50ch&sidebar=true&maxLevel=3&close-sidebar=true#/?id=introduction
+
+> [!TIP]
+> To scroll to specific section content to present, click on the nearest header and then bookmark the resulting Docsify-This page URL with the included anchor tag (like `#/?id=section-name` above), as shown in the above example URLs.
+
+##### Reducing Content Shift When Toggling the Sidebar
+
+When the sidebar toggles in desktop view, the content area width can change if the width of the sidebar and content area is wider than the current Browser window, causing text reflow. To prevent this, set the `max-width` parameter to match or be slightly less than the content width when the sidebar is visible.
+
+For example, to reduce the content width from the default 910px to minimize text repositioning when showing/hiding the sidebar:
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&sidebar=true&maxLevel=3&max-width=810px
 
 ##### Providing a Page Table of Contents within a Smaller Area
 

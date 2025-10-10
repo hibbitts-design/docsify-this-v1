@@ -124,10 +124,11 @@ Docsify-This provides a quick way to transform and style [Markdown content](http
 With Docsify-This you can:
 
 - Instantly publish online Markdown files as standalone web pages or even complete websites — no complex configuration required
+- Display existing Markdown content in a presentation-friendly style for workshops, courses, and online sessions
 - Maintain full control over your content by keeping files stored in their original locations, such as GitHub or Codeberg
 - Customize web pages with a point-and-click Web Page Builder, avoiding the need for technical expertise or custom development
 - Encourage collaboration with automatic ‘Edit this Page’ links for Markdown files hosted on GitHub or Codeberg, making it possible for collaborative authoring
-- Embed constraint-free Markdown/HTML seamlessly into other platforms (LMS, CMS, etc.), enabling flexible content presentation and cross-platform integration
+- Embed constraint-free Markdown/HTML seamlessly into other platforms (LMS, CMS, etc.), enabling flexible content display and cross-platform integration
 - Streamline content reuse by embedding Markdown files across platforms without duplication, reducing redundant workflows and boosting efficiency
 - Tailor the appearance of embedded content dynamically using URL parameters, adapting it to suit the look and feel of each destination platform
 
@@ -144,18 +145,19 @@ With Docsify-This you can:
 
 ---
 
-### When is Docsify-This a Good Candidate?
+#### When is Docsify-This a Good Candidate?
 
-#### Docsify-This often works really well when you:
+##### Docsify-This often works really well when you:
 - Want to embed the same content across multiple platforms (LMS, websites, etc.)
 - Need cross-platform content reuse (same content for web, mobile, PDF and eBook generation)
 - Want to publish open content quickly without technical setup
+- Need to present existing Markdown content for live audiences
 - Prefer minimal maintenance publishing (set it and forget it, no Webserver needed)
 - Value simple, portable Markdown files with platform independence
 - Are interested in using GitHub/Codeberg for version-control and collaboration
 - Are creating educational materials, documentation, or research content
 
-#### Other publishing tools might be better candidates when you:
+##### Other publishing tools might be better candidates when you:
 - Require SEO optimization and search engine discoverability
 - Need complex user management, approval workflows, or interactive features (contact forms, newsletters, user accounts)
 - Want rich media features (e-commerce, forums, booking systems) or extensive visual customization
@@ -267,11 +269,12 @@ Learn more about each of the basic Docsify-This URL parameters below, and discov
 **Basic URL Parameters (included in the standard Web Page Builder)**
 
 - [browser-tab-title](#browser-tab-title)
+- [close-sidebar](#close-sidebar)
 - [edit-link](#edit-link)
 - [edit-link-text](#edit-link-text)
 - [edit-link-top](#edit-link-top)
 - [font-family](#font-family)
-- [font-size](/#font-size)
+- [font-size](#font-size)
 - [header-weight](#header-weight)
 - [hide-credits](#hide-credits)
 - [hypothesis](#hypothesis)
@@ -280,7 +283,7 @@ Learn more about each of the basic Docsify-This URL parameters below, and discov
 - [link-color](#link-color)
 - [maxLevel](#maxLevel)
 - [searchbox](#searchbox)
-- [sidebar](/#sidebar)
+- [sidebar](#sidebar)
 - [toc](#toc)
 - [toc-headings](#toc-headings)
 - [toc-narrow](#toc-narrow)
@@ -289,8 +292,12 @@ Learn more about each of the basic Docsify-This URL parameters below, and discov
 ##### browser-tab-title
 
 Set a custom title on Browser tab for your web pages with the optional **browser-tab-title** parameter, for example:  
-https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main/docs&homepage=resources.md&browser-tab-title=Resources  
-Please note to use titles with spaces they must be [encoded](https://meyerweb.com/eric/tools/dencoder/), so "My Page" would be "My%20Page". Underscores may also be used to represent spaces.
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main/docs&homepage=resources.md&browser-tab-title=Resources. Please note to use titles with spaces they must be [encoded](https://meyerweb.com/eric/tools/dencoder/), so "My Page" would be "My%20Page". Underscores may also be used to represent spaces.
+
+##### close-sidebar
+
+Set the Docsify sidebar to start closed and auto-close after navigation with the optional **close-sidebar** parameter, for example:  
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&sidebar=true&close-sidebar=true
 
 ##### edit-link
 
@@ -300,8 +307,7 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-des
 ##### edit-link-text
 
 Change the default text for a "Edit this Page" link with the optional **edit-link-text** parameter, for example:  
-https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main&edit-link=https://github.com/hibbitts-design/docsify-open-publishing-starter-kit/blob/main/README.md&edit-link-text=View%20as%20Markdown  
-Please note to use text with spaces they must be [encoded](https://meyerweb.com/eric/tools/dencoder/), so "View as Markdown" would be "View%20as%20Markdown". Underscores may also be used to represent spaces.
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main&edit-link=https://github.com/hibbitts-design/docsify-open-publishing-starter-kit/blob/main/README.md&edit-link-text=View%20as%20Markdown. Please note to use text with spaces they must be [encoded](https://meyerweb.com/eric/tools/dencoder/), so "View as Markdown" would be "View%20as%20Markdown". Underscores may also be used to represent spaces.
 
 ##### edit-link-top
 
@@ -311,12 +317,12 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-des
 ##### font-family
 
 Set a custom font for your web pages with the optional **font-family** parameter, for example:  
-https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main/docs&homepage=resources.md&font-family=Helvetica,Arial,sans-serif. This parameter can be particularly valuable when trying to better match the visual presentation of embedded content with your destination platform. Please note to use fonts with spaces in their names they must be [encoded](https://meyerweb.com/eric/tools/dencoder/), so "Courier New" would be "Courier%20New". Underscores may also be used to represent spaces.
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main/docs&homepage=resources.md&font-family=Helvetica,Arial,sans-serif. This parameter can be particularly valuable when trying to better match the visual appearance of embedded content with your destination platform. Please note to use fonts with spaces in their names they must be [encoded](https://meyerweb.com/eric/tools/dencoder/), so "Courier New" would be "Courier%20New". Underscores may also be used to represent spaces.
 
 ##### font-size
 
 Set a custom font size for your web pages with the optional **font-size** parameter, for example:  
-https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main/docs&homepage=resources.md&font-size=16px. This parameter can be particularly valuable when trying to better match the visual presentation of embedded content with your destination platform.
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main/docs&homepage=resources.md&font-size=16px. This parameter can be particularly valuable when trying to better match the visual appearance of embedded content with your destination platform.
 
 ##### header-weight
 
@@ -535,8 +541,7 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-des
 ##### page-title
 
 Add a custom page title at the top of your web pages with the optional **page-title** parameter, for example:  
-https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/grav-skeleton-course-hub/refs/heads/master/pages/03.resources&homepage=page.md&page-title=Resources  
-Please note to use titles with spaces they must be [encoded](https://meyerweb.com/eric/tools/dencoder/), so "My Page" would be "My%20Page". Underscores may also be used to represent spaces.
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/grav-skeleton-course-hub/refs/heads/master/pages/03.resources&homepage=page.md&page-title=Resources. Please note to use titles with spaces they must be [encoded](https://meyerweb.com/eric/tools/dencoder/), so "My Page" would be "My%20Page". Underscores may also be used to represent spaces.
 
 ##### pagination
 
@@ -658,13 +663,13 @@ To use these templates you would generally do the following (template specific i
 
 To edit a file in GitHub, tap the **Pencil** icon (Edit file) in the upper-right when viewing the file, make your changes, and then tap the **Commit changes...** button to save those changes.
 
-**Available Docsify-This Markdown Templates**
+##### Available Docsify-This Markdown Templates
 
 - [One Page Article Template](#one-page-article-template)
 - [One Page Course Template](#one-page-course-template)
 - [Multiple Page Basic Site Template](#multiple-page-basic-site-template)
-- [Multiple Page Blog Style Site Template](#multiple-page-blog-style-site-template)  <span class="badge" style="--badge-bg-color: #22c55e;">NEW</span>
-- [Multiple Page Open Publishing Site Template](#multiple-page-open-publishing-site-template)  <span class="badge" style="--badge-bg-color: #22c55e;">NEW</span>
+- [Multiple Page Blog Style Site Template](#multiple-page-blog-style-site-template) <span class="badge" style="--badge-bg-color: #22c55e;">NEW</span>
+- [Multiple Page Open Publishing Site Template](#multiple-page-open-publishing-site-template) <span class="badge" style="--badge-bg-color: #22c55e;">NEW</span>
 - [Multiple Page Course Site Template](#multiple-page-course-site-template)
 - [LMS Content Pages Template](#lms-content-pages-template)
 
@@ -751,13 +756,13 @@ To edit a file in GitHub, tap the **Pencil** icon (Edit file) in the upper-right
 
 [LMS Content Pages Template](https://github.com/hibbitts-design/docsify-this-lms-content-pages) example pages, including the use of the `font-family`, `font-size` and `hide-credits` URL parameters for seamless content embedding within the Canvas LMS, as displayed by Docsify-This:
 
-- [Embeddable Home Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=home.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Home Page")
-- [Embeddable Weekly Module Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=module-01.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Weekly Module Page")
-- [Embeddable Schedule Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=schedule.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Schedule Page")
-- [Embeddable Topics Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=topics.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Topics Page")
-- [Embeddable Resources Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=resources.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Resource Page")
-- [Embeddable UX Techniques Guide Page (using Accordion format)](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=ux-techniques-guide.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable UX Techniques Guide Page (using Accordion format)")
-- [Embeddable Contact Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=contact.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Contact Page")
+- [Embeddable Home Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=home.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Home Page") ([home.md](https://github.com/hibbitts-design/docsify-this-lms-content-pages/blob/main/home.md))
+- [Embeddable Weekly Module Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=module-01.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Weekly Module Page") ([module-01.md](https://github.com/hibbitts-design/docsify-this-lms-content-pages/blob/main/module-01.md))
+- [Embeddable Schedule Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=schedule.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Schedule Page") ([schedule.md](https://github.com/hibbitts-design/docsify-this-lms-content-pages/blob/main/schedule.md))
+- [Embeddable Topics Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=topics.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Topics Page") ([topics.md](https://github.com/hibbitts-design/docsify-this-lms-content-pages/blob/main/topics.md))
+- [Embeddable Resources Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=resources.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Resource Page") ([resources.md](https://github.com/hibbitts-design/docsify-this-lms-content-pages/blob/main/resources.md))
+- [Embeddable Guide Page - using accordion format](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=ux-techniques-guide.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable UX Techniques Guide Page (using Accordion format)") ([ux-techniques-guide.md](https://github.com/hibbitts-design/docsify-this-lms-content-pages/blob/main/ux-techniques-guide.md))
+- [Embeddable Contact Page](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-lms-content-pages/main&homepage=contact.md&font-family=Lato%20Extended,%20Lato,Helvetica%20Neue,%20Helvetica,%20Arial,%20sans-serif&font-size=16px&hide-credits=true "Embeddable Contact Page") ([contact.md](https://github.com/hibbitts-design/docsify-this-lms-content-pages/blob/main/contact.md))
 
 View an example Canvas LMS site using Docsify-This content at https://canvas.sfu.ca/courses/76692.
 
@@ -1275,7 +1280,7 @@ You can limit the domains which remote files can be rendered from by locating th
 
 ##### Advanced Customization
 
-If you want to further customize and control the presentation of your Markdown content, especially when rendering multiple page sites, you can install your own [Docsify Open Publishing Starter Kit](https://github.com/hibbitts-design/docsify-open-publishing-starter-kit) (that this hosted web app is based on) and store all Markdown files within that site. You can learn more about the capabilities of Docsify itself at [Docsify.js.org](https://docsify.js.org).
+If you want to further customize and control the display of your Markdown content, especially when rendering multiple page sites, you can install your own [Docsify Open Publishing Starter Kit](https://github.com/hibbitts-design/docsify-open-publishing-starter-kit) (that this hosted web app is based on) and store all Markdown files within that site. You can learn more about the capabilities of Docsify itself at [Docsify.js.org](https://docsify.js.org).
 
 Looking for some help with getting a Docsify custom-This instance up and running for your organization? Paul provides a range of professional services related to Docsify-This - [contact him to learn more](https://docsify-this.net/#/?id=contact-and-support).
 
@@ -1427,6 +1432,7 @@ An overview to self-publishing with Markdown using the open source project Docsi
 - [Understanding Path Handling in Docsify-This](#understanding-path-handling-in-docsify-this)
 - [Matching Fonts with Your Destination Platform Content](#matching-fonts-with-your-destination-platform-content)
 - [Displaying Markdown Content During a Presentation](#displaying-markdown-content-during-a-presentation)
+- [Reducing Content Shift When Toggling the Sidebar](#reducing-content-shift-when-toggling-the-sidebar)
 - [Providing a Page Table of Contents within a Smaller Area](#providing-a-page-table-of-contents-within-a-smaller-area)
 - [Including Code Blocks](#including-code-blocks)
 - [Displaying Images in a Grid](#displaying-images-in-a-grid)
@@ -1467,12 +1473,27 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts
 
 ##### Displaying Markdown Content During a Presentation
 
-When presenting content to an audience, you can optimize display for better readability by adjusting font size, font family, content maximum width, and optionally enabling dark theme mode. For example, to display a specific section using a larger sans-serif font with white text on a dark background:  
-https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this/main&font-family=Open%20Sans,sans-serif&font-size=42px&header-weight=600&dark-mode=on#/?id=docsify-this-core-design-principles
+When presenting content to an audience, you can optimize display for better readability by adjusting font size, font family, content maximum width, and optionally enabling dark theme mode. For more interactive presentations, you can also include the Docsify Sidebar. For example, to display a specific section using a larger sans-serif font with white text on a dark background:  
+https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&font-family=Open%20Sans,sans-serif&font-size=36px&header-weight=600&dark-mode=on#/?id=introduction
 
-Once viewing the presented page, you can refine the left/right margins and spacing above any navigated to header by further adjusting content maximum width (`max-width`, default unit is % and the suggested value is 80) and optionally adding the URL parameter `topMargin` (default unit is px) to the Docsify-This URL:  
+Once viewing the presented page, you can refine the left/right margins and spacing above any navigated to header by further adjusting content maximum width (`max-width`, default unit is % and the suggested initial value is 80):  
 
-https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this/main&font-family=Open%20Sans,sans-serif&font-size=42px&header-weight=600&dark-mode=on&max-width=80&topMargin=20#/?id=docsify-this-core-design-principles
+https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&font-family=Open%20Sans,sans-serif&font-size=42px&header-weight=600&dark-mode=on&max-width=80#/?id=introduction
+
+You can also refine the `font-size` parameter for further adjusting the amount of text shown on the presented page.
+
+If you want to toggle the Docsify sidebar for navigation during your presentation, ensure the content width accounts for the sidebar display to prevent possible text reflow. For example, here is the sidebar included but initially closed, using the more consistent content width unit of characters (ch):  
+https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&font-family=Open%20Sans,sans-serif&font-size=36px&header-weight=600&dark-mode=on&max-width=50ch&sidebar=true&maxLevel=3&close-sidebar=true#/?id=introduction
+
+> [!TIP]
+> To scroll to specific section content to present, click on the nearest header and then bookmark the resulting Docsify-This page URL with the included anchor tag (like `#/?id=section-name` above), as shown in the above example URLs.
+
+##### Reducing Content Shift When Toggling the Sidebar
+
+When the sidebar toggles in desktop view, the content area width can change if the width of the sidebar and content area is wider than the current Browser window, causing text reflow. To prevent this, set the `max-width` parameter to match or be slightly less than the content width when the sidebar is visible.
+
+For example, to reduce the content width from the default 910px to minimize text repositioning when showing/hiding the sidebar:
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&sidebar=true&maxLevel=3&max-width=810px
 
 ##### Providing a Page Table of Contents within a Smaller Area
 
@@ -1702,7 +1723,7 @@ Use these pre-configured Web Page Builders that automatically apply the default 
 - [Moodle Config](http://load-moodle.docsify-this.net)
 - [Sakai Config](http://load-sakai.docsify-this.net)
 
-Each opens the Docsify-This Web Page Builder with fonts, colors, and sizing pre-set to seamlessly blend with your chosen platform.  
+Each opens the Docsify-This Web Page Builder with fonts, colors, and sizing pre-set to seamlessly blend with your chosen platform.
 
 ---
 
