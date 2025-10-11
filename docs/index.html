@@ -1152,14 +1152,6 @@
 
             if (window.$docsify['basePath']) {
 
-              // Close Sidebar based on URL parm
-              if (getURLParameterByName(['close-sidebar', 'closeSidebar'], null, null, window.location.href, true) === 'true') {
-                const sidebarToggle = document.querySelector('.sidebar-toggle');
-                if (sidebarToggle) {
-                  sidebarToggle.click();
-                }
-              }
-
               var htmlElement = document.createElement('div');
               htmlElement.innerHTML = html;
 
@@ -2252,6 +2244,19 @@
         if (!(isNaN(maxwidth))) {
           maxwidth += '%'; // Append '%' if no unit is provided
         }
+        
+        // Check if aside (ToC) is present and adjust for percentage values
+        const hasAside = getURLParameterByName(['toc', 'toc-narrow', 'tocNarrow'], null, null, window.location.href, true) === 'true';
+        
+        if (hasAside && maxwidth.endsWith('%')) {
+          const isNarrowToc = getURLParameterByName(['toc-narrow', 'tocNarrow'], null, null, window.location.href, true) === 'true';
+          let asideWidth = '440px'; // default to regular ToC
+          if (isNarrowToc) {
+            asideWidth = '280px';
+          }
+          maxwidth = `calc(${maxwidth} - ${asideWidth})`;
+        }
+        
         document.documentElement.style.setProperty('--content-max-width', maxwidth);
       }
 
@@ -2290,6 +2295,7 @@
             .sidebar { font-size: 18px !important; }
             .search kbd { font-size: 14px !important; }
             .sidebar .search h2 { font-size: 18px !important; }
+            .page_toc ul { font-size: 18px !important; }
         `;
         document.head.appendChild(fontCSS);
         document.addEventListener('DOMContentLoaded', function () {
