@@ -1713,16 +1713,26 @@ For example, the following URL will display the Advanced Web Page Builder, with 
 
 The quickest way to create such a shareable URL is to use the Docsify-This Web Page Builder to generate a Docsify-This web page URL, and then replace the URL parameter `basepath` with `url-field` using the full path of the source Markdown file URL. For example, the URL https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&sidebar=true&maxLevel=3 would be changed to https://docsify-this.net?url-field=https://github.com/hibbitts-design/docsify-this-one-page-article/blob/main/home.md&homepage=home.md&sidebar=true&maxLevel=3.
 
-##### Load and Go LMS Styling Configurations
+##### Load and Go Styling Configurations
 
-Use these pre-configured Web Page Builders that automatically apply the default styling for your Learning Management System:
+Use these pre-configured Web Page Builders that automatically apply optimal styling for specific contexts. Just paste your Markdown file URL and go - you can even bookmark these for instant reuse.  
 
-- [Brightspace Config](http://load-brightspace.docsify-this.net) 
-- [Canvas Config](http://load-canvas.docsify-this.net)
-- [Moodle Config](http://load-moodle.docsify-this.net)
-- [Sakai Config](http://load-sakai.docsify-this.net)
+**Presentations**  
+*Open Sans 36px, semi-bold headers, dark mode, and hidden credits*
 
-Each opens the Docsify-This Web Page Builder with fonts, colors, and sizing pre-set to seamlessly blend with your chosen platform.
+- Basic Presentation: [present.docsify-this.net](http://present.docsify-this.net) → *80% width*
+- Presentation with Docsify Sidebar for Navigation (auto-closes): [present-nav.docsify-this.net](http://present-nav.docsify-this.net) → *55ch width, navigation up to H3*
+
+**Learning Management Systems**  
+*Visually styled for seamless embedding with full-width layout, platform-matched fonts and colors, hidden credits, and links with underline on hover*
+
+- Brightspace: [brightspace.docsify-this.net](http://brightspace.docsify-this.net) → *Lato Extended 19px, #006fbf links (hover: #050077)*
+- Canvas: [canvas.docsify-this.net](http://canvas.docsify-this.net) → *Lato Extended 16px, #0374B5 links*
+- Moodle: [moodle.docsify-this.net](http://moodle.docsify-this.net) → *System-UI 15px, #0f6cbf links (hover: #0C5699)*
+- Sakai: [sakai.docsify-this.net](http://sakai.docsify-this.net) → *Open Sans 14px, #0b1660 links (hover: #091242)*
+
+> [!TIP]
+> After loading any of these configs, you can further modify the generated URL by manually editing URL parameters like `&font-size=32px` or `&link-color=CC0000`. Bookmark your customized URL to create your own personal Load and Go configuration. For example, to make Basic Presentation use 32px fonts instead of 36px, just change `&font-size=36px` to `&font-size=32px` in the URL, reload the Docsify-This page and tap **Publish as a Web Page** button to view the final results.
 
 ---
 
