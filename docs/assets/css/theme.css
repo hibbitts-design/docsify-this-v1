@@ -1534,9 +1534,24 @@ input[type="url"]:focus {
 
 #docsifythisurlfield {
   width: 100%;
-  vertical-align: middle;
-  padding: min(15px, 5%) min(15px, 5%);
+  padding: 14px 12px;
   font-size: 22px;
+  line-height: 1.6;
+  box-sizing: border-box;
+  resize: none;
+  overflow: hidden;
+  
+  /* Auto-sizing for modern browsers */
+  field-sizing: content;
+  min-height: 72px;
+}
+
+/* Firefox: fixed comfortable height */
+@supports not (field-sizing: content) {
+  #docsifythisurlfield {
+    height: 106px;
+    overflow-y: auto;
+  }
 }
 
 span #docsifythisurlfield {
