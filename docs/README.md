@@ -1,14 +1,14 @@
 <div id="docsifythis">
 
 <div class="docsifythisheader">
-<div style="margin-bottom:6px; margin-right:-6px; text-align:right;"><a class="navpill" href="https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this/main&homepage=README.md&edit-link=https://github.com/hibbitts-design/docsify-this/blob/main/README.md&sidebar=true&searchbox=true&browser-tab-title=Docsify-This%20ReadMe&edit-link-text=Suggest%20an%20Edit%20on%20GitHub&maxLevel=4&header-weight=600&zoom-images=true&dark-mode=auto&code-copy=true" target="_blank"><i class="fas fa-book-open fa-fw" style="margin-right:2px;"></i>Docsify-This ReadMe Docs</a><a class="navpill" href="https://discord.gg/docsify" target="_blank"><i class="fab fa-discord fa-fw" style="margin-right:2px;"></i>Docsify Discord Chat</a><a class="navpill" href="https://github.com/hibbitts-design/docsify-this" target="_blank"><i class="fab fa-github fa-fw" style="margin-right:2px;"></i>GitHub</a></div>
+<div style="margin-bottom:6px; margin-right:-6px; text-align:right;"><a class="navpill" href="https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this/main&homepage=README.md&edit-link=https://github.com/hibbitts-design/docsify-this/blob/main/README.md&sidebar=true&searchbox=true&browser-tab-title=Docsify-This%20ReadMe&edit-link-text=Suggest%20an%20Edit%20on%20GitHub&maxLevel=4&header-weight=600&zoom-images=true&dark-mode=auto&code-copy=true&page-copy-button=true" target="_blank"><i class="fas fa-book-open fa-fw" style="margin-right:2px;"></i>Docsify-This ReadMe Docs</a><a class="navpill" href="https://discord.gg/docsify" target="_blank"><i class="fab fa-discord fa-fw" style="margin-right:2px;"></i>Docsify Discord Chat</a><a class="navpill" href="https://github.com/hibbitts-design/docsify-this" target="_blank"><i class="fab fa-github fa-fw" style="margin-right:2px;"></i>GitHub</a></div>
   <div class="logoandtext">
     <img src='https://raw.githubusercontent.com/hibbitts-design/docsify-this/main/docs/images/icon.svg' alt='Docsify Logo' />
     <h1>Docsify&#8288;&#8211;&#8288;This</h1>
   </div>
 </div>
 
-<div id="banner">
+<div id="banner" style="display: none;">
 <div style="background: linear-gradient(to right, #e8f5e8 0%, #d4edd6 100%); border: 1px solid #a8c4aa; border-radius: 12px; padding: 16px; margin: 20px 0; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);">
   <div style="flex: 1;">
     <strong style="color: #57985e;">Docsify-This v2.0 Preview is now available!</strong>
@@ -177,9 +177,11 @@ Page layout:
 
 <hr>
 
-<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="imageCaptions" unchecked><label for="imageCaptions">Show alternative text of images as captions</label></div>
+<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="pageCopyButton"/><label for="pageCopyButton">Include Copy Page button for accessing Markdown content</label></div>
 
 <div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="zoomimages" unchecked><label for="zoomimages">Enable zoomable page images (tapping on images to enlarge them)</label></div>
+
+<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="imageCaptions" unchecked><label for="imageCaptions">Show alternative text of images as captions</label></div>
 
 <hr>
 
@@ -371,9 +373,9 @@ Page layout:
 
 ### Quickstart ⚡
 
-1. **Have a Markdown file online?** GitHub, Codeberg, or a public raw Markdown file works
-1. Visit the location of your file and **copy the file URL**
-1. Return here and **paste that URL** into the above Markdown File URL field
+1. **Have a Markdown file online?** GitHub, Codeberg, or any public Markdown file works
+1. Visit the location of your file and **copy the URL from your browser's address bar**
+1. Return here and **paste that URL** into the above Markdown File URL field (e.g., `https://github.com/username/repo/blob/main/filename.md`)
 1. Choose a **Page layout** (try **Docsify Sidebar** for enhanced navigation)
 1. Tap on the link  **Show More Page Appearance Options »** and select from available choices
 1. Tap on the button **Publish as Web Page**
@@ -515,6 +517,9 @@ Docsify-This is a customized Docsify Open Publishing Starter Kit site configured
 The **basePath** Docsify parameter is the URL path containing the raw source Markdown file to render. If the file is named the expected default **README.md** then no other parameter are required, otherwise the **homepage** Docsify parameter must also be included set to the name of the file to render. An example Docsify-This URL would be:
 https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md
 
+> [!NOTE]
+> When using the Docsify-This Web Page Builder, a regular GitHub or Codeberg file URL (e.g. https://github.com/username/repo/blob/main/README.md) is recommended for convenience, though raw URLs (e.g. https://raw.githubusercontent.com/username/repo/main/README.md) are also fully supported. If you are manually constructing a Docsify-This URL (bypassing the Web Page Builder) to render a public GitHub file, you must use its raw source URL, obtainable by tapping the Raw button when viewing a file.
+
 Docsify-This can render files from anywhere that the content of a Markdown file can be viewed within a web browser, including:
 
 - [GitHub.com](https://github.com/)(recommended) or [Codeberg.org](https://codeberg.org/) repository
@@ -618,6 +623,7 @@ Learn more about each of the basic Docsify-This URL parameters below, and discov
 - [line-height](/?id=line-heightconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
 - [link-color](/?id=link-colorconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
 - [maxLevel](/?id=maxLevelconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
+- [page-copy-button](/?id=page-copy-buttonconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
 - [searchbox](/?id=searchboxconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
 - [sidebar](/?id=sidebarconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
 - [toc](/?id=tocconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
@@ -694,6 +700,11 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-des
 
 Set the maximum header level of the Docsify sidebar with the optional **maxLevel** Docsify parameter, for example:  
 https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-publishing-starter-kit/main/docs&homepage=introduction.md&sidebar=true&maxLevel=3
+
+##### page-copy-button<button type="button" class="copy-link" aria-label="Copy back-link parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&page-copy-button=').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
+
+Include a copy page menu, with the choices to directly copy or view page source Markdown, at the top right of your web pages with the optional page-copy-button parameter, for example:  
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&page-copy-button=true. To not include the choice for LLM discussion, use `page-copy-button=nollm`.
 
 ##### searchbox<button type="button" class="copy-link" aria-label="Copy searchbox parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&searchbox=true').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
@@ -897,6 +908,13 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-des
 
 #### Loading Web Page Builder Configurations
 
+To pre-load the Docsify-This Web Page Builder with specific options, use the `url-field` parameter along with your desired configuration parameters. This allows you to share a pre-configured builder that others can use by simply clicking "Publish as Web Page".
+
+Basic format:
+```html
+https://docsify-this.net?url-field=https://github.com/username/repo/blob/main/filename.md&sidebar=true&searchbox=true
+```
+
 You can load specific configurations in the Docsify-This Web Page Builder by also using URL parameters. This ability can be helpful in a range of situations, including producing multiple web pages/sites with consistent styling and facilitating support and collaboration among Docsify-This users.
 
 - [Preset Load and Go Styling Configurations](/?id=preset-load-and-go-styling-configurations)
@@ -928,12 +946,20 @@ Use these preset Web Page Builder configurations that automatically apply optima
 Along with the standard Docsify-This URL parameters, the Web Page Builder also offers the following specific parameters for creating custom configurations:
 
 ##### url-field
+
+To pre-fill the Web Page Builder with a specific URL, use the `url-field` parameter, for example:
+
 ```html
-https://preview-v2.docsify-this.net?url-field=https://codeberg.org/paulhibbitts/docsify-this-one-page-course/src/branch/main/home.md
+https://docsify-this.net?url-field=https://codeberg.org/paulhibbitts/docsify-this-one-page-course/src/branch/main/home.md
 ```
+
+To clear the default Markdown file URL field, use the value of `empty`.
+
 ```html
-https://preview-v2.docsify-this.net?url-field=empty
+https://docsify-this.net?url-field=empty
 ```
+
+**Note:** The `url-field` parameter is used only for pre-populating the Web Page Builder form. Once you click "Publish as Web Page", the resulting URL will use `basePath` and `homepage` parameters for the rendered page.
 
 ?> You can even just type **docsify-this.net?** in front of an online Markdown file URL that you are viewing (such as files hosted on GitHub, Codeberg, or raw source files) to instantly set up the Docsify-This Web Page Builder with that file. Once the Web Page Builder loads, press the Return key — no need to leave the keyboard — to see Docsify-This display the Markdown file as a web page! For example, `https://preview-v2.docsify-this.net?https://github.com/hibbitts-design/docsify-this-one-page-course/blob/main/home.md`.
 
@@ -2149,16 +2175,16 @@ function test() {
 If the source images are of different sizes, whitespace (padding) will be added to the sides or top/bottom to fill the space rather than cropping images.  
 
 Change the number of columns (default is 3) with the optional **image-grid-columns** parameter, for example:  
-https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts/Markdown-File-Tests/main&homepage=image-grid.md&image-grid-columns=4
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts/markdown-file-examples/main&homepage=image-grid.md&image-grid-columns=4
 
 To accomodate a larger number of columns, the optional **image-grid-minWidth** parameter (default is 200px) can be adjusted, for example:  
-https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts/Markdown-File-Tests/main&homepage=image-grid.md&image-grid-columns=6&image-grid-minWidth=100
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts/markdown-file-examples/main&homepage=image-grid.md&image-grid-columns=6&image-grid-minWidth=100
 
 Use with the optional **zoom-images** parameter for the ability to view unlinked images at a larger size, for example:  
-https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts/Markdown-File-Tests/main&homepage=image-grid.md&image-grid-columns=4&zoom-images=true
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts/markdown-file-examples/main&homepage=image-grid.md&image-grid-columns=4&zoom-images=true
 
 Use the optional **image-captions** parameter to display alt text below images, for example:  
-https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts/Markdown-File-Tests/main&homepage=image-grid.md&image-grid-columns=4&zoom-images=true&image-captions=true&image-captions-text-align=center&image-captions-font-style=normal
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/paulhibbitts/markdown-file-examples/main&homepage=image-grid.md&image-grid-columns=4&zoom-images=true&image-captions=true&image-captions-text-align=center&image-captions-font-style=normal
 
 ##### Embedding a Responsive Docsify-This Page in HTML
 
@@ -2204,7 +2230,7 @@ The content of external Markdown files can be embedded into Docsify-This web pag
 ```
 
 ```markdown
-[included Markdown from URL](https://raw.githubusercontent.com/paulhibbitts/Markdown-File-Tests/main/itworks.md ":include")
+[included Markdown from URL](https://raw.githubusercontent.com/paulhibbitts/markdown-file-examples/main/itworks.md ":include")
 ```
 
 For additional examples of including external content, view [Docsify Embeded Files](https://docsify.js.org/#/embed-files?id=embed-files).
