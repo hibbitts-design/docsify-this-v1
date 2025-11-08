@@ -8,7 +8,7 @@
   </div>
 </div>
 
-<div id="banner" style="display: none;">
+<div id="banner" style="display: block;">
 <div style="background: linear-gradient(to right, #e8f5e8 0%, #d4edd6 100%); border: 1px solid #a8c4aa; border-radius: 12px; padding: 16px; margin: 20px 0; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);">
   <div style="flex: 1;">
     <strong style="color: #57985e;">Docsify-This v2.0 Preview is now available!</strong>
@@ -389,7 +389,9 @@ https://github.com/hibbitts-design/markdown/blob/main/ReadMe.md
 [See the above ReadMe file displayed with Docsify Sidebar and a searchbox, using the Merriweather font →](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/markdown/main&homepage=ReadMe.md&sidebar=true&font-family=Merriweather,Georgia,serif&searchbox=true&dark-mode=auto ':target=_blank')
 
 > [!TIP]
-> New to Markdown publishing? Check out the [Markdown Publishing with Docsify-This](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/publishing-with-docsify-this/main&sidebar=true&searchbox=true&edit-link=https://github.com/hibbitts-design/publishing-with-docsify-this/blob/main/README.md&maxLevel=3&browser-tab-title=Markdown%20Publishing%20with%20Docsify-This&header-weight=600&dark-mode=auto&code-copy=true) guide for step-by-step introduction.
+> **New to Docsify-This?** Try our interactive [Leap into Open Publishing with Docsify-This](https://preview.docsify-this.net/?basePath=https://raw.githubusercontent.com/paulhibbitts/published-markdown-files/main&homepage=leap-into-open-publishing-standalone-guide.md&edit-link=https://github.com/paulhibbitts/published-markdown-files/blob/main/leap-into-open-publishing-standalone-guide.md&edit-link-text=View%20Source%20Markdown%20File&edit-link-emoji=:page_facing_up:&browser-tab-title=Leap%20into%20Open%20Publishing&sidebar=true&maxLevel=2&font-family=Open%20Sans,sans-serif&header-weight=600&dark-mode=auto#/) guide with brief hands-on challenges that can get you publishing styled web page in less than 20 minutes!
+> 
+> **Wanting more complete coverage?** Check out the [Markdown Publishing with Docsify-This](https://preview.docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/publishing-with-docsify-this/main&sidebar=true&searchbox=true&edit-link=https://github.com/hibbitts-design/publishing-with-docsify-this/blob/main/README.md&maxLevel=3&browser-tab-title=Markdown%20Publishing%20with%20Docsify-This&header-weight=600&dark-mode=auto&code-copy=true#/) guide for step-by-step instructions and more advanced workflows.
 
 ## Everything You Need to Know about Docsify-This
 

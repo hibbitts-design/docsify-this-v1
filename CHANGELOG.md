@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.10.8] - XX/XX/2025
+## [1.10.8] - 11/XX/2025
 
 **New:**
 * Added value and unit fields for max width in Web Page Builder (in addition to URL parameter `max-width`)
@@ -16,10 +16,12 @@
 * Automatically adjust topMargin when max-width is a percentage
 * Keep sidebar font to default font size
 * Updated pre-configured styles to support presentation defaults
+* Delay visibility of Sidebar for better visual experience during delayed page loads
 
 **Bugfix:**
 * Added missing 600 weight Open Sans font
 * Adjusted behavior of `dark-mode=true` to match `dark-mode=on`
+* Support use of underlines when preloading Web Page Builder text fields
 
 ## [1.10.7] - 10/01/2025🎃
 

@@ -59,6 +59,14 @@
   <script src="assets/vendor/coloris/coloris.min.js"></script>
 
   <style>
+
+    /* Override Sidebar initial visibility via CSS for delayed Markdown page load */
+    #__sidebar:not(.loaded),
+    .sidebar-toggle:not(.loaded) {
+      visibility: hidden;
+      opacity: 0;
+    }
+
     :root {
       --base-font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
 
@@ -902,7 +910,7 @@
       // Update link colors based on current theme mode
       const darkModeEnabled = getURLParameterByName(['dark-mode', 'darkMode'], null, null, window.location.href, true) || darkmode;
 
-      if ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && (darkModeEnabled === 'auto' || darkModeEnabled === 'true')) || darkModeEnabled === 'on') {
+      if (((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches || darkModeEnabled === 'true') && (darkModeEnabled === 'auto' || darkModeEnabled === 'true' || darkModeEnabled === 'on'))) {
         // dark mode
         const linkColorDarkMode = getURLParameterByName(['link-color-dark-mode', 'linkColorDarkMode'], null, null, window.location.href, true);
 
@@ -1486,15 +1494,23 @@
           // Invoked on each page load after new HTML has been appended to the DOM
           hook.doneEach(function () {
             if (window.$docsify['basePath']) {
+
+              // Restore Sidebar visibility
+              const sidebar = document.getElementById('__sidebar');
+              const toggle = document.querySelector('.sidebar-toggle');
+              
+              if (sidebar) sidebar.classList.add('loaded');
+              if (toggle) toggle.classList.add('loaded');
+
               const docHead = document.head;
               const docBody = document.body;
 
               // Close Sidebar - handle page-to-page navigation if URL parameter is present
               if (getURLParameterByName(['close-sidebar', 'closeSidebar'], null, null, window.location.href, true) === 'true') {
                 const sidebarToggle = document.querySelector('.sidebar-toggle');
-                const sidebar = document.querySelector('.sidebar');
                 
-                if (sidebar && !sidebar.classList.contains('close') && sidebarToggle && window.innerWidth > 640) {
+                console.log(window.innerWidth);
+                if ((sidebarToggle && sidebarToggle.getAttribute('aria-expanded') === 'true' && window.innerWidth >= 768) || (sidebarToggle && sidebarToggle.getAttribute('aria-expanded') === 'false' && window.innerWidth < 768)) {
                   sidebarToggle.click();
                 }
               }
@@ -1700,9 +1716,9 @@
                     lastHash = currentHash;
                     
                     const sidebarToggle = document.querySelector('.sidebar-toggle');
-                    const sidebar = document.querySelector('.sidebar');
-                    
-                    if (sidebar && !sidebar.classList.contains('close') && sidebarToggle && window.innerWidth > 640) {
+                    console.log(window.innerWidth);
+                    // Only close if sidebar is currently expanded (visible)
+                    if ((sidebarToggle && sidebarToggle.getAttribute('aria-expanded') === 'true' && window.innerWidth >= 768) || (sidebarToggle && sidebarToggle.getAttribute('aria-expanded') === 'false' && window.innerWidth < 768)) {
                       sidebarToggle.click();
                     }
                   }
@@ -1807,6 +1823,7 @@
 
             browserTabTitle = getURLParameterByName(['browser-tab-title', 'browserTabTitle'], null, null, window.location.href, true);
             if (browserTabTitle) {
+              browserTabTitle = browserTabTitle.replaceAll('_', ' ');
               document.getElementById('browserTabTitle').value = decodeURI(browserTabTitle);
             }
 
@@ -1837,6 +1854,7 @@
 
             editLinkText = getURLParameterByName(['edit-link-text', 'editLinkText'], null, null, window.location.href, true);
             if (editLinkText) {
+              editLinkText = editLinkText.replaceAll('_', ' ');
               document.getElementById('editLinkText').value = decodeURI(editLinkText);
             }
 
@@ -1885,6 +1903,7 @@
 
             pageTitle = getURLParameterByName(['page-title', 'pageTitle'], null, null, window.location.href, true);
             if (pageTitle) {
+              pageTitle = pageTitle.replaceAll('_', ' ');
               document.getElementById('pageTitle').value = decodeURI(pageTitle);
             }
 
@@ -1966,6 +1985,7 @@
 
             siteName = getURLParameterByName('name', null, null, window.location.href, true);
             if (siteName) {
+              siteName = siteName.replaceAll('_', ' ');
               document.getElementById("siteName").value = siteName;
             }
 
