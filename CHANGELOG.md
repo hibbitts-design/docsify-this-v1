@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.10.9] - XX/XX/2025
+
+**Improved:**
+* Hide empty rows in responsive tables
+* Left align rows in responsive tables
+* Support nested properties via URL parameters
+* Updated ReadMe
+
+**Bugfix:**
+* Accommodate legacy use of default font sizes being in rem units
+
 ## [1.10.8] - 11/24/2025
 
 **New:**
