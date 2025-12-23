@@ -100,6 +100,9 @@
 
       --blockquote-border-color: #757b7f;
 
+      --sidebar-background: #FCFCFC;
+      --sidebar-border-color: #F0F0F0;
+      --sidebar-toggle-background: #F0F0F0;
       --sidebar-name-color: #0374B5;
       --sidebar-name-font-weight: 600;
       --sidebar-nav-link-color--active: #0374B5;
@@ -900,17 +903,17 @@
       document.documentElement.style.setProperty('--cover-button-primary-border', '1px solid ' + color);
       document.documentElement.style.setProperty('--cover-button-color', color);
       document.documentElement.style.setProperty('--cover-button-border', '1px solid ' + color);
-      document.documentElement.style.setProperty('--sidebar-nav-pagelink-background--active', 'no-repeat 0px center / 5px 6px linear-gradient(225deg, transparent 2.75px, ' + color + ' 2.75px 4.25px, transparent 4.25px), no-repeat 5px center / 5px 6px linear-gradient(135deg, transparent 2.75px, ' + color + ' 2.75px 4.25px, transparent 4.25px)');
-      document.documentElement.style.setProperty('--sidebar-nav-pagelink-background--collapse', 'no-repeat 2px calc(50% - 2.5px) / 6px 5px linear-gradient(45deg, transparent 2.75px, ' + color + ' 2.75px 4.25px, transparent 4px), no-repeat 2px calc(50% + 2.5px) / 6px 5px linear-gradient(135deg, transparent 2.75px, ' + color + ' 2.75px 4.25px, transparent 4px)');
-      document.documentElement.style.setProperty('--sidebar-nav-pagelink-background--loaded', 'no-repeat 0px center / 5px 6px linear-gradient(225deg, transparent 2.75px, ' + color + ' 2.75px 4.25px, transparent 4.25px), no-repeat 5px center / 5px 6px linear-gradient(135deg, transparent 2.75px, ' + color + ' 2.75px 4.25px, transparent 4.25px)');
     }
 
     function updateThemeModeLinkColors() {
       // Update link colors based on current theme mode
       const darkModeEnabled = getURLParameterByName(['dark-mode', 'darkMode'], null, null, window.location.href, true) || darkmode;
 
-      if (((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches || darkModeEnabled === 'true') && (darkModeEnabled === 'auto' || darkModeEnabled === 'true' || darkModeEnabled === 'on'))) {
+      if ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && darkModeEnabled === 'auto') || darkModeEnabled === 'true' || darkModeEnabled === 'on') {
         // dark mode
+        document.documentElement.style.setProperty('--sidebar-background', 'var(--mono-shade1)');
+        document.documentElement.style.setProperty('--sidebar-border-color', 'var(--mono-tint1');
+        document.documentElement.style.setProperty('--sidebar-toggle-background', 'var(--mono-tint1');
         const linkColorDarkMode = getURLParameterByName(['link-color-dark-mode', 'linkColorDarkMode'], null, null, window.location.href, true);
 
         if (linkColorDarkMode !== false) {
@@ -940,6 +943,9 @@
         }
       } else {
         // light mode
+        document.documentElement.style.setProperty('--sidebar-background', '#FCFCFC');
+        document.documentElement.style.setProperty('--sidebar-border-color', '#F0F0F0');
+        document.documentElement.style.setProperty('--sidebar-toggle-background', '#F0F0F0');
         const linkColor = getURLParameterByName(['link-color', 'linkColor'], null, null, window.location.href, true);
 
         document.documentElement.style.setProperty('--cover-button-primary-color', '#FFFFFF');
@@ -2364,8 +2370,6 @@
       if (!(fontfamily === false)) {
         fontfamily = fontfamily.replaceAll('_', ' ');
         document.documentElement.style.setProperty('--base-font-family', fontfamily);
-      } else {
-        document.documentElement.style.setProperty('--base-font-family', '"Source Sans Pro","Helvetica Neue",sans-serif');
       }
 
       // Change body font size if fontSize parameter present
@@ -2385,7 +2389,7 @@
 
         // Only apply sidebar/ToC adjustments if font size is 24px or larger
         const numericFontSize = parseFloat(fontsize);
-        if (numericFontSize >= 24) {
+        if (numericFontSize > 18) {
           document.documentElement.style.setProperty('--sidebar-width', '306px');
           document.documentElement.style.setProperty('--sidebar-name-font-size', '24px');
 
@@ -2395,6 +2399,7 @@
               .search kbd { font-size: 14px !important; }
               .sidebar .search h2 { font-size: 18px !important; }
               .page_toc ul { font-size: 18px !important; }
+              .app-nav { font-size: 18px !important; }
           `;
           document.head.appendChild(fontCSS);
 
