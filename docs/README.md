@@ -1,3 +1,22 @@
+<style>
+html {
+  background: linear-gradient(135deg, #f8fafd 0%, #eef3ff 100%);
+  background-attachment: fixed;
+  min-height: 100%;
+}
+
+body {
+  background: transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background: linear-gradient(135deg, #0f1318 0%, #1a2230 100%);
+    background-attachment: fixed;
+  }
+}
+</style>
+
 <div id="docsifythis">
 
 <div class="docsifythisheader">
@@ -9,7 +28,7 @@
 </div>
 
 <div id="banner" style="display: block;">
-<div style="background: linear-gradient(to right, #e8f5e8 0%, #d4edd6 100%); border: 1px solid #a8c4aa; border-radius: 12px; padding: 16px; margin: 20px 0; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);">
+<div style="background: linear-gradient(to right, #e8f5e8 0%, #d4edd6 100%); border: 1px solid #a8c4aa; border-radius: 12px; padding: 16px; margin: 20px 0; display: flex; align-items: center; gap: 12px;">
   <div style="flex: 1;">
     <strong style="color: #57985e;">Docsify-This v2.0 Preview is now available!</strong>
     <div style="color: #475569; margin-top: 2px; font-size: 18px; display: block;">
@@ -109,6 +128,7 @@ Page layout:
    <option value="Arial,sans-serif">Arial, sans-serif</option>
    <option value="Helvetica,sans-serif">Helvetica, sans-serif</option>
    <option value="Helvetica%20Neue,Helvetica,Arial,sans-serif">Helvetica Neue, sans-serif</option>
+   <option value="Inter,sans-serif">Inter, sans-serif</option>
    <option value="Lato%20Extended,Lato,Helvetica%20Neue,Helvetica,Arial,sans-serif">Lato, sans-serif</option>
    <option value="Open%20Sans,sans-serif">Open Sans, sans-serif</option>
    <option value="system-ui,sans-serif">System UI, sans-serif</option>
