@@ -42,7 +42,7 @@ body {
       <span class="hide-on-mobile">Built with the latest Docsify v5.0 release candidate and featuring a refreshed UI.</span>
     </div>
   </div>
-  <a href="https://preview-v2.docsify-this.net" style="background: #57985e; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; white-space: nowrap; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); transition: all 0.2s ease;">Explore v2.0</a>
+  <a href="https://preview-v2.docsify-this.net" style="background: #57985e; white-space: normal; overflow-wrap: break-word; word-break: break-word; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; white-space: nowrap; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); transition: all 0.2s ease;">Explore v2.0</a>
 </div>
 </div>
 
@@ -89,19 +89,19 @@ Page layout:
 <label>
   <input type="radio" name="pagestyle" id="stylecontentonly" aria-label="Page Content Only" checked>
   <img style="padding: 1px;" src="images/contentonly.png" alt="Page Content Only">
-  <figcaption id="caption">Content Only</figcaption>
+  <figcaption style="overflow-wrap: break-word; word-break: break-word; hyphens: auto; text-align: left;" id="caption">Content Only</figcaption>
 </label>
 
 <label>
   <input type="radio" name="pagestyle" id="styletoc" aria-label="Page with Table of Contents">
   <img style="padding: 1px;" src="images/toc.png" alt="Page with Table of Contents">
-  <figcaption id="caption">Table of Contents</figcaption>
+  <figcaption style="overflow-wrap: break-word; word-break: break-word; hyphens: auto; text-align: left;" id="caption">Table of Contents</figcaption>
 </label>
 
 <label>
   <input type="radio" name="pagestyle" id="stylesidebar" aria-label="Page with Docsify Sidebar (collapsible)">
   <img style="padding: 1px;" src="images/sidebar.png" alt="Page with Docsify Sidebar (collapsible)">
-  <figcaption id="caption">Docsify Sidebar</figcaption>
+  <figcaption style="overflow-wrap: break-word; word-break: break-word; hyphens: auto; text-align: left;" id="caption">Docsify Sidebar</figcaption>
 </label>
 
 </div>
@@ -385,7 +385,7 @@ Page layout:
 
 </div>
 
-<div id="docsifythisurlbuilderrestoredefaultsbutton"><input style="color: #323232;" type="button" id="btn_4" value="Reset to Defaults" onclick="restoreAllDefaults()"/></div>
+<div id="docsifythisurlbuilderrestoredefaultsbutton"><input style="color: #323232; white-space: normal; overflow-wrap: break-word; word-break: break-word;" type="button" id="btn_4" value="Reset to Defaults" onclick="restoreAllDefaults()"/></div>
 
 </div>
 
