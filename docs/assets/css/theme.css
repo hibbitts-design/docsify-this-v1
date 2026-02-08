@@ -1567,6 +1567,7 @@ body .docsify-pagination-container {
 }
 
 /* DOCSIFY THIS */
+/* Original CSS updated with assistance from Anthropic Claude and Kimi 2.5 AI */
 
 :root {
   /* Light Mode */
@@ -1575,62 +1576,68 @@ body .docsify-pagination-container {
   --dt-link-color: #4f46e5;
   --dt-link-hover-bg: rgba(79, 70, 229, 0.08);
   --dt-coverpage-color: #6c8a9a;
-  
+
   /* Dark Mode - Blue links, Purple UI */
   --dt-link-color-dark: #60a5fa;
   --dt-coverpage-color-dark: #5a7a8a;
-  
+
   /* Backgrounds */
-  --dt-bg-gradient: linear-gradient(to right, #f8fafc 0%, #f1f5f9 100%);
-  --dt-bg-gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  
+  --dt-page-bg: #f8fafc;
+  --dt-page-bg-dark: #0f172a;
+
+  /* Card/Builder */
+  --dt-card-bg: #fafbfc;
+  --dt-card-bg-dark: #1e293b;
+  --dt-card-shadow: 0 2px 16px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --dt-card-shadow-dark: 0 4px 24px rgba(0, 0, 0, 0.4);
+
   /* Text */
   --dt-text-primary: #0f172a;
   --dt-text-primary-dark: #f1f5f9;
   --dt-text-secondary: #334155;
   --dt-text-secondary-dark: #94a3b8;
-  
+
   /* Borders */
   --dt-border-color: #e2e8f0;
   --dt-border-color-dark: #334155;
   --dt-border-color-darker: #1e293b;
   --dt-border-color-outline-dark: #64748b;
-  
+
   /* Inputs */
   --dt-input-bg: #ffffff;
   --dt-input-bg-dark: #1e293b;
   --dt-input-height: 2rem;
   --dt-input-border-radius: 6px;
-  
+
   /* Shadows */
   --dt-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --dt-shadow-sm-dark: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   --dt-focus-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
   --dt-focus-shadow-dark: 0 0 0 3px rgba(129, 140, 248, 0.25);
-  
+
   /* Spacing */
   --dt-spacing-xs: 4px;
   --dt-spacing-sm: 8px;
   --dt-spacing-md: 16px;
   --dt-spacing-lg: 40px;
-  
+
   /* Typography */
   --dt-font-size-base: 22px;
   --dt-font-size-sm: 18px;
-  
+
   /* Radius */
   --dt-radius-sm: 4px;
   --dt-radius-md: 6px;
   --dt-radius-lg: 8px;
   --dt-radius-xl: 12px;
   --dt-radius-pill: 9999px;
-  
+
   /* Header */
   --dt-logo-height: 45px;
   --dt-logo-height-mobile: 35px;
   --dt-header-font-size: 2.25rem;
   --dt-header-font-size-mobile: 1.8rem;
-  
+
   /* Button */
   --dt-button-width: 260px;
   --dt-button-padding: 10px;
@@ -1642,11 +1649,13 @@ body .docsify-pagination-container {
     clear: both;
     margin-top: 10px;
   }
+
   .stackedlabeldropdown:has(label[for="lineheight"]) {
     display: inline-block;
     margin-left: 15px;
     margin-top: 0;
   }
+
   .stackedlabeldropdown select {
     width: auto !important;
     max-width: none !important;
@@ -1661,8 +1670,8 @@ body .docsify-pagination-container {
   border-radius: var(--dt-radius-md);
 }
 
-.markdown-section .docsify-copy-code-button > .error,
-.markdown-section .docsify-copy-code-button > .success {
+.markdown-section .docsify-copy-code-button>.error,
+.markdown-section .docsify-copy-code-button>.success {
   padding: 0.2em 0.35em;
   font-size: 0.8em;
 }
@@ -1702,9 +1711,9 @@ body .docsify-pagination-container {
 #docsifythis .alert.callout,
 #docsifythis .warn {
   background-color: #f1f5f9;
-  border-top: 1px solid #e2e8f0;
-  border-right: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
+  border-top: 1px solid #dce4f0;
+  border-right: 1px solid #dce4f0;
+  border-bottom: 1px solid #dce4f0;
   border-radius: var(--dt-radius-lg);
 }
 
@@ -1747,27 +1756,27 @@ body .docsify-pagination-container {
   padding-right: calc(16px + (16 - 12) * (100vw - 400px) / (800 - 400));
   border-width: 0;
   border-radius: var(--dt-radius-xl);
-  background: var(--dt-bg-gradient);
+  background: var(--dt-card-bg);
+  box-shadow: var(--dt-card-shadow) !important;
   border: 1px solid var(--dt-border-color) !important;
-  box-shadow: var(--dt-shadow-sm) !important;
 }
 
-/* UPDATED: Purple headers in light mode */
-#docsifythisurlbuilder h2 {
-  color: var(--dt-primary-color);
+/* UPDATED: Slate-purple hybrid headers */
+#docsifythisurlbuilder h2,
+#docsifythisurlbuilder h3,
+#docsifythisurlbuilder h2 a,
+#docsifythisurlbuilder h2 a.anchor,
+#docsifythisurlbuilder h3 a,
+#docsifythisurlbuilder h3 a.anchor {
+  color: #5a6070;
+  /* Fallback for older browsers */
+  color: color-mix(in srgb, var(--dt-text-secondary) 60%, var(--dt-primary-color) 40%);
+  font-weight: 600;
+  text-decoration: none !important;
 }
 
 #docsifythisurlbuilder h3 {
   margin-top: 14px;
-  color: var(--dt-primary-color); /* Changed from var(--dt-text-primary) */
-}
-
-#docsifythisurlbuilder h3 a {
-  color: var(--dt-primary-color); /* Added to ensure anchor links are also purple */
-}
-
-#docsifythisurlbuilder h3 a.anchor:hover {
-  text-decoration: none !important;
 }
 
 #docsifythisurlbuilder input[type="text"],
@@ -1795,7 +1804,6 @@ input[type="url"]:focus {
   width: 100%;
   padding: 14px 12px;
   font-size: var(--dt-font-size-base);
-  line-height: var(--dt-line-height-base);
   box-sizing: border-box;
   resize: none;
   overflow: hidden;
@@ -1914,7 +1922,7 @@ span #docsifythisurlfield {
   opacity: 0;
 }
 
-#docsifythisurlbuilder [type="radio"] + img {
+#docsifythisurlbuilder [type="radio"]+img {
   cursor: pointer;
   margin-right: 0.5rem;
   border-radius: var(--dt-radius-md);
@@ -1922,10 +1930,10 @@ span #docsifythisurlfield {
   opacity: 0.9;
 }
 
-#docsifythisurlbuilder [type="radio"]:checked + img {
+#docsifythisurlbuilder [type="radio"]:checked+img {
   opacity: 1;
   outline: 3px solid var(--dt-primary-color);
-  outline-offset: 2px;
+  outline-offset: 0px;
   border-radius: var(--dt-radius-md);
   position: relative;
   z-index: 1;
@@ -1986,7 +1994,7 @@ span #docsifythisurlfield {
   margin-top: 3px;
 }
 
-#docsifythisurlbuilder input[type="checkbox"] ~ label {
+#docsifythisurlbuilder input[type="checkbox"]~label {
   padding-left: 1.4em;
   display: inline-block;
 }
@@ -2028,7 +2036,7 @@ span #docsifythisurlfield {
 }
 
 #docsifythisurlbuilder hr {
-  border: 1px solid var(--dt-border-color-light);
+  border: 1px solid var(--dt-border-color);
   margin-top: 0.6em;
   margin-bottom: 0.6em;
 }
@@ -2124,6 +2132,7 @@ span #docsifythisurlfield {
     width: 100%;
     margin-right: 0px;
   }
+
   .markdown-section .docsifythiscolumn65 {
     width: 100%;
     margin-top: 0px;
@@ -2155,6 +2164,7 @@ span #docsifythisurlfield {
     font-size: var(--dt-header-font-size-mobile);
     line-height: 35px;
   }
+
   #docsifythis .docsifythisheader .logoandtext img {
     height: var(--dt-logo-height-mobile);
   }
@@ -2189,18 +2199,23 @@ span #docsifythisurlfield {
     background-color: rgba(96, 165, 250, 0.15);
   }
 
-  /* Builder Headers - PURPLE (explicit override) */
+  /* UPDATED: Builder Headers - Slate-purple hybrid */
   #docsifythis #docsifythisurlbuilder h2,
   #docsifythis #docsifythisurlbuilder h3,
   #docsifythis #docsifythisurlbuilder h2 a,
-  #docsifythis #docsifythisurlbuilder h3 a {
-    color: var(--dt-primary-color-dark) !important;
+  #docsifythis #docsifythisurlbuilder h2 a.anchor,
+  #docsifythis #docsifythisurlbuilder h3 a,
+  #docsifythis #docsifythisurlbuilder h3 a.anchor {
+    color: #8585a3 !important;
+    /* Fallback */
+    color: color-mix(in srgb, var(--dt-text-secondary-dark) 60%, var(--dt-primary-color-dark) 40%) !important;
+    text-decoration: none !important;
   }
 
   #docsifythisurlbuilder {
-    background: var(--dt-bg-gradient-dark);
+    background: var(--dt-card-bg-dark);
+    box-shadow: var(--dt-card-shadow-dark) !important;
     border: 1px solid var(--dt-border-color-dark) !important;
-    box-shadow: var(--dt-shadow-sm-dark) !important;
   }
 
   #docsifythisurlfield {
@@ -2256,11 +2271,17 @@ span #docsifythisurlfield {
     border-color: rgba(129, 140, 248, 0.3);
   }
 
-  #docsifythisurlbuilder [type="radio"]:checked + img {
+  /* Secondary button hover state for dark mode */
+  .docsifythisurlbuildersecondarybutton:hover {
+    background-color: rgba(129, 140, 248, 0.15);
+    border-color: rgba(129, 140, 248, 0.4);
+  }
+
+  #docsifythisurlbuilder [type="radio"]:checked+img {
     outline-color: var(--dt-primary-color-dark);
   }
 
-  /* FIXED: Spin box hover behavior with color-scheme */
+  /* Spin box hover behavior with color-scheme */
   #docsifythisurlbuilder input[type="number"] {
     background-color: var(--dt-input-bg-dark);
     color: var(--dt-text-primary-dark);
@@ -2279,9 +2300,11 @@ span #docsifythisurlfield {
     border-color: var(--dt-border-color-dark);
   }
 
+  /* IMPROVED: Select focus state specificity to match inputs */
   #docsifythisurlbuilder select:focus {
     border-color: var(--dt-primary-color-dark);
     box-shadow: var(--dt-focus-shadow-dark);
+    outline: none;
   }
 
   #docsifythisurlbuilder #editCheck,

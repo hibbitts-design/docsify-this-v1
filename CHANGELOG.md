@@ -1,12 +1,18 @@
 # Changelog
 
-## [1.11.0] - XX/XX/2026
+## [1.11.1] - XX/XX/2026
+
+**Improved:**
+* Banner can now be hidden by default on Web Page Builder page using inline CSS
+* Adjusted Web Page Builder background color for improved contrast
+
+## [1.11.0] - 02/01/2026
 
 **New:**
 * Add Inter font choice, which also enables rendering Grav CMS Helios page content with visual consistency
 
 **Improved:**
-* Visual refresh of Web Page Builder with gradient background and enhanced dark mode styling
+* Visual refresh of Web Page Builder with various refinements and enhanced dark mode styling
 * Improved text wrapping for longer labels in non-English languages, especially on smaller screens
 * Refactored Docsify-This CSS to use CSS custom properties (variables)
 
