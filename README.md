@@ -1,10 +1,16 @@
+<div style="display:none;">
+  
 <div align="center">
 
 <img src="https://docsify.js.org/_media/icon.svg" width="64">
 
+</div>
+
 # Docsify-This
 
 <p><em>Instantly publish Markdown files as styled web pages – no setup or hosting required.</em></p>
+
+<div style="display:none;">
 
 [![Docsify Discord Chat](https://img.shields.io/discord/713647066802421792.svg?logo=discord&colorB=7289DA&label=Docsify%20Discord%20Chat)](https://discord.gg/docsify) [![GitHub Stars](https://img.shields.io/github/stars/hibbitts-design/docsify-this?style=flat-square&logo=github&logoColor=white&label=Stars)](https://github.com/hibbitts-design/docsify-this) [![Latest Release](https://img.shields.io/github/v/release/hibbitts-design/docsify-this?style=flat-square&label=Release)](https://github.com/hibbitts-design/docsify-this/releases/latest) [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/hibbitts-design/docsify-this/blob/main/LICENSE)
 
@@ -55,9 +61,11 @@
   </tr>
 </table>
 
-</div>
-
 Content stays in the Markdown files you already have, wherever they are hosted. Publish as standalone pages or embed into Canvas, Moodle, WordPress, or almost any platform – one source, many destinations.
+
+</div>
+  
+</div>
 
 ## Quickstart ⚡
 
@@ -81,9 +89,9 @@ https://github.com/hibbitts-design/markdown/blob/main/ReadMe.md
 > 
 > **Wanting more complete coverage?** Check out the [Markdown Publishing with Docsify-This](https://preview.docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/publishing-with-docsify-this/main&sidebar=true&searchbox=true&edit-link=https://github.com/hibbitts-design/publishing-with-docsify-this/blob/main/README.md&maxLevel=3&browser-tab-title=Markdown%20Publishing%20with%20Docsify-This&header-weight=600&dark-mode=auto&code-copy=true#/) guide for step-by-step instructions and more advanced workflows.
 
-## Everything You Need to Know about Docsify-This
+</div>
 
-<div style="display: none;">
+## Everything You Need to Know about Docsify-This
 
 <h3><a href="#1-introduction-and-overview-1">1. Introduction and Overview</a></h3>
 <ul>
