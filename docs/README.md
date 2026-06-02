@@ -9,10 +9,22 @@ body {
   background: transparent;
 }
 
+#docs-zone {
+  background: #ffffff;
+  margin: 4rem -9999px;
+  padding: 3.5rem 9999px;
+  overflow: hidden;
+  border-top: 2px solid #e2e8f0;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     background-attachment: fixed;
+  }
+  #docs-zone {
+    background: #0f172a;
+    border-top-color: #334155;
   }
 }
 </style>
@@ -402,16 +414,18 @@ Page layout:
 
 No online Markdown file handy? **Copy and paste this example URL** - an overview of the Markdown syntax:
 
-```
+```text
 https://github.com/hibbitts-design/markdown/blob/main/ReadMe.md
 ```
 
 [See the above ReadMe file displayed with Docsify Sidebar and a searchbox, using the Merriweather font →](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/markdown/main&homepage=ReadMe.md&sidebar=true&font-family=Merriweather,Georgia,serif&searchbox=true&dark-mode=auto ':target=_blank')
 
 > [!TIP]
-> **New to Docsify-This?** Try our interactive [Leap into Open Publishing with Docsify-This](https://preview.docsify-this.net/?basePath=https://raw.githubusercontent.com/paulhibbitts/published-markdown-files/main&homepage=leap-into-open-publishing-standalone-guide.md&edit-link=https://github.com/paulhibbitts/published-markdown-files/blob/main/leap-into-open-publishing-standalone-guide.md&edit-link-text=View%20Source%20Markdown%20File&edit-link-emoji=:page_facing_up:&browser-tab-title=Leap%20into%20Open%20Publishing&sidebar=true&searchbox=true&maxLevel=2&font-family=Open%20Sans,sans-serif&header-weight=600&dark-mode=auto#/) guide with brief hands-on challenges that can get you publishing styled web page in less than 20 minutes!
+> **New to Docsify-This?** Try our interactive [Leap into Open Publishing with Docsify-This](https://preview.docsify-this.net/?basePath=https://raw.githubusercontent.com/paulhibbitts/published-markdown-files/main&homepage=leap-into-open-publishing-standalone-guide.md&edit-link=https://github.com/paulhibbitts/published-markdown-files/blob/main/leap-into-open-publishing-standalone-guide.md&edit-link-text=View%20Source%20Markdown%20File&edit-link-emoji=:page_facing_up:&browser-tab-title=Leap%20into%20Open%20Publishing&sidebar=true&searchbox=true&maxLevel=2&font-family=Open%20Sans,sans-serif&header-weight=600&dark-mode=auto#/) guide with brief hands-on activities that can get you publishing styled web page in minutes!
 > 
-> **Wanting more complete coverage?** Check out the [Markdown Publishing with Docsify-This](https://preview.docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/publishing-with-docsify-this/main&sidebar=true&searchbox=true&edit-link=https://github.com/hibbitts-design/publishing-with-docsify-this/blob/main/README.md&maxLevel=3&browser-tab-title=Markdown%20Publishing%20with%20Docsify-This&header-weight=600&dark-mode=auto&code-copy=true#/) guide for step-by-step instructions and more advanced workflows.
+> **Wanting more complete coverage?** Browse the full documentation below, or check out the [Markdown Publishing with Docsify-This](https://preview.docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/publishing-with-docsify-this/main&sidebar=true&searchbox=true&edit-link=https://github.com/hibbitts-design/publishing-with-docsify-this/blob/main/README.md&maxLevel=3&browser-tab-title=Markdown%20Publishing%20with%20Docsify-This&header-weight=600&dark-mode=auto&code-copy=true#/) guide for step-by-step instructions and more advanced workflows.
+
+<div id="docs-zone">
 
 ## Everything You Need to Know about Docsify-This
 
@@ -459,6 +473,7 @@ https://github.com/hibbitts-design/markdown/blob/main/ReadMe.md
 ### [6. Support and Policies](/?id=_6-support-and-policies-1)
 
 - [Privacy Policy Summary](/?id=privacy-policy-summary)
+- [Content Responsibility](/?id=content-responsibility)
 - [Contact and Support](/?id=contact-and-support)
 
 What do you think about Docsify-This so far? Help shape its direction by sharing your feedback in just a few minutes!
@@ -484,7 +499,7 @@ Docsify-This provides a quick way to transform and style [Markdown content](http
 
 With Docsify-This you can:
 
-- Transform online Markdown files into visually styled web pages or complete websites — no technical setup or hosting required
+- Transform online Markdown files into visually styled web pages or complete websites — no technical setup or web server required
 - Present your materials, courses, documentation, and projects in a clean, professional style great for workshops, presentations, and online sharing
 - Maintain full control over your content by keeping files in their original locations, such as GitHub or Codeberg repositories
 - Style and customize web pages with a point-and-click Web Page Builder — no coding or technical expertise required
@@ -582,7 +597,7 @@ Here are a few real-world examples of how educators and creators are using Docsi
 
 - **[OpenLab Project Documentation](https://docsify-this.net?basePath=https://raw.githubusercontent.com/davidmalawey/openLab/main&homepage=home.md&edit-link=https://github.com/davidmalawey/openLab/blob/main&sidebar=true&browser-tab-title=OpenLab_Project&edit-link-top=true&hide-credits=true&loadFavicon=favicon.png&loadSidebar=_sidebar.md&loadNavbar=_navbar.md&name=OpenLab_Project&searchbox=true&page-title=OpenLab&mergeNavbar=true&zoom-images=true&dark-mode=true)** - Documented robotics prototyping lab at Texas A&M University
 - **[Digital Literacy Course](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/harlows/TERTL509/main/modules/introduction&homepage=overview.md&browser-tab-title=TERTL509&hide-credits=true&sidebar=true&loadSidebar=_sidebar.md&subMaxLevel=3&loadFooter=_footer.md)** - Open university course on digital literacy, which adapts Ontario Extend OER content
-- **[Intro to Software Engineering Course](https://docsify-this.net?basePath=https%3A%2F%2Fraw.githubusercontent.com%2FParsa-Rajabi%2FCMPT-276%2Fmain%2Fdocs&homepage=syllabus.md&sidebar=true&font-family=Lato%20Extended%2CLato%2CHelvetica%20Neue%2CHelvetica%2CArial%2Csans-serif&font-size=16px&link-color=cc0633&loadSidebar=_sidebar.md&name=CMPT_276&dark-mode=auto&link-color-dark-mode=ea7688)** - Docsify Open Course Starter Kit branded for SFU, as displayed by Docsify-This
+- **[Ethics & Other Management Issues in Information Systems](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/Parsa-Rajabi/CIS-485/main/docs&homepage=home.md&sidebar=true&font-family=Lato%20Extended,Lato,Helvetica%20Neue,Helvetica,Arial,sans-serif&font-size=16px&loadSidebar=_sidebar.md&name=CIS%20485&loadFavicon=assets/favicon/favicon-ufv.ico&dark-mode=auto)** - Docsify Open Course Starter Kit for UFV, as displayed by Docsify-This
 
 BONUS: [What’s up, Doc? Docsifying the SPLOT Docs](https://cogdogblog.com/2022/08/docsifying-splot-docs/) - Blog post about using Docsify-This to provide one source of project documentation in multiple contexts.
 
@@ -895,7 +910,7 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-des
 ##### max-width<button type="button" class="copy-link" aria-label="Copy max-width parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&max-width=').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
 Set a custom max width for content of your web pages with the optional **max-width** parameter (not included in the Advanced Web Page Builder), for example:  
-https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&core-theme-styles=true&max-width=100. If no unit is included the default unit is percentage (%). You can also specify other units like max-width=910px.
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&core-theme-styles=true&max-width=100. If no unit is included the default unit is percentage (%). You can also specify other units like max-width=910px. When set to 100 (i.e. full width), the top margin of the content area is automatically removed for a flush, edge-to-edge layout — useful for embedding pages in iframes or other full-width contexts. When set to 100 (full width), the top and side padding of the content area is automatically removed for a flush, edge-to-edge layout.
 
 ##### mergeNavbar<button type="button" class="copy-link" aria-label="Copy mergeNavbar parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&mergeNavbar=true').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
@@ -1998,6 +2013,7 @@ Looking for some help with getting a Docsify custom-This instance up and running
 - [Font Awesome Icons](/?id=font-awesome-icons)
 - [Additional Docsify-This Examples and Templates](/?id=additional-docsify-this-examples-and-templates)
 - [Additional Docsify-This Learning Materials](/?id=additional-docsify-this-learning-materials)
+- [llms.txt](https://docsify-this.net/llms.txt) — machine-readable summary of Docsify-This
 
 ---
 
@@ -2169,7 +2185,9 @@ This streamlined approach also enables authors to help other authors by sharing 
 
 ##### Understanding Path Handling in Docsify-This
 
-Docsify, the parent project of Docsify-This, currently handles paths inconsistently, which can cause links to break in nested directories. Until this issue is addressed, it is recommended to keep all content files at the root level and only nesting non-markdown assets. See [Docsify issue #1891](https://github.com/docsifyjs/docsify/issues/1891) for details
+Docsify, the parent project of Docsify-This, currently handles paths inconsistently, which can cause links to break in nested directories. Until this issue is addressed, it is recommended to keep all content files at the root level and only nesting non-markdown assets. See [Docsify issue #1891](https://github.com/docsifyjs/docsify/issues/1891) for details.
+
+If nesting content files is required, add the URL parameter ?relative-paths=true to your Docsify-This URL. Use explicit relative path prefixes for all links — ./filename.md for same-directory links and ../ or ../../ for parent directories (e.g. ../readme.md, ../../readme.md). Note that this parameter is not compatible with full root-relative paths (e.g. level1/foo.md). This is an unlisted advanced parameter for this specific scenario.
 
 ##### Matching Fonts with Your Destination Platform Content
 
@@ -2453,6 +2471,7 @@ Docsify-This (as with Docsify itself) will only execute the first script include
 ### 6. Support and Policies
 
 - [Privacy Policy Summary](#privacy-policy-summary)
+- [Content Responsibility](#content-responsibility)
 - [Contact and Support](#contact-and-support)
 
 ---
@@ -2466,6 +2485,12 @@ Docsify-This (as with Docsify itself) will only execute the first script include
 - The open source JavaScript tools [Mermaid](https://mermaid.js.org/) and [MathJax](https://www.mathjax.org/) are automatically loaded via [jsDelivr](https://www.jsdelivr.com/terms) when displaying remote Markdown files
 - The web service [Hypothes.is](https://web.hypothes.is/privacy/) is only loaded if chosen when displaying remote Markdown files
 - The web service [Embed.ly](https://embed.ly/legal/privacy) is only loaded if [Embedly Card](https://embed.ly/cards) elements are present in remote Markdown files
+
+---
+
+#### Content Responsibility
+
+**You are solely responsible for content you display via this service.** Docsify-This renders content from URLs you provide but does not host, store, or control that content. Users must comply with all applicable laws. To report problematic content, contact the platform hosting the displayed source content.
 
 ---
 
@@ -2488,5 +2513,7 @@ This [open source project](https://github.com/hibbitts-design/docsify-this) is b
 **🙇🏻‍♂️Special Thanks**  
 [Beau Shaw](https://github.com/DaddyWarbucks) for his [Remote Docsify](https://github.com/DaddyWarbucks/remote-docsify) example.  
 [Alan Levine](https://github.com/cogdog) for the inspiration of a consolidated ReadMe collection.
+
+</div>
 
 </div>

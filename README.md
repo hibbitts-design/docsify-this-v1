@@ -1,30 +1,85 @@
-# Docsify-This
+<div align="center">
+  
+<div style="display:none;">
 
-[![Docsify](https://img.shields.io/npm/v/docsify?label=docsify)](https://docsify.js.org/)
-[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/hibbitts-design/docsify-this/blob/main/LICENSE)
-<a href="https://discord.gg/docsify">
-<img src="https://img.shields.io/badge/chat-on%20discord-7289DA.svg" alt="Docsify Discord Chat" />
-</a>
-
-## Instantly Turn Markdown Text Files into Styled Web Pages
-
-This open-source web app built with [Docsify](https://docsify.js.org), a magical documentation site generator capable of flexible content display, makes [Markdown](https://en.wikipedia.org/wiki/Markdown) publishing as simple as providing a file link - publish and style pages or entire sites for reading, embedding, or presenting, without requiring webserver setup or modifying source files.  
-
-<div style="display: none;">
-
-_**Check out what Docsify-This can do by [viewing this ReadMe file as a web page with an optional Sidebar that includes headings up to 4 levels!](https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this/main&homepage=README.md&edit-link=https://github.com/hibbitts-design/docsify-this/blob/main/README.md&sidebar=true&browser-tab-title=Docsify-This%20ReadMe&edit-link-text=Suggest%20an%20Edit%20on%20GitHub&maxLevel=4&header-weight=600&zoom-images=true&dark-mode=auto)**_
+<img src="https://docsify.js.org/_media/icon.svg" width="64">
 
 </div>
 
-<picture>
-  <source srcset="https://raw.githubusercontent.com/paulhibbitts/github-repo-images/master/docsify-this-v1-11-0-web-page-builder-dark.png" media="(prefers-color-scheme: dark)">
-  <img src="https://raw.githubusercontent.com/paulhibbitts/github-repo-images/master/docsify-this-v1-11-0-web-page-builder.png" alt="Docsify-This">
-</picture>
-<p>
-  <em>Figure 1. <a href="https://docsify-this.net">Docsify-This.net</a> Web Page Builder.</em>
-</p>
+<div style="text-align: left !important;">
 
-### Quickstart ⚡
+# Docsify-This
+
+<p><em>Instantly publish Markdown files as styled web pages – no setup or web server required.</em></p>
+
+</div>
+
+<div style="display:none;">
+
+[![Docsify Discord Chat](https://img.shields.io/discord/713647066802421792.svg?logo=discord&colorB=7289DA&label=Docsify%20Discord%20Chat)](https://discord.gg/docsify) [![Latest Release](https://img.shields.io/github/v/release/hibbitts-design/docsify-this?style=flat-square&label=Release)](https://github.com/hibbitts-design/docsify-this/releases/latest) [![GitHub Stars](https://img.shields.io/github/stars/hibbitts-design/docsify-this?style=flat-square&logo=github&logoColor=white&label=Stars)](https://github.com/hibbitts-design/docsify-this) [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/hibbitts-design/docsify-this/blob/main/LICENSE)
+
+<p><a href="https://docsify-this.net">Try Docsify-This.net</a></p>
+
+<p>A free, open-source web app built on <a href="https://docsify.js.org">Docsify</a> – publish any public Markdown file as a styled web page in seconds, with no account, server, or configuration required. Named a finalist in the Open Infrastructure category for the <a href="https://www.oeglobal.org/2024/09/04/finalists-2024-oeawards/">2024 Open Education Awards for Excellence</a>.</p>
+
+> *"I'm blown away just by the fact you put a URL into Docsify-This and then you get a URL back for a web page… done!"*
+> – J. Groom, Co-founder, [Reclaim Hosting](https://reclaimhosting.com)
+
+<table style="border-collapse: collapse;">
+  <tr style="background: none !important;">
+    <td width="49%" style="border: none; padding-bottom: 0;">
+      <a href="https://raw.githubusercontent.com/hibbitts-design/docsify-this/refs/heads/main/screenshots/screenshot-1.png">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/hibbitts-design/docsify-this/refs/heads/main/screenshots/screenshot-1-dark.png">
+        <img alt="Docsify-This Web Page Builder interface" src="https://raw.githubusercontent.com/hibbitts-design/docsify-this/refs/heads/main/screenshots/screenshot-1.png" width="100%">
+      </picture>
+      </a>
+    </td>
+    <td width="49%" style="border: none; padding-bottom: 0;">
+      <a href="https://raw.githubusercontent.com/hibbitts-design/docsify-this/refs/heads/main/screenshots/screenshot-2.png">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/hibbitts-design/docsify-this/refs/heads/main/screenshots/screenshot-2-dark.png">
+        <img alt="Example page published with Docsify-This" src="https://raw.githubusercontent.com/hibbitts-design/docsify-this/refs/heads/main/screenshots/screenshot-2.png" width="100%">
+      </picture>
+      </a>
+    </td>
+  </tr>
+  <tr style="background: none !important;">
+    <td align="center" style="border: none; padding-top: 4px;">Docsify-This – Web Page Builder</td>
+    <td align="center" style="border: none; padding-top: 4px;">Docsify-This – Published page example</td>
+  </tr>
+  <tr style="display:none;"><td colspan="2" style="border: none;">&nbsp;</td></tr>
+  <tr style="background: none !important;">
+    <td width="49%" style="border: none; padding-bottom: 0;">
+      <a href="https://raw.githubusercontent.com/hibbitts-design/docsify-this/refs/heads/main/screenshots/screenshot-3.png">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/hibbitts-design/docsify-this/refs/heads/main/screenshots/screenshot-3-dark.png">
+        <img alt="Web Page Builder page appearance options" src="https://raw.githubusercontent.com/hibbitts-design/docsify-this/refs/heads/main/screenshots/screenshot-3.png" width="100%">
+      </picture>
+      </a>
+    </td>
+    <td width="49%" style="border: none; padding-bottom: 0;">
+      <a href="https://raw.githubusercontent.com/hibbitts-design/docsify-this/refs/heads/main/screenshots/screenshot-4.png">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/hibbitts-design/docsify-this/refs/heads/main/screenshots/screenshot-4-dark.png">
+        <img alt="Web Page Builder advanced options" src="https://raw.githubusercontent.com/hibbitts-design/docsify-this/refs/heads/main/screenshots/screenshot-4.png" width="100%">
+      </picture>
+      </a>
+    </td>
+  </tr>
+  <tr style="background: none !important;">
+    <td align="center" style="border: none; padding-top: 4px;">Web Page Builder – Page appearance options</td>
+    <td align="center" style="border: none; padding-top: 4px;">Web Page Builder – Advanced options</td>
+  </tr>
+</table>
+
+Content stays in the Markdown files you already have, wherever they are hosted. Publish as standalone pages or embed into Canvas, Moodle, WordPress, or almost any platform – one source, many destinations.
+
+</div>
+  
+</div>
+
+## Quickstart ⚡
 
 1. **Have a Markdown file online?** GitHub, Codeberg, or any public Markdown file works
 1. Visit the location of your file and **copy the URL from your browser's address bar**
@@ -35,20 +90,20 @@ _**Check out what Docsify-This can do by [viewing this ReadMe file as a web page
 
 No online Markdown file handy? **Copy and paste this example URL** - an overview of the Markdown syntax:
 
-```
+```text
 https://github.com/hibbitts-design/markdown/blob/main/ReadMe.md
 ```
 
 [See the above ReadMe file displayed with Docsify Sidebar and a searchbox, using the Merriweather font →](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/markdown/main&homepage=ReadMe.md&sidebar=true&font-family=Merriweather,Georgia,serif&searchbox=true&dark-mode=auto)
 
 > [!TIP]
-> **New to Docsify-This?** Try our interactive [Leap into Open Publishing with Docsify-This](https://preview.docsify-this.net/?basePath=https://raw.githubusercontent.com/paulhibbitts/published-markdown-files/main&homepage=leap-into-open-publishing-standalone-guide.md&edit-link=https://github.com/paulhibbitts/published-markdown-files/blob/main/leap-into-open-publishing-standalone-guide.md&edit-link-text=View%20Source%20Markdown%20File&edit-link-emoji=:page_facing_up:&browser-tab-title=Leap%20into%20Open%20Publishing&sidebar=true&maxLevel=2&font-family=Open%20Sans,sans-serif&header-weight=600&dark-mode=auto#/) guide with brief hands-on challenges that can get you publishing styled web page in less than 20 minutes!
+> **New to Docsify-This?** Try our interactive [Leap into Open Publishing with Docsify-This](https://preview.docsify-this.net/?basePath=https://raw.githubusercontent.com/paulhibbitts/published-markdown-files/main&homepage=leap-into-open-publishing-standalone-guide.md&edit-link=https://github.com/paulhibbitts/published-markdown-files/blob/main/leap-into-open-publishing-standalone-guide.md&edit-link-text=View%20Source%20Markdown%20File&edit-link-emoji=:page_facing_up:&browser-tab-title=Leap%20into%20Open%20Publishing&sidebar=true&maxLevel=2&font-family=Open%20Sans,sans-serif&header-weight=600&dark-mode=auto#/) guide with brief hands-on activities that can get you publishing styled web page in minutes!
 > 
-> **Wanting more complete coverage?** Check out the [Markdown Publishing with Docsify-This](https://preview.docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/publishing-with-docsify-this/main&sidebar=true&searchbox=true&edit-link=https://github.com/hibbitts-design/publishing-with-docsify-this/blob/main/README.md&maxLevel=3&browser-tab-title=Markdown%20Publishing%20with%20Docsify-This&header-weight=600&dark-mode=auto&code-copy=true#/) guide for step-by-step instructions and more advanced workflows.
+> **Wanting more complete coverage?** Browse the full documentation below, or check out the [Markdown Publishing with Docsify-This](https://preview.docsify-this.net/?basePath=https://raw.githubusercontent.com/hibbitts-design/publishing-with-docsify-this/main&sidebar=true&searchbox=true&edit-link=https://github.com/hibbitts-design/publishing-with-docsify-this/blob/main/README.md&maxLevel=3&browser-tab-title=Markdown%20Publishing%20with%20Docsify-This&header-weight=600&dark-mode=auto&code-copy=true#/) guide for step-by-step instructions and more advanced workflows.
+
+</div>
 
 ## Everything You Need to Know about Docsify-This
-
-<div style="display: none;">
 
 <h3><a href="#1-introduction-and-overview-1">1. Introduction and Overview</a></h3>
 <ul>
@@ -99,6 +154,7 @@ https://github.com/hibbitts-design/markdown/blob/main/ReadMe.md
 <h3><a href="#6-support-and-policies-1">6. Support and Policies</a></h3>
 <ul>
   <li><a href="#privacy-policy-summary">Privacy Policy Summary</a></li>
+  <li><a href="#content-responsibility">Content Responsibility</a></li>
   <li><a href="#contact-and-support">Contact and Support</a></li>
 </ul>
 
@@ -125,7 +181,7 @@ Docsify-This provides a quick way to transform and style [Markdown content](http
 
 With Docsify-This you can:
 
-- Transform online Markdown files into visually styled web pages or complete websites — no technical setup or hosting required
+- Transform online Markdown files into visually styled web pages or complete websites — no technical setup or web server required
 - Present your materials, courses, documentation, and projects in a clean, professional style great for workshops, presentations, and online sharing
 - Maintain full control over your content by keeping files in their original locations, such as GitHub or Codeberg repositories
 - Style and customize web pages with a point-and-click Web Page Builder — no coding or technical expertise required
@@ -223,7 +279,7 @@ Here are a few real-world examples of how educators and creators are using Docsi
 
 - **[OpenLab Project Documentation](https://docsify-this.net?basePath=https://raw.githubusercontent.com/davidmalawey/openLab/main&homepage=home.md&edit-link=https://github.com/davidmalawey/openLab/blob/main&sidebar=true&browser-tab-title=OpenLab_Project&edit-link-top=true&hide-credits=true&loadFavicon=favicon.png&loadSidebar=_sidebar.md&loadNavbar=_navbar.md&name=OpenLab_Project&searchbox=true&page-title=OpenLab&mergeNavbar=true&zoom-images=true&dark-mode=true)** - Documented robotics prototyping lab at Texas A&M University
 - **[Digital Literacy Course](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/harlows/TERTL509/main/modules/introduction&homepage=overview.md&browser-tab-title=TERTL509&hide-credits=true&sidebar=true&loadSidebar=_sidebar.md&subMaxLevel=3&loadFooter=_footer.md)** - Open university course on digital literacy, which adapts Ontario Extend OER content
-- **[Intro to Software Engineering Course](https://docsify-this.net?basePath=https%3A%2F%2Fraw.githubusercontent.com%2FParsa-Rajabi%2FCMPT-276%2Fmain%2Fdocs&homepage=syllabus.md&sidebar=true&font-family=Lato%20Extended%2CLato%2CHelvetica%20Neue%2CHelvetica%2CArial%2Csans-serif&font-size=16px&link-color=cc0633&loadSidebar=_sidebar.md&name=CMPT_276&dark-mode=auto&link-color-dark-mode=ea7688)** - Docsify Open Course Starter Kit branded for SFU, as displayed by Docsify-This
+- **[Ethics & Other Management Issues in Information Systems](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/Parsa-Rajabi/CIS-485/main/docs&homepage=home.md&sidebar=true&font-family=Lato%20Extended,Lato,Helvetica%20Neue,Helvetica,Arial,sans-serif&font-size=16px&loadSidebar=_sidebar.md&name=CIS%20485&loadFavicon=assets/favicon/favicon-ufv.ico&dark-mode=auto)** - Docsify Open Course Starter Kit for UFV, as displayed by Docsify-This
 
 BONUS: [What’s up, Doc? Docsifying the SPLOT Docs](https://cogdogblog.com/2022/08/docsifying-splot-docs/) - Blog post about using Docsify-This to provide one source of project documentation in multiple contexts.
 
@@ -538,7 +594,7 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-des
 ##### max-width
 
 Set a custom max width for content of your web pages with the optional **max-width** parameter (not included in the Advanced Web Page Builder), for example:  
-https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&core-theme-styles=true&max-width=100. If no unit is included the default unit is percentage (%). You can also specify other units like max-width=910px.
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&core-theme-styles=true&max-width=100. If no unit is included the default unit is percentage (%). You can also specify other units like max-width=910px. When set to 100 (full width), the top and side padding of the content area is automatically removed for a flush, edge-to-edge layout.
 
 ##### mergeNavbar
 
@@ -1422,6 +1478,7 @@ Looking for some help with getting a Docsify custom-This instance up and running
 - [Font Awesome Icons](#font-awesome-icons)
 - [Additional Docsify-This Examples and Templates](#additional-docsify-this-examples-and-templates)
 - [Additional Docsify-This Learning Materials](#additional-docsify-this-learning-materials)
+- [llms.txt](https://docsify-this.net/llms.txt) — machine-readable summary of Docsify-This
 
 ---
 
@@ -1593,7 +1650,9 @@ This streamlined approach also enables authors to help other authors by sharing 
 
 ##### Understanding Path Handling in Docsify-This
 
-Docsify, the parent project of Docsify-This, currently handles paths inconsistently, which can cause links to break in nested directories. Until this issue is addressed, it is recommended to keep all content files at the root level and only nesting non-markdown assets. See [Docsify issue #1891](https://github.com/docsifyjs/docsify/issues/1891) for details
+Docsify, the parent project of Docsify-This, currently handles paths inconsistently, which can cause links to break in nested directories. Until this issue is addressed, it is recommended to keep all content files at the root level and only nesting non-markdown assets. See [Docsify issue #1891](https://github.com/docsifyjs/docsify/issues/1891) for details.
+
+If nesting content files is required, add the URL parameter ?relative-paths=true to your Docsify-This URL. Use explicit relative path prefixes for all links — ./filename.md for same-directory links and ../ or ../../ for parent directories (e.g. ../readme.md, ../../readme.md). Note that this parameter is not compatible with full root-relative paths (e.g. level1/foo.md). This is an unlisted advanced parameter for this specific scenario.
 
 ##### Matching Fonts with Your Destination Platform Content
 
@@ -1877,6 +1936,7 @@ Docsify-This (as with Docsify itself) will only execute the first script include
 ### 6. Support and Policies
 
 - [Privacy Policy Summary](#privacy-policy-summary)
+- [Content Responsibility](#content-responsibility)
 - [Contact and Support](#contact-and-support)
 
 ---
@@ -1890,6 +1950,12 @@ Docsify-This (as with Docsify itself) will only execute the first script include
 - The open source JavaScript tools [Mermaid](https://mermaid.js.org/) and [MathJax](https://www.mathjax.org/) are automatically loaded via [jsDelivr](https://www.jsdelivr.com/terms) when displaying remote Markdown files
 - The web service [Hypothes.is](https://web.hypothes.is/privacy/) is only loaded if chosen when displaying remote Markdown files
 - The web service [Embed.ly](https://embed.ly/legal/privacy) is only loaded if [Embedly Card](https://embed.ly/cards) elements are present in remote Markdown files
+
+---
+
+#### Content Responsibility
+
+**You are solely responsible for content you display via this service.** Docsify-This renders content from URLs you provide but does not host, store, or control that content. Users must comply with all applicable laws. To report problematic content, contact the platform hosting the displayed source content.
 
 ---
 
