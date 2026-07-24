@@ -1,9 +1,20 @@
 # Changelog
 
-## [1.11.2] - XX/XX/2026
+## [1.11.3] - 07/23/2026
+
+**New:**
+* Further support for using Docsify-This during presentations with new custom Docsify Spotlight plugin
+* Updated ReadMe
+
+**Improved:**
+* Reorganized Web Page Builder options into clearer sections
+* Added card-box grouping to Web Page Builder for improved visual hierarchy and reduced complexity
+
+## [1.11.2] - 06/03/2026
 
 **New:**
 * Add llms.txt file to improve LLM knowledge of Docsify-This
+* Further support for using Docsify-This during presentations with new custom Docsify Spotlight plugin
 
 **Improved:**
 * Updated ReadMe

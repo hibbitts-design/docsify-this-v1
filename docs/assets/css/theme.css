@@ -1779,6 +1779,24 @@ body .docsify-pagination-container {
   margin-top: 14px;
 }
 
+/* ADDED: Section cards */
+#docsifythisurlbuilder .builder-section {
+  background: #f1f4f8;
+  border: 1px solid #dde3ec;
+  border-radius: var(--dt-radius-lg);
+  padding: 14px 16px 12px;
+  margin-bottom: 14px;
+}
+
+#docsifythisurlbuilder .builder-section h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#docsifythisurlbuilder .builder-section hr {
+  display: none;
+}
+
 #docsifythisurlbuilder input[type="text"],
 input[type="url"],
 input[type="color"] {
@@ -1968,6 +1986,7 @@ span #docsifythisurlfield {
 .markdown-section #toch1,
 .markdown-section #toch2,
 .markdown-section #toch3,
+.markdown-section #spotlight,
 .markdown-section #hideCredits,
 .markdown-section #hypothesisenable,
 .markdown-section #loadfavicon,
@@ -1977,6 +1996,7 @@ span #docsifythisurlfield {
 .markdown-section #loadcustomfooter,
 .markdown-section #enableSidebarsearch,
 .markdown-section #mergeNavbar,
+.markdown-section #pageCopyButton,
 .markdown-section #imageCaptions,
 .markdown-section #zoomimages,
 .markdown-section #enableDarkmode,
@@ -2101,6 +2121,11 @@ span #docsifythisurlfield {
   margin-left: var(--dt-spacing-xs);
 }
 
+#docsifythisurlbuilder #linkhovercolorpreview,
+#docsifythisurlbuilder #linkhovercolordarkmodepreview {
+  background-color: var(--dt-input-bg) !important;
+}
+
 #docsifythisurlbuilderrestoredefaultsbutton {
   font-family: inherit;
   font-size: inherit;
@@ -2218,6 +2243,12 @@ span #docsifythisurlfield {
     border: 1px solid var(--dt-border-color-dark) !important;
   }
 
+  /* ADDED: Section cards - dark mode */
+  #docsifythisurlbuilder .builder-section {
+    background: #243044;
+    border: 1px solid var(--dt-border-color-dark);
+  }
+
   #docsifythisurlfield {
     background-color: var(--dt-input-bg-dark);
     color: var(--dt-text-primary-dark);
@@ -2313,6 +2344,7 @@ span #docsifythisurlfield {
   .markdown-section #toch1,
   .markdown-section #toch2,
   .markdown-section #toch3,
+  .markdown-section #spotlight,
   .markdown-section #hideCredits,
   .markdown-section #hypothesisenable,
   .markdown-section #loadfavicon,
@@ -2322,6 +2354,7 @@ span #docsifythisurlfield {
   .markdown-section #loadcustomfooter,
   .markdown-section #enableSidebarsearch,
   .markdown-section #mergeNavbar,
+  .markdown-section #pageCopyButton,
   .markdown-section #imageCaptions,
   .markdown-section #zoomimages,
   .markdown-section #enableDarkmode,

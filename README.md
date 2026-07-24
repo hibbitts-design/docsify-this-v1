@@ -348,6 +348,7 @@ Learn more about each of the basic Docsify-This URL parameters below, and discov
 - [page-copy-button](#page-copy-button)
 - [searchbox](#searchbox)
 - [sidebar](#sidebar)
+- [spotlight](#spotlight)
 - [toc](#toc)
 - [toc-headings](#toc-headings)
 - [toc-narrow](#toc-narrow)
@@ -438,6 +439,11 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-des
 Display a Docsify sidebar with the optional **sidebar** parameter, for example:  
 https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main&sidebar=true
 
+##### spotlight
+
+Enable Section Spotlight Mode to visually focus on the section currently in view, dimming all other sections, with the optional **spotlight** parameter, for example:  
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&spotlight=true
+
 ##### toc
 
 Display a page table of contents with the optional **toc** parameter, for example:  
@@ -488,6 +494,8 @@ The following additional URL parameters are available for use in Docsify-This UR
 - [name](#name)
 - [page-title](#page-title)
 - [pagination](#pagination)
+- [spotlight-headings](#spotlight-headings)
+- [spotlight-toggle](#spotlight-toggle)
 - [submaxLevel](#subMaxLevel)
 - [svg-icons](#svg-icons)
 
@@ -615,6 +623,16 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-des
 
 Display Pagination buttons in page content area (Docsify custom Sidebar required) with the optional **pagination** parameter, for example:  
 https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-course-site/main&homepage=home.md&sidebar=true&loadSidebar=_sidebar.md&loadNavbar=_navbar.md&searchbox=true&pagination=true
+
+##### spotlight-headings
+
+Set which heading levels are used to define sections in Spotlight Mode with the optional **spotlight-headings** parameter (not included in the Advanced Web Page Builder), for example:  
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&spotlight=true&spotlight-headings=h2,h3. The default value is `h2,h3`.
+
+##### spotlight-toggle
+
+Hide the Spotlight toggle button and keep Spotlight Mode always on with the optional **spotlight-toggle** parameter (not included in the Advanced Web Page Builder), for example:  
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&spotlight=true&spotlight-toggle=false. When set to `false` the toggle button is hidden and Spotlight Mode can only be disabled via URL parameter.
 
 ##### subMaxLevel
 

@@ -338,6 +338,13 @@
             }
           }
 
+          const cb23 = document.querySelector('#spotlight');
+          if (cb23.checked) {
+            if (!url.includes('spotlight=')) {
+              var URLparms = URLparms + `&spotlight=true`;
+            }
+          }
+
           const cb3 = document.querySelector('#hideCredits');
           if (cb3.checked) {
             if (!url.includes('hide-credits=')) {
@@ -850,6 +857,7 @@
       document.getElementById("toch3").checked = false;
       document.getElementById("maxLevel").value = 2;
       document.getElementById("pageCopyButton").checked = false;
+      document.getElementById("spotlight").checked = false;
       document.getElementById("hideCredits").checked = false;
       document.getElementById("hypothesisenable").checked = false;
       document.getElementById("loadfavicon").checked = false;
@@ -1932,6 +1940,10 @@
               document.getElementById("pageCopyButton").checked = true;
             }
 
+            if (getURLParameterByName('spotlight', null, null, window.location.href, true) === 'true') {
+              document.getElementById("spotlight").checked = true;
+            }
+
             if (getURLParameterByName(['hide-credits', 'hideCredits'], null, null, window.location.href, true) === 'true') {
               document.getElementById("hideCredits").checked = true;
             }
@@ -2570,6 +2582,13 @@
   <script>
     if (!(window.$docsify['basePath'] === undefined) && ['true', 'nollm'].includes(getURLParameterByName(['page-copy-button', 'pageCopyButton', 'page-copy-menu', 'pageCopyMenu', 'page-actions-menu', 'pageActionsMenu'], null, null, window.location.href, true))) {
       document.write('<script src="assets/vendor/docsify/plugins/custom/docsify-page-actions-menu.js"><\/script>');
+    }
+  </script>
+
+  <!-- Spotlight plugin -->
+  <script>
+    if (!(window.$docsify['basePath'] === undefined) && (getURLParameterByName('spotlight', null, null, window.location.href, true) === 'true')) {
+      document.write('<script src="assets/vendor/docsify/plugins/custom/spotlight.js"><\/script>');
     }
   </script>
 

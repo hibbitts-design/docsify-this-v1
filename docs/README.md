@@ -39,23 +39,23 @@ body {
   </div>
 </div>
 
-<div id="banner" style="display: block;">
-<div style="background: linear-gradient(135deg, #f8fafc 0%, #f0fdf4 100%); border: 1px solid #bbf7d0; border-radius: 16px; padding: 20px 24px; margin: 24px 0; display: flex; align-items: center; gap: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02), inset 0 1px 0 rgba(255,255,255,0.6);">
-  <div style="flex: 1; min-width: 0;">
-    <strong style="color: #166534;">Docsify-This v2.0 Preview is now available!</strong>
-    <div style="color: #475569; margin-top: 2px; font-size: 18px; display: block;">
-      <style>
-        @media (max-width: 768px) {
-          .hide-on-mobile {
-              display: none !important;
-          }
-        }
-      </style>
-      <span class="hide-on-mobile">Built with the latest Docsify v5.0 release candidate and featuring a refreshed UI.</span>
+<div id="banner" style="display: none;">
+  <style>
+    @media (max-width: 768px) {
+      #banner > div { flex-direction: column; }
+      #banner a { text-align: center; }
+      .hide-on-mobile { display: none !important; }
+    }
+  </style>
+  <div style="background: linear-gradient(135deg, #f8fafc 0%, #f0fdf4 100%); border: 1px solid #bbf7d0; border-radius: 16px; padding: 20px 24px; margin: 24px 0; display: flex; align-items: center; gap: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02), inset 0 1px 0 rgba(255,255,255,0.6);">
+    <div style="flex: 1; min-width: 0;">
+      <strong style="color: #166534;">Docsify-This v2.0 Preview is now available!</strong>
+      <div style="color: #475569; margin-top: 2px; font-size: 18px; display: block;">
+        <span class="hide-on-mobile">Built with the latest Docsify v5.0 release candidate and featuring a refreshed UI.</span>
+      </div>
     </div>
+    <a href="https://preview-v2.docsify-this.net" style="background: #20b256; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; white-space: nowrap; box-shadow: 0 1px 2px rgba(0,0,0,0.05); transition: all 0.2s ease;">Explore v2.0</a>
   </div>
-  <a href="https://preview-v2.docsify-this.net" style="background: #20b256; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; white-space: nowrap; box-shadow: 0 1px 2px rgba(0,0,0,0.05); transition: all 0.2s ease;">Explore v2.0</a>
-</div>
 </div>
 
 <h1>Instantly Turn Markdown Text Files into Styled Web&nbsp;Pages</h1>
@@ -70,29 +70,29 @@ This open-source web app built with [Docsify](https://docsify.js.org), a magical
 
 **Markdown File URL** (GitHub, Codeberg or raw source URL):  
 <textarea
-    style="border-radius: 7px; border-color: #8e8f9d; resize: none; width: 100%; font-family: inherit; overflow: hidden; box-sizing: border-box;"
-    aria-label="Markdown File URL (GitHub, Codeberg or raw source URL)"
-    name="markdownFileURL"
-    id="docsifythisurlfield"
-    onfocus="this.select()"
-    rows="1"
-    onkeydown="if(event.key==='Enter'){event.preventDefault(); checkKey(event); return false;}"
-    oninput="if(!CSS.supports('field-sizing', 'content')){this.style.height='auto';this.style.height=this.scrollHeight+'px';} this.value=this.value.replace(/[^a-zA-Z0-9\-._~:\/?#@!$&()*+,;=%]/g,'');"
-    placeholder="Paste Markdown file URL • Choose options below or add URL parameters here">https://github.com/hibbitts-design/docsify-this-one-page-article/blob/main/home.md</textarea>
+   style="border-radius: 7px; border-color: #8e8f9d; resize: none; width: 100%; font-family: inherit; overflow: hidden; box-sizing: border-box;"
+   aria-label="Markdown File URL (GitHub, Codeberg or raw source URL)"
+   name="markdownFileURL"
+   id="docsifythisurlfield"
+   onfocus="this.select()"
+   rows="1"
+   onkeydown="if(event.key==='Enter'){event.preventDefault(); checkKey(event); return false;}"
+   oninput="if(!CSS.supports('field-sizing', 'content')){this.style.height='auto';this.style.height=this.scrollHeight+'px';} this.value=this.value.replace(/[^a-zA-Z0-9\-._~:\/?#@!$&()*+,;=%]/g,'');"
+   placeholder="Paste Markdown file URL • Choose options below or add URL parameters here">https://github.com/hibbitts-design/docsify-this-one-page-article/blob/main/home.md</textarea>
 <style>
 #docsifythisurlfield {
-    field-sizing: content;
-    padding: 15px 10px;
+   field-sizing: content;
+   padding: 15px 10px;
 }
 @supports (-webkit-hyphens: none) {
-    #docsifythisurlfield {
-        field-sizing: auto !important;
-        padding: 15px 10px !important;
-        -webkit-appearance: none !important;
-    }
+   #docsifythisurlfield {
+      field-sizing: auto !important;
+      padding: 15px 10px !important;
+      -webkit-appearance: none !important;
+   }
 }
 </style>
-<input class="docsifythisurlbuilderprimarybutton" style="margin-top: -10px;" type="button" id="btn_1" value="Publish as a Web Page" onclick="openURLs(document.getElementById('docsifythisurlfield').value)"/></br>
+<input class="docsifythisurlbuilderprimarybutton" style="margin-top: -10px;" type="button" id="btn_1" value="Publish as a Web Page" onclick="openURLs(document.getElementById('docsifythisurlfield').value)"/><br>
 
 Page layout:
 
@@ -101,85 +101,85 @@ Page layout:
 <label>
   <input type="radio" name="pagestyle" id="stylecontentonly" aria-label="Page Content Only" checked>
   <img style="padding: 1px;" src="images/contentonly.png" alt="Page Content Only">
-  <figcaption style="overflow-wrap: break-word; word-break: break-word; hyphens: auto; text-align: left;" id="caption">Content Only</figcaption>
+  <figcaption style="overflow-wrap: break-word; word-break: break-word; hyphens: auto; text-align: left;">Content Only</figcaption>
 </label>
 
 <label>
   <input type="radio" name="pagestyle" id="styletoc" aria-label="Page with Table of Contents">
   <img style="padding: 1px;" src="images/toc.png" alt="Page with Table of Contents">
-  <figcaption style="overflow-wrap: break-word; word-break: break-word; hyphens: auto; text-align: left;" id="caption">Table of Contents</figcaption>
+  <figcaption style="overflow-wrap: break-word; word-break: break-word; hyphens: auto; text-align: left;">Table of Contents</figcaption>
 </label>
 
 <label>
   <input type="radio" name="pagestyle" id="stylesidebar" aria-label="Page with Docsify Sidebar (collapsible)">
   <img style="padding: 1px;" src="images/sidebar.png" alt="Page with Docsify Sidebar (collapsible)">
-  <figcaption style="overflow-wrap: break-word; word-break: break-word; hyphens: auto; text-align: left;" id="caption">Docsify Sidebar</figcaption>
+  <figcaption style="overflow-wrap: break-word; word-break: break-word; hyphens: auto; text-align: left;">Docsify Sidebar</figcaption>
 </label>
 
 </div>
 
-<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="editCheck" unchecked><label for="editCheck">Include 'Edit this Page' link with GitHub or Codeberg files (at bottom of page by default)</label></div>
+<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="editCheck"><label for="editCheck">Include 'Edit this Page' link with GitHub or Codeberg files (at bottom of page by default)</label></div>
 
 <div id="docsifythisurlbuildershowhidelink"><a name='toggleDivlink' href='#' onclick='toggleDiv(this); return false;'>Show More Page Appearance Options &raquo;</a></div>
 
 <div id="docsifythisurlbuilderoptionsDiv" style='display: none'>
 
-### Page Style and Behavior
+<section class="builder-section" style='margin-top: 12px'>
 
-<hr>
+### Page Style and Behavior
 
 <div class="docsifythisurlbuilderoptionsline">Title on Browser tab:<br><input style="border-radius: 7px;border-color: #8e8f9d" aria-label="Title on Browser tab" type="text" maxlength="60" value="Published by Docsify-This" id="browserTabTitle" name="browserTabTitle"></div>
 
 <div class="clearfix">
 
 <div class='stackedlabeldropdown'>
- <label for="fontfamily">Page font family:</label>
- <select style="border-radius: 7px;border-color: #8e8f9d; display: inline-block; vertical-align: middle; margin-right: 4px;" class="docsifythisurlbuilderoptionsline" id="fontfamily" name="fontfamily">
-   <option value="default">Source Sans Pro</option>
-   <option disabled="disabled">----</option>
-   <option value="Arial,sans-serif">Arial, sans-serif</option>
-   <option value="Helvetica,sans-serif">Helvetica, sans-serif</option>
-   <option value="Helvetica%20Neue,Helvetica,Arial,sans-serif">Helvetica Neue, sans-serif</option>
-   <option value="Inter,sans-serif">Inter, sans-serif</option>
-   <option value="Lato%20Extended,Lato,Helvetica%20Neue,Helvetica,Arial,sans-serif">Lato, sans-serif</option>
-   <option value="Open%20Sans,sans-serif">Open Sans, sans-serif</option>
-   <option value="system-ui,sans-serif">System UI, sans-serif</option>
-   <option value="Tahoma,sans-serif">Tahoma, sans-serif</option>
-   <option value="Verdana,sans-serif">Verdana, sans-serif</option>
-   <option value="Georgia,serif">Georgia, serif</option>
-   <option value="Merriweather,Georgia,serif">Merriweather, serif</option>
-   <option value="Times%20New%20Roman,serif">Times New Roman, serif</option>
-   <option value="Courier,monospace">Courier, monospace</option>
- </select>
- <span id="fontPreview" style="display: inline-block; vertical-align: middle; margin-top: 6px; margin-right: 6px; font-size: 1.2em; border: 1px dashed #ccc; padding: 2px 5px; background-color: var(--mono-tint2); color: var(--base-color); width: 118px; overflow: hidden; text-align: center;">
-   AaBb 123
- </span>
+  <label for="fontfamily">Font family:</label>
+  <select style="border-radius: 7px;border-color: #8e8f9d; display: inline-block; vertical-align: middle; margin-right: 4px;" class="docsifythisurlbuilderoptionsline" id="fontfamily" name="fontfamily">
+    <option value="default">Source Sans Pro</option>
+    <option disabled="disabled">----</option>
+    <option value="Arial,sans-serif">Arial, sans-serif</option>
+    <option value="Helvetica,sans-serif">Helvetica, sans-serif</option>
+    <option value="Helvetica%20Neue,Helvetica,Arial,sans-serif">Helvetica Neue, sans-serif</option>
+    <option value="Inter,sans-serif">Inter, sans-serif</option>
+    <option value="Lato%20Extended,Lato,Helvetica%20Neue,Helvetica,Arial,sans-serif">Lato, sans-serif</option>
+    <option value="Open%20Sans,sans-serif">Open Sans, sans-serif</option>
+    <option value="system-ui,sans-serif">System UI, sans-serif</option>
+    <option value="Tahoma,sans-serif">Tahoma, sans-serif</option>
+    <option value="Verdana,sans-serif">Verdana, sans-serif</option>
+    <option value="Georgia,serif">Georgia, serif</option>
+    <option value="Merriweather,Georgia,serif">Merriweather, serif</option>
+    <option value="Times%20New%20Roman,serif">Times New Roman, serif</option>
+    <option value="Courier,monospace">Courier, monospace</option>
+  </select>
+  <span id="fontPreview" style="display: inline-block; vertical-align: middle; margin-top: 6px; margin-right: 6px; font-size: 1.2em; border: 1px dashed #ccc; padding: 2px 5px; background-color: var(--mono-tint2); color: var(--base-color); width: 118px; overflow: hidden; text-align: center;">
+    AaBb 123
+  </span>
 </div>
 
-<div class='stackedlabeldropdown' style='margin-top: 2px;' >
+<div class='stackedlabeldropdown' style='margin-top: 2px;'>
   <label for="fontsize">Font size (px):</label>
-  <input 
-    type="number" 
-    id="fontsize" 
-    name="fontsize" 
-    value="18" 
-    min="10" 
-    max="72" 
+  <input
+    type="number"
+    id="fontsize"
+    name="fontsize"
+    value="18"
+    min="10"
+    max="72"
     step="1"
     style="border-radius: 7px; border-color: #8e8f9d; width: 80px;"
     class="docsifythisurlbuilderoptionsline"
   >
 </div>
-        
+
 <div class='stackedlabeldropdown' style='margin-top: 2px;'>
   <label for="lineheight">Line height:</label>
-  <input 
-    type="number" 
-    id="lineheight" 
-    name="lineheight" 
-    value="1.4" 
-    min="1.0" 
-    max="3.0" 
+  <input
+    type="number"
+    id="lineheight"
+    name="lineheight"
+    value="1.4"
+    min="1.0"
+    max="3.0"
     step="0.1"
     style="border-radius: 7px; border-color: #8e8f9d; width: 80px;"
     class="docsifythisurlbuilderoptionsline"
@@ -189,12 +189,12 @@ Page layout:
 
 </div>
 
-<div class="docsifythisurlbuilderoptionsline" style='margin-top:0px;'>Page link color:<br><input style="border-radius: 7px;border-color: #8e8f9d" aria-label="Page link color" type="text" maxlength="7" size="8" value="#0374B5" id="linkcolor" style="text-transform:uppercase" oninput="validateColorAndUpdatePreview('linkcolor', 'linkcolorpreview');" data-coloris><span id="linkcolorpreview"></span></div>
+<div class="docsifythisurlbuilderoptionsline" style='margin-top:0px;'>Link color:<br><input style="border-radius: 7px;border-color: #8e8f9d;text-transform:uppercase" aria-label="Page link color" type="text" maxlength="7" size="8" value="#0374B5" id="linkcolor" oninput="validateColorAndUpdatePreview('linkcolor', 'linkcolorpreview');" data-coloris><span id="linkcolorpreview"></span></div>
 
 <div class="clearfix">
 
 <div class="docsifythisurlbuilderoptionsline"><div class='stackedlabeldropdown' style='margin-bottom:12px;border-radius: 7px;border-color: #8e8f9d'>
-  <label for="headerweight">Page headers font weight:</label>
+  <label for="headerweight">Headers font weight:</label>
   <select style="border-radius: 7px;border-color: #8e8f9d" class="docsifythisurlbuilderoptionsline" id="headerweight" name="headerweight">
     <option value="400">Normal (400)</option>
     <option disabled="disabled">----</option>
@@ -205,17 +205,18 @@ Page layout:
 
 </div>
 
+<div class="docsifythisurlbuilderoptionsline">
+  <input class="docsifythisurlbuildercheckbox" type="checkbox" id="hideCredits"/>
+  <label for="hideCredits">Remove the Docsify-This credit text from bottom of page</label>
+</div>
+
+</section>
+
+<section class="builder-section">
+
 ### Page Display Options
 
-<hr>
-
-<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="pageCopyButton"/><label for="pageCopyButton">Include Copy Page button for accessing Markdown content</label></div>
-
-<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="zoomimages" unchecked><label for="zoomimages">Enable zoomable page images (tapping on images to enlarge them)</label></div>
-
-<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="imageCaptions" unchecked><label for="imageCaptions">Show alternative text of images as captions</label></div>
-
-<hr>
+<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="spotlight"><label for="spotlight">Enable spotlight to focus on current heading (dims surrounding content)</label></div>
 
 <div class="clearfix">
 
@@ -223,7 +224,7 @@ Page layout:
   <label for="maxWidthValue">Content maximum width:</label>
   <div style="display: flex; gap: 10px;">
     <input type="number" id="maxWidthValue" name="maxWidthValue"
-       style="width=85px; border-radius: 7px; border-color: #8e8f9d; vertical-align: top;"
+       style="width: 70px; border-radius: 7px; border-color: #8e8f9d; vertical-align: top;"
        value="910" step="10">
     <select style="border-radius: 7px; border-color: #8e8f9d; vertical-align: top; transform: translateY(4px);"
         id="maxWidthValueUnit" name="maxWidthValueUnit" value="px" onchange="updateMaxWidthStep()">
@@ -232,52 +233,48 @@ Page layout:
       <option value="ch" data-step="5">Characters (ch)</option>
     </select>
   </div>
-    <div style="font-size: 1em; opacity: 0.8; margin-top: -5px;">
-      Embedding or presenting content? Try 100% for embeds and 80% for presentations
-    </div>
+  <div style="font-size: 1em; opacity: 0.8; margin-top: -5px;">
+    Embedding or presenting content? Try 100% for embeds and 80% for presentations
+  </div>
 </div>
 
 </div>
+
+<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="pageCopyButton"/><label for="pageCopyButton">Include Copy Page button for accessing Markdown content</label></div>
+
+<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="zoomimages"/><label for="zoomimages">Enable zoomable page images (tapping on images to enlarge them)</label></div>
+
+<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="imageCaptions"/><label for="imageCaptions">Show image alternative text as captions</label></div>
+
+</section>
+
+<section class="builder-section">
 
 ### Navigation Display Options
 
-<hr>
-
 <div class="docsifythisurlbuilderoptionsline" >Headings to include in table of contents (at least one required):</div>
-<div class="docsifythisurlbuilderoptionsindentedline"><input aria-label="Include h1 in table of contents" class="docsifythisurlbuildercheckbox" type="checkbox" id="toch1"  unchecked><label for="toch1">Heading 1 (h1)</label></div>
+<div class="docsifythisurlbuilderoptionsindentedline"><input aria-label="Include h1 in table of contents" class="docsifythisurlbuildercheckbox" type="checkbox" id="toch1"><label for="toch1">Heading 1 (h1)</label></div>
 <div class="docsifythisurlbuilderoptionsindentedline"><input aria-label="Include h2 in table of contents" class="docsifythisurlbuildercheckbox" type="checkbox" id="toch2" checked><label for="toch2">Heading 2 (h2)</label></div>
-<div class="docsifythisurlbuilderoptionsindentedline"><input aria-label="Include h3 in table of contents" class="docsifythisurlbuildercheckbox" type="checkbox" id="toch3" unchecked><label for="toch3">Heading 3 (h3)</label></div>
+<div class="docsifythisurlbuilderoptionsindentedline"><input aria-label="Include h3 in table of contents" class="docsifythisurlbuildercheckbox" type="checkbox" id="toch3"><label for="toch3">Heading 3 (h3)</label></div>
 
-<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="narrowToC" unchecked><label for="narrowToC">Use a narrower table of contents area, along with a smaller screen breakpoint</label></div>
-
-<hr>
+<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="narrowToC"><label for="narrowToC">Use a narrower table of contents area, along with a smaller screen breakpoint</label></div>
 
 <div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="closesidebar"/><label for="closesidebar">Automatically close Docsify Sidebar for presentations or focused reading</label></div>
 
-<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="enableSidebarsearch" unchecked><label for="enableSidebarsearch">Enable search field in Docsify Sidebar</label></div>
+<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="enableSidebarsearch"><label for="enableSidebarsearch">Enable search field in Docsify Sidebar</label></div>
 
 <div class="docsifythisurlbuilderoptionsline">Maximum Header depth (1-6) for Docsify Sidebar:<br><input style="border-radius: 7px;border-color: #8e8f9d" aria-label="Maximum Header depth (1-6) for Docsify Sidebar" type="number" size="1" value="2" min="1" max="6" id="maxLevel" name="maxLevel"></div>
 
-### Additional Page Options
+</section>
 
-<hr>
-
-<div class="docsifythisurlbuilderoptionsline">Text of 'Edit this Page' link:<br><input style="border-radius: 7px;border-color: #8e8f9d" aria-label="Text of 'Edit this Page' link" type="text" maxlength="60" value="Edit this Page" id="editLinkText" name="editLinkText"></div>
-
-<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="editLinkTopCheck" unchecked><label for="editLinkTopCheck">Set location of the 'Edit this Page' link to top of page</label></div>
-
-<hr>
-
-<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="hideCredits" unchecked><label for="hideCredits">Remove the Docsify-This credit text from bottom of page</label></div>
+<section class="builder-section">
 
 ### Dark Theme
 
-<hr>
-
 <div class="clearfix">
 
-<div class="docsifythisurlbuilderoptionsline"><div class='stackedlabeldropdown' style='margin-top:-6px; margin-bottom:4px;border-radius: 7px;border-color: #8e8f9d'>
-  <label for="enableDarkmode">Dark theme mode:</label>
+<div class="docsifythisurlbuilderoptionsline"><div class='stackedlabeldropdown' style='margin-top:-6px; margin-bottom:12px;border-radius: 7px;border-color: #8e8f9d'>
+  <label for="enableDarkmode">Dark mode:</label>
   <select style="border-radius: 7px;border-color: #8e8f9d" class="docsifythisurlbuilderoptionsline" id="enableDarkmode" name="enableDarkmode">
     <option value="false">Off</option>
     <option disabled="disabled">----</option>
@@ -288,29 +285,25 @@ Page layout:
 
 </div>
 
+<div class="docsifythisurlbuilderoptionsline">Link color (dark theme):<br><input style="border-radius: 7px;border-color: #8e8f9d;text-transform:uppercase" aria-label="Page link color for dark theme" type="text" maxlength="7" size="8" value="#1BA1EE" id="linkcolordarkmode" oninput="validateColorAndUpdatePreview('linkcolordarkmode', 'linkcolordarkmodepreview');" data-coloris><span id="linkcolordarkmodepreview"></span></div>
+
+</section>
+
 <input class="docsifythisurlbuilderprimarybutton" style="border:none;margin-top: 10px;" type="button" id="btn_2" value="Publish as a Web Page" onclick="openURLs(document.getElementById('docsifythisurlfield').value)"/>
 
-<div class="docsifythisurlbuilderoptionsline" style="margin-top: 42px;margin-bottom: -27px;"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="advancedwebpagebuilder" onclick='toggleDiv2(this)' unchecked><label for="advancedwebpagebuilder">Advanced Web Page Builder Options</label></div>
+<div class="docsifythisurlbuilderoptionsline" style="margin-top: 42px;margin-bottom: -27px;"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="advancedwebpagebuilder" onclick='toggleDiv2(this)'><label for="advancedwebpagebuilder">Advanced Web Page Builder Options</label></div>
 
 <div id="docsifythisurlbuilderoptionsDiv2" style='margin-top:40px;display: none'>
 
-### Dark Theme Link Colors
-
-<hr>
-
-<div class="docsifythisurlbuilderoptionsline" style="margin-left: 10px;">Link color for dark theme:<br><input style="border-radius: 7px;border-color: #8e8f9d" aria-label="Page link color for dark theme" type="text" maxlength="7" size="8" value="#1BA1EE" id="linkcolordarkmode" style="text-transform:uppercase" oninput="validateColorAndUpdatePreview('linkcolordarkmode', 'linkcolordarkmodepreview');" data-coloris><span id="linkcolordarkmodepreview"></span></div>
-
-<div class="docsifythisurlbuilderoptionsline" style="margin-left: 10px;">Link hover color for dark theme:<br><input style="border-radius: 7px;border-color: #8e8f9d" aria-label="Page link hover color for dark theme" type="text" maxlength="7" size="8" value="" id="linkhovercolordarkmode" style="text-transform:uppercase" oninput="validateColorAndUpdatePreview('linkhovercolordarkmode', 'linkhovercolordarkmodepreview');" data-coloris><span id="linkhovercolordarkmodepreview"></span></div>
+<section class="builder-section">
 
 ### Link Style and Behavior
-
-<hr>
 
 <div class="clearfix">
 
 <div class='stackedlabeldropdown'>
   <label for="linktextdecoration">Link text decoration:</label>
-  <select style="border-radius: 7px;border-color: #8e8f9d" class="docsifythisurlbuilderoptionsline" id="linktextdecoration" name="linktextdecoration" style="width: 60px;">
+  <select style="border-radius: 7px;border-color: #8e8f9d;" class="docsifythisurlbuilderoptionsline" id="linktextdecoration" name="linktextdecoration">
     <option value="underline">Underline</option>
     <option disabled="disabled">----</option>
     <option value="none">None</option>
@@ -320,11 +313,17 @@ Page layout:
 
 <div class="clearfix">
 
-  <div class='stackedlabeldropdown'><div class="docsifythisurlbuilderoptionsline" style='margin-top:-2px;'>Link hover color:<br><input style="border-radius: 7px;border-color: #8e8f9d" aria-label="Link hover color" type="text" maxlength="7" size="8" value="" id="linkhovercolor" style="text-transform:uppercase" oninput="validateColorAndUpdatePreview('linkhovercolor', 'linkhovercolorpreview');" data-coloris><span id="linkhovercolorpreview"></span></div></div>
+  <div class='stackedlabeldropdown'><div class="docsifythisurlbuilderoptionsline" style='margin-top:-2px;'>Link hover color:<br><input style="border-radius: 7px;border-color: #8e8f9d;text-transform:uppercase" aria-label="Link hover color" type="text" maxlength="7" size="8" value="" id="linkhovercolor" oninput="validateColorAndUpdatePreview('linkhovercolor', 'linkhovercolorpreview');" data-coloris><span id="linkhovercolorpreview"></span></div></div>
+
+  <div class='stackedlabeldropdown'><div class="docsifythisurlbuilderoptionsline" style='margin-top:-2px;'>Link hover color (dark theme):<br><input style="border-radius: 7px;border-color: #8e8f9d;text-transform:uppercase" aria-label="Page link hover color for dark theme" type="text" maxlength="7" size="8" value="" id="linkhovercolordarkmode" oninput="validateColorAndUpdatePreview('linkhovercolordarkmode', 'linkhovercolordarkmodepreview');" data-coloris><span id="linkhovercolordarkmodepreview"></span></div></div>
+
+</div>
+
+<div class="clearfix">
 
   <div class='stackedlabeldropdown' style="margin-top:-6px;">
   <label for="linkhovertextdecoration">Link hover text decoration:</label>
-  <select style="border-radius: 7px;border-color: #8e8f9d" class="docsifythisurlbuilderoptionsline" id="linkhovertextdecoration" name="linkhovertextdecoration" style="width: 60px;">
+  <select style="border-radius: 7px;border-color: #8e8f9d;width: 120px;" class="docsifythisurlbuilderoptionsline" id="linkhovertextdecoration" name="linkhovertextdecoration">
     <option value="none">None</option>
     <option disabled="disabled">----</option>
     <option value="underline">Underline</option>
@@ -336,7 +335,7 @@ Page layout:
 
 <div class='stackedlabeldropdown' style="margin-top:-11px;">
 <label for="externalLinkTarget">External link target:</label>
-<select style="border-radius: 7px;border-color: #8e8f9d" class="docsifythisurlbuilderoptionsline" id="externalLinkTarget" name="externalLinkTarget" style="width: 60px;">
+<select style="border-radius: 7px;border-color: #8e8f9d;" class="docsifythisurlbuilderoptionsline" id="externalLinkTarget" name="externalLinkTarget">
   <option value="_top">Same window or tab</option>
   <option disabled="disabled">----</option>
   <option value="_blank">New window or tab</option>
@@ -344,32 +343,40 @@ Page layout:
 
 </div>
 
-### Custom Page Additions
+</section>
 
-<hr>
+<section class="builder-section">
+
+### Custom Page Options
 
 <div class="docsifythisurlbuilderoptionsline">Add '←Back' link URL (displayed at top of page):<br><input style="border-radius: 7px;border-color: #8e8f9d" placeholder="https://example.com" aria-label="Add back link URL (displayed at top of page)" type="url" maxlength="200" value="" id="backLink" name="backLink"></div>
 
 <div class="docsifythisurlbuilderoptionsline">Add page title (as H1 header at top of page):<br><input style="border-radius: 7px;border-color: #8e8f9d" aria-label="Add page title (as H1 header at top of page)" type="text" maxlength="200" value="" id="pageTitle" name="pageTitle"></div>
 
-<hr>
+<div class="docsifythisurlbuilderoptionsline">Text of 'Edit this Page' link:<br><input style="border-radius: 7px;border-color: #8e8f9d" aria-label="Text of 'Edit this Page' link" type="text" maxlength="60" value="Edit this Page" id="editLinkText" name="editLinkText"></div>
 
-<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="hypothesisenable" unchecked><label for="hypothesisenable">Enable page annotation with Hypothes.is, an open source web annotation tool</label></div>
+<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="editLinkTopCheck"><label for="editLinkTopCheck">Set location of the 'Edit this Page' link to top of page</label></div>
+
+<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="hypothesisenable"><label for="hypothesisenable">Enable page annotation with Hypothes.is, an open source web annotation tool</label></div>
+
+</section>
+
+<section class="builder-section">
 
 ### Docsify Custom Files
 
-<hr>
-
 <div class="docsifythisurlbuilderoptionsline">Load and display additional <a href="https://docsify.js.org/#/more-pages" target="_blank">Docsify</a> custom files (must be located at root level of remote files):</div>
-<div class="docsifythisurlbuilderoptionsindentedline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="loadcustomsidebar"  unchecked><label for="loadcustomsidebar">Sidebar (<code>_sidebar.md</code>)</label></div>
-<div class="docsifythisurlbuilderoptionsindentedline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="loadcustomnavbar" unchecked><label for="loadcustomnavbar">Navbar (<code>_navbar.md</code>)</label></div>
-<div class="docsifythisurlbuilderoptionsindentedline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="loadcoverpage" unchecked><label for="loadcoverpage">Coverpage (<code>_coverpage.md</code>)</label></div>
-<div class="docsifythisurlbuilderoptionsindentedline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="loadfavicon"  unchecked><label for="loadfavicon">Favicon (<code>favicon.png</code>)</label></div>
-<div class="docsifythisurlbuilderoptionsindentedline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="loadcustomfooter" unchecked><label for="loadcustomfooter">Footer (<code>_footer.md</code>)</label></div>
+<div class="docsifythisurlbuilderoptionsindentedline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="loadcustomsidebar"><label for="loadcustomsidebar">Sidebar (<code>_sidebar.md</code>)</label></div>
+<div class="docsifythisurlbuilderoptionsindentedline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="loadcustomnavbar"><label for="loadcustomnavbar">Navbar (<code>_navbar.md</code>)</label></div>
+<div class="docsifythisurlbuilderoptionsindentedline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="loadcoverpage"><label for="loadcoverpage">Coverpage (<code>_coverpage.md</code>)</label></div>
+<div class="docsifythisurlbuilderoptionsindentedline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="loadfavicon"><label for="loadfavicon">Favicon (<code>favicon.png</code>)</label></div>
+<div class="docsifythisurlbuilderoptionsindentedline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="loadcustomfooter"><label for="loadcustomfooter">Footer (<code>_footer.md</code>)</label></div>
+
+</section>
+
+<section class="builder-section">
 
 ### Docsify Custom Sidebar Options
-
-<hr>
 
 <div class="docsifythisurlbuilderoptionsline">Website name displayed in Sidebar:<br><input style="border-radius: 7px;border-color: #8e8f9d" aria-label="Website name displayed in Sidebar" type="text" maxlength="80" value="" id="siteName" name="siteName"></div>
 
@@ -377,21 +384,27 @@ Page layout:
 
 <div class="docsifythisurlbuilderoptionsline">Maximum Header depth of Sidebar for page table of contents (0 for none):<br><input style="border-radius: 7px;border-color: #8e8f9d" aria-label="Maximum Header depth of Sidebar for page table of contents (0 for none)" type="number" size="1" value="2" min="0" max="6" id="subMaxLevel" name="subMaxLevel"></div>
 
-<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="pagination" unchecked><label for="pagination">Enable pagination buttons in page content area (Docsify custom Sidebar required)  </label></div>
+<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="pagination"><label for="pagination">Enable pagination buttons in page content area (Docsify custom Sidebar required)  </label></div>
+
+</section>
+
+<section class="builder-section">
 
 ### Docsify Custom Navbar Options
 
-<hr>
+<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="mergeNavbar"><label for="mergeNavbar">Move Navbar items to the top of the Sidebar on smaller screens</label></div>
 
-<div class="docsifythisurlbuilderoptionsline"><input class="docsifythisurlbuildercheckbox" type="checkbox" id="mergeNavbar" unchecked><label for="mergeNavbar">Move Navbar items to the top of the Sidebar on smaller screens</label></div>
+</section>
+
+<section class="builder-section">
 
 ### Docsify Custom Coverpage Colors
 
-<hr>
+<div class="docsifythisurlbuilderoptionsline">Coverpage color:<br><input style="border-radius: 7px;border-color: #8e8f9d;text-transform:uppercase" aria-label="Coverpage color" type="text" maxlength="7" size="8" value="#6C8A9A" id="coverpagecolor" oninput="validateColorAndUpdatePreview('coverpagecolor', 'coverpagecolorpreview');" data-coloris><span id="coverpagecolorpreview"></span></div>
 
-<div class="docsifythisurlbuilderoptionsline">Coverpage color:<br><input style="border-radius: 7px;border-color: #8e8f9d" aria-label="Coverpage color" type="text" maxlength="7" size="8" value="#6C8A9A" id="coverpagecolor" style="text-transform:uppercase" oninput="validateColorAndUpdatePreview('coverpagecolor', 'coverpagecolorpreview');" data-coloris><span id="coverpagecolorpreview"></span></div>
+<div class="docsifythisurlbuilderoptionsline">Coverpage color for dark theme:<br><input style="border-radius: 7px;border-color: #8e8f9d;text-transform:uppercase" aria-label="Coverpage color for dark theme" type="text" maxlength="7" size="8" value="#262D30" id="coverpagecolordarkmode" oninput="validateColorAndUpdatePreview('coverpagecolordarkmode', 'coverpagecolordarkmodepreview');" data-coloris><span id="coverpagecolordarkmodepreview"></span></div>
 
-<div class="docsifythisurlbuilderoptionsline">Coverpage color for dark theme:<br><input style="border-radius: 7px;border-color: #8e8f9d" aria-label="Coverpage color for dark theme" type="text" maxlength="7" size="8" value="#262D30" id="coverpagecolordarkmode" style="text-transform:uppercase" oninput="validateColorAndUpdatePreview('coverpagecolordarkmode', 'coverpagecolordarkmodepreview');" data-coloris><span id="coverpagecolordarkmodepreview"></span></div>
+</section>
 
 <input class="docsifythisurlbuilderprimarybutton" style="border:none;margin-top: 10px;margin-bottom: 8px;" type="button" id="btn_3" value="Publish as a Web Page" onclick="openURLs(document.getElementById('docsifythisurlfield').value)"/>
 
@@ -664,6 +677,7 @@ Learn more about each of the basic Docsify-This URL parameters below, and discov
 - [page-copy-button](/?id=page-copy-buttonconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
 - [searchbox](/?id=searchboxconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
 - [sidebar](/?id=sidebarconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
+- [spotlight](/?id=spotlightconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
 - [toc](/?id=tocconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
 - [toc-headings](/?id=toc-headingsconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
 - [toc-narrow](/?id=toc-narrowconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
@@ -754,6 +768,11 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-des
 Display a Docsify sidebar with the optional **sidebar** parameter, for example:  
 https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-open-course-starter-kit/main&sidebar=true
 
+##### spotlight<button type="button" class="copy-link" aria-label="Copy spotlight parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&spotlight=true').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
+
+Enable Section Spotlight Mode to visually focus on the section currently in view, dimming all other sections, with the optional **spotlight** parameter, for example:  
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&spotlight=true
+
 ##### toc<button type="button" class="copy-link" aria-label="Copy toc parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&toc=true').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
 Display a page table of contents with the optional **toc** parameter, for example:  
@@ -804,6 +823,8 @@ The following additional URL parameters are available for use in Docsify-This UR
 - [name](/?id=nameconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
 - [page-title](/?id=page-titleconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
 - [pagination](/?id=paginationconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
+- [spotlight-headings](/?id=spotlight-headingsconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
+- [spotlight-toggle](/?id=spotlight-toggleconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
 - [subMaxLevel](/?id=subMaxLevelconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
 - [svg-icons](/?id=svg-iconsconst-bthisconst-origbtextcontentbtextcontentcopiedsettimeoutbtextcontentorig1500copy)
 
@@ -931,6 +952,16 @@ https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-des
 
 Display Pagination buttons in page content area (Docsify custom Sidebar required) with the optional **pagination** parameter, for example:  
 https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-multiple-page-course-site/main&homepage=home.md&sidebar=true&loadSidebar=_sidebar.md&loadNavbar=_navbar.md&searchbox=true&pagination=true
+
+##### spotlight-headings<button type="button" class="copy-link" aria-label="Copy spotlight-headings parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&spotlight-headings=h2,h3').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
+
+Set which heading levels are used to define sections in Spotlight Mode with the optional **spotlight-headings** parameter (not included in the Advanced Web Page Builder), for example:  
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&spotlight=true&spotlight-headings=h2,h3. The default value is `h2,h3`.
+
+##### spotlight-toggle<button type="button" class="copy-link" aria-label="Copy spotlight-toggle parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&spotlight-toggle=true').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
+
+Hide the Spotlight toggle button and keep Spotlight Mode always on with the optional **spotlight-toggle** parameter (not included in the Advanced Web Page Builder), for example:  
+https://docsify-this.net?basePath=https://raw.githubusercontent.com/hibbitts-design/docsify-this-one-page-article/main&homepage=home.md&spotlight=true&spotlight-toggle=false. When set to `false` the toggle button is hidden and Spotlight Mode can only be disabled via URL parameter.
 
 ##### subMaxLevel<button type="button" class="copy-link" aria-label="Copy subMaxLevel parameter" onclick="event.stopPropagation(); event.preventDefault(); navigator.clipboard.writeText('&subMaxLevel=').then(()=>{const b=this;const orig=b.textContent;b.textContent='copied!';setTimeout(()=>b.textContent=orig,1500)})">copy</button>
 
